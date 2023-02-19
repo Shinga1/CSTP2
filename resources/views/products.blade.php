@@ -4,7 +4,19 @@
 
 <div>
     <h1>All of our Products</h1>
+    
+    <h2>View products by a category of your choice:</h2>
+    <p>
+        <a href="/products/category/Beauty">Beauty</a>
+        <a href="/products/category/Electronics">Electronics</a>
+        <a href="/products/category/Food">Food</a>
+        <a href="/products/category/Clothing&Shoes">Clothing & shoes</a>
+        <a href="/products/category/Books">Books</a>
+    </p>
+
 </div>
+
+<br><br>
 
 <div>
     

@@ -16,4 +16,9 @@ class ProductsController extends Controller
         $product = Products::findOrFail($id);
         return view('product', ['product' => $product]);
     }
+
+    public function viewByCategory($product_category) {
+        $products = Products::all()->where('product_category', $product_category);
+        return view('products', ['products' => $products]);
+    }
 }
