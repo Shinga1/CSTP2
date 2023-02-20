@@ -1,7 +1,8 @@
 <?php
-
-use App\Http\Controllers\ProductsController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+
+/* Main Frontend Routes */
+Route::controller(App\Http\Controllers\FrontendController::class)->group(function() {
+    Route::get('/', 'home');
+    Route::get('/about_us', 'aboutus');
+    Route::get('/contact_us', 'contactus');
+
 });
 
 Route::get('/products', [ProductsController::class, 'show']);

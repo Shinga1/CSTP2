@@ -1,0 +1,285 @@
+* {
+    font-family: "Gill Sans", sans-serif;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    background-color: #000;
+}
+
+/** -------------------------------------------------------- NAVBAR CSS ----------------------------------------------------------------------**/
+nav {
+    position: fixed;
+    inset: 0 0 auto;
+    padding-top: 10px;
+    display: flex;
+    align-items: baseline;
+    z-index: 100;
+    background: transparent;
+    border-bottom: 0.1px solid #242424;
+    transition: all 0.5s ease;
+}
+
+nav:hover {
+    background: rgb(0, 0, 0);
+}
+
+nav.active {
+    background: rgb(0, 0, 0);
+    transition: all 0.5s ease;
+}
+
+nav .links {
+    padding-right: 130px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .logo {
+    padding-left: 40px;
+    height: 40px;
+}
+
+nav ul li {
+    text-transform: uppercase;
+    list-style: none;
+    display: inline-block;
+    padding: 13px;
+}
+
+nav ul a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    --padding: 0.5em;
+    position: relative;
+    padding: var(--padding);
+    transition: scale 0.5s ease;
+}
+
+nav ul a::after {
+    content: "";
+    position: absolute;
+    inset: auto var(--padding) calc(var(--padding) * 0.6);
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    scale: 0 1;
+    transition: inherit;
+    transform-origin: right;
+}
+
+nav ul a:hover::after {
+    scale: 1 1;
+    transform-origin: left;
+}
+/** -------------------------------------------------------- END OF NAVBAR CSS ----------------------------------------------------------------------**/
+
+/** -------------------------------------------------------- WELCOME PAGE CSS ----------------------------------------------------------------------**/
+.home-bg {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    text-align: center;
+    color: white;
+}
+
+.home-bg h1 {
+    text-transform: capitalize;
+    font-size: 85px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.home-about {
+    background-color: #fff;
+    padding: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+}
+
+.about-text {
+    background-color: #fff;
+    padding: 0 2rem;
+}
+
+.home-about .about-text span {
+    background-color: #fff;
+    text-transform: capitalize;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.home-about .about-text h2 {
+    background-color: #fff;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin: 1rem 0 2rem;
+}
+
+.home-about .about-text p {
+    background-color: #fff;
+    margin: 1rem 0 2rem;
+    line-height: 1.5;
+}
+
+.home-about .about-text a {
+    background-color: #fff;
+}
+
+/** -------------------------------------------------------- END OF HOME PAGE CSS ----------------------------------------------------------------------**/
+
+/** -------------------------------------------------------- FOOTER PAGE CSS ----------------------------------------------------------------------**/
+.footer-container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer ul {
+    list-style: none;
+}
+
+.footer {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    background-color: #000;
+    padding-top: 70px;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 50px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h2 {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 50px;
+    font-weight: bold;
+    position: relative;
+    margin-left: 40px;
+}
+
+.footer-col h2:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #fff;
+    height: 2px;
+    box-sizing: border-box;
+    width: 30px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.footer-col ul li a {
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #808080;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+    padding-left: 8px;
+}
+
+.footer-col a {
+    font-size: 20px;
+}
+
+.footer-col p a {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #808080;
+    font-size: 16px;
+}
+
+.footer-col p.text1 {
+    text-transform: capitalize;
+    font-size: 13px;
+    color: #fff;
+    padding-bottom: 2rem;
+}
+
+.footer-col p.text2 {
+    text-transform: capitalize;
+    font-size: 13px;
+    color: #fff;
+}
+
+.footer-col .form {
+    padding-bottom: 10rem;
+}
+
+.footer-col .input {
+    color: #d3d3d3;
+    border: 0;
+    padding: 2px;
+    width: 100%;
+    outline: none !important;
+    box-sizing: border-box;
+    font-size: 13px;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+}
+
+.footer-col .socials a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    padding: 10;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .socials a:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+/** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
