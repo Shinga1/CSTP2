@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2023 at 10:25 PM
+-- Generation Time: Feb 21, 2023 at 10:40 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -113,8 +113,8 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`product_id`, `product_name`, `product_image`, `product_description`, `product_price`, `product_category`, `product_stock`) VALUES
 (1, 'Fenty Beauty Lipstick', 'fenty.jpg', 'The semi-matte, creamy formula hugs lips with a smooth, plush texture and long lasting iconic wear.', 20, 'Beauty', 10),
 (2, 'Beats by Dr Dre', 'beats.jpg', 'Beats by Dr. Dre (Beats) is a leading audio brand founded in 2006 by Dr. Dre and Jimmy Iovine.', 350, 'Electronics', 10),
-(3, 'Snoop Cereal by Snoop Dogg', 'snoop-loopz.jpg', 'This cereal is gluten-free, sugary, colorful, and full of marshmallows and produced by Broadus Foods, Snoops family-owned food product company.', 20, 'Foods', 10),
-(4, 'Yeezy by Kanye West', 'yeezy.jpg', 'Yeezy was a fashion collaboration between American rapper, designer and entrepreneur Kanye West and German sportswear company Adidas.', 200, 'Clothing&Shoes', 10),
+(3, 'Snoop Cereal by Snoop Dogg', 'snoop-loopz.jpg', 'This cereal is gluten-free, sugary, colorful, and full of marshmallows and produced by Broadus Foods, Snoops family-owned food product company.', 20, 'Food', 10),
+(4, 'Yeezy by Kanye West', 'yeezy.jpg', 'Yeezy was a fashion collaboration between American rapper, designer and entrepreneur Kanye West and German sportswear company Adidas.', 200, 'Perfumes', 10),
 (5, 'Book', 'book.jpg', 'book description', 0, 'Books', 0);
 
 -- --------------------------------------------------------
