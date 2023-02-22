@@ -18,6 +18,12 @@
 
 </div>
 
+<div>
+    <h1>Filter price by:</h1>
+    <a href="/products/sorted/high-to-low">High to low</a>
+    <a href="/products/sorted/low-to-high">Low to high</a>
+</div>
+
 <br><br>
 
 <div>
@@ -28,10 +34,10 @@
         {{ $product->product_name }} <br>
         £{{ $product->product_price }} <br>
 
-        @if($product->product_stock == 0)
-            Sorry this product is currently out of stock
+        @if($product->product_stock > 0)
+            In stock
         @else
-            In stock    
+            Sorry this product is currently out of stock
         @endif
         <br><br><br><br>
     </a>    

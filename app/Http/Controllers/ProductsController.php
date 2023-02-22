@@ -21,4 +21,19 @@ class ProductsController extends Controller
         $products = Products::all()->where('product_category', $product_category);
         return view('products', ['products' => $products]);
     }
+
+    public function sortByPrice ($price) {
+
+        if ($price == 'low-to-high') {
+            $products = Products::all()->sortBy('product_price');
+
+            return view('products', ['products' => $products]);
+            
+        } else {
+            $products = Products::all()->sortByDesc('product_price');
+
+            return view('products', ['products' => $products]);
+        }
+    }
+
 }

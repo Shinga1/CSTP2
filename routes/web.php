@@ -30,3 +30,5 @@ Route::get('/products', [ProductsController::class, 'show']);
 Route::get('/products/{id}', [ProductsController::class, 'singleProduct']);
 
 Route::get('/products/category/{product_category}', [ProductsController::class, 'viewByCategory']);
+
+Route::get('/products/sorted/{price}', [ProductsController::class, 'sortByPrice']);

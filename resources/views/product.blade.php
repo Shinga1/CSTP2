@@ -10,10 +10,10 @@
 
     Price: £{{ $product->product_price }} <br>
     
-    @if($product->product_stock == 0)
-        Sorry this product is currently out of stock
-    @else
+    @if($product->product_stock > 0)
         In stock
+    @else
+        Sorry this product is currently out of stock
     @endif
 
 </div>
