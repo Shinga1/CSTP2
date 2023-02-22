@@ -6,10 +6,6 @@
                 <h3>why Celessentials?</h3>
                 <p class="text1">Celessentials. ​
                 </p>
-                <div class="socials">
-                    <a href="https://github.com/"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://trello.com/"><i class="fa-brands fa-trello"></i></a>
-                </div>
             </div>
 
             <div class="footer-col">

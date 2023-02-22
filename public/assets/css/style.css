@@ -1,5 +1,5 @@
 * {
-    font-family: "Gill Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
     list-style: none;
     text-decoration: none;
@@ -29,16 +29,18 @@ nav.active {
 }
 
 nav .links {
-    padding-right: 130px;
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+nav .right {
+    padding-right: 20px;
+}
+
 nav .logo {
     padding-left: 40px;
-    height: 40px;
 }
 
 nav ul li {
@@ -79,26 +81,27 @@ nav ul a:hover::after {
 /** -------------------------------------------------------- WELCOME PAGE CSS ----------------------------------------------------------------------**/
 .home-bg {
     min-height: 100vh;
+    padding-left: 5rem;
     display: grid;
-    place-items: center;
     align-content: center;
-    text-align: center;
     color: white;
 }
 
 .home-bg h1 {
     text-transform: capitalize;
-    font-size: 85px;
+    font-size: 55px;
     color: #fff;
     font-weight: 600;
+}
+
+.home-bg img {
+    float: right;
+    width: 50%;
 }
 
 .home-about {
     background-color: #fff;
     padding: 100px;
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    grid-gap: 1.5rem;
     align-items: center;
 }
 
@@ -129,6 +132,63 @@ nav ul a:hover::after {
 
 .home-about .about-text a {
     background-color: #fff;
+}
+
+.home-discover {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-discover span {
+    color: #fff;
+}
+
+.discover-text {
+    color: #fff;
+    display: block;
+    margin-top: 1em;
+}
+
+.discover-text a {
+    display: block;
+    margin: 0.5em 0;
+}
+
+.home-products {
+    background-color: #fff;
+    padding-block: 100px;
+}
+
+.home-products .product-row {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.home-products .product {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 90px 20px 0;
+}
+
+.home-products .product img {
+    background-color: #fff;
+    max-width: 100%;
+    height: auto;
+}
+
+.home-products .product button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
 /** -------------------------------------------------------- END OF HOME PAGE CSS ----------------------------------------------------------------------**/
@@ -281,5 +341,23 @@ footer ul {
     .footer-col {
         width: 100%;
     }
+}
+/** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
+
+/** -------------------------------------------------------- ABOUT US PAGE CSS ----------------------------------------------------------------------**/
+.about_us {
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+    color: white;
+}
+/** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
+
+/** -------------------------------------------------------- CONTACT US PAGE CSS ----------------------------------------------------------------------**/
+.contact_us {
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+    color: white;
 }
 /** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
