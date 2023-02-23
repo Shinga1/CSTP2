@@ -670,12 +670,29 @@ nav ul a:hover::after {
     box-sizing: border-box;
 }
 
+.home-reviews .review .rating {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.home-reviews .review .fa-star {
+    font-size: 20px;
+    color: #bbb;
+    margin-right: 5px;
+}
+
+.home-reviews .review .fa-star.checked {
+    color: #f90;
+}
+
 .home-reviews .review-text {
     color: #fff;
     text-align: center;
     font-size: 1.2em;
     line-height: 1.5;
     margin-bottom: 10px;
+    padding: 0 30px;
 }
 
 .home-reviews .customer {
@@ -693,7 +710,7 @@ nav ul a:hover::after {
     background-color: transparent;
     border: none;
     outline: none;
-    font-size: 2em;
+    font-size: 1.6em;
     color: #ccc;
     cursor: pointer;
 }
@@ -794,7 +811,7 @@ footer ul {
 }
 
 .footer:after {
-    content: "© 2023, CELESSENTIALS - All Rights Reserved.";
+    content: "© 2023, CELESSENTIALS";
     position: absolute;
     bottom: 1%;
     left: 1%;
