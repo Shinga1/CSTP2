@@ -6,7 +6,7 @@
 <div>
     <h1>All of our Products</h1>
     
-    <h2>View products by a category of your choice:</h2>
+    <h2>Filter by:</h2>
     <p>
         <a href="/products">All categories</a>
         <a href="/products/category/Beauty">Beauty</a>
@@ -14,14 +14,10 @@
         <a href="/products/category/Food">Food</a>
         <a href="/products/category/Perfumes">Perfumes</a>
         <a href="/products/category/Books">Books</a>
+        <a href="/products/sorted/high-to-low">High to low</a>
+        <a href="/products/sorted/low-to-high">Low to high</a>
     </p>
 
-</div>
-
-<div>
-    <h1>Filter price by:</h1>
-    <a href="/products/sorted/high-to-low">High to low</a>
-    <a href="/products/sorted/low-to-high">Low to high</a>
 </div>
 
 <br><br>
