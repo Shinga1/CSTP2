@@ -1,7 +1,7 @@
 <nav>
     <p>
         <a href="{{ url('/') }}">
-            <img class="logo" src="{{ asset('assets/images/...') }}" alt="logo">
+            <img class="logo" src="{{ asset('assets/images/logo(white).png') }}" alt="logo">
         </a>
     </p>
 
