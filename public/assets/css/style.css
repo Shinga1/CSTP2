@@ -553,7 +553,7 @@ nav ul a:hover::after {
 .home .main-photo {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 5%;
     transform: translateY(-50%);
     width: 32%;
     z-index: 1;
@@ -653,9 +653,7 @@ nav ul a:hover::after {
 }
 
 .home-reviews {
-    position: relative;
     padding-block: 50px;
-    overflow-x: hidden;
 }
 
 .home-reviews .reviews-container {
@@ -668,18 +666,26 @@ nav ul a:hover::after {
     flex: 0 0 100%;
     padding: 20px;
     box-sizing: border-box;
+    background-color: transparent;
+}
+
+.home-reviews .review.fly-in-right {
+    animation: fly-in-right 0.5s ease forwards;
+    background-color: transparent;
 }
 
 .home-reviews .review .rating {
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
+    background-color: transparent;
 }
 
 .home-reviews .review .fa-star {
     font-size: 20px;
     color: #bbb;
     margin-right: 5px;
+    background-color: transparent;
 }
 
 .home-reviews .review .fa-star.checked {
@@ -692,7 +698,8 @@ nav ul a:hover::after {
     font-size: 1.2em;
     line-height: 1.5;
     margin-bottom: 10px;
-    padding: 0 30px;
+    padding: 0 100px;
+    background-color: transparent;
 }
 
 .home-reviews .customer {
@@ -700,32 +707,7 @@ nav ul a:hover::after {
     text-align: center;
     font-style: italic;
     font-size: 0.8em;
-}
-
-.home-reviews .prev-button,
-.next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: 1.6em;
-    color: #ccc;
-    cursor: pointer;
-}
-
-.home-reviews .prev-button:hover,
-.next-button:hover {
-    color: #fff;
-}
-
-.home-reviews .prev-button {
-    left: 10px;
-}
-
-.home-reviews .next-button {
-    right: 10px;
 }
 
 .home-products {
@@ -927,7 +909,7 @@ footer ul {
     align-content: center;
     color: #fff;
 }
-/** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
+/** -------------------------------------------------------- END OF ABOUT US PAGE CSS ----------------------------------------------------------------------**/
 
 /** -------------------------------------------------------- CONTACT US PAGE CSS ----------------------------------------------------------------------**/
 .contact_us {
@@ -936,4 +918,4 @@ footer ul {
     align-content: center;
     color: #fff;
 }
-/** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
+/** -------------------------------------------------------- END OF CONTACT US PAGE CSS ----------------------------------------------------------------------**/
