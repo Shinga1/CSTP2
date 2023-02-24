@@ -11,7 +11,7 @@ class LoginC extends Controller
     public function authenticate(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
+            'username' => ['required', 'usernmae'],
             'password' => ['required'],
         ]);
  
@@ -21,8 +21,8 @@ class LoginC extends Controller
         }
  
         return back()->withErrors([
-            'email' => 'Incorrect Username or Password!',
-        ])->onlyInput('email');
+            'username' => 'Incorrect Username or Password!',
+        ])->onlyInput('username');
 
     }
 

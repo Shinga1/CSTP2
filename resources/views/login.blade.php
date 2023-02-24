@@ -5,7 +5,7 @@
 <div class="about_us">
 
     <div class="home-bg">
-    <form action="/home.blade.php">
+    <form action="/LoginC.php">
         <label for="uname">User name:</label><br>
         <input type="text" id="uname" name="uname"><br>
         <label for="pword">Password:</label><br>
