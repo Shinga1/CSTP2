@@ -2,8 +2,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
-
-
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +31,9 @@ Route::get('/products/{id}', [ProductsController::class, 'singleProduct']);
 Route::get('/products/category/{product_category}', [ProductsController::class, 'viewByCategory']);
 
 Route::get('/products/sorted/{price}', [ProductsController::class, 'sortByPrice']);
+
+Route::get('/register', [RegisterController::class, 'register']);
+Route::post('/register', [RegisterController::class, 'registerDone']);
 
 Route::get('/login', function () {
     return view('login');
