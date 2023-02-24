@@ -12,7 +12,7 @@
          .image {
             border:4px solid #1b6b6f; 
             padding:15px;
-            align: "right";
+            align: "center";
         }
          </style>
 
