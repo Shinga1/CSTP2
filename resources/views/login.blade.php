@@ -1,5 +1,3 @@
-@extends('layouts.main')
-
 <head>
 	<title>Login Page</title>
 </head>
@@ -19,7 +17,7 @@
 				// start a session and redirect to home page
 				session_start();
 				$_SESSION["username"] = $username;
-				header("Location: home.php");
+				header("Location: home.blade.php");
 			} else {
 				// show an error message
 				echo "<p style='color:red'>Invalid username or password</p>";
