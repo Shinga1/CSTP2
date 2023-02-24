@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section ('content')
+
 <div class="about_us">
-    <h1>About Us</h1>
+
+    <div class="home-bg">
+         <h1>WHO WE ARE</h1>
+         <a href="/products">Celessentials</a>
+    </div>
 </div>

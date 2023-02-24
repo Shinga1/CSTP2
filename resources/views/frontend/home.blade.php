@@ -53,8 +53,6 @@
                         </p>
                         <p class="customer">- James L.</p>
                     </div>
-                    <button class="prev-button"><i class="fas fa-chevron-left"></i></button>
-                    <button class="next-button"><i class="fas fa-chevron-right"></i></button>
             </section>
 
             <section class="home-products" id="products">

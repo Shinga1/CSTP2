@@ -14,7 +14,7 @@
             </div>
 
             <div class="footer-col">
-                <h2>information</h2>
+                <h2>more information</h2>
                 <ul>
                     <li><a href="{{ asset('/') }}">About Us</a></li>
                     <li><a href="{{ asset('/') }}">Privacy Policy</a></li>
@@ -23,7 +23,7 @@
             </div>
 
             <div class="footer-col">
-                <h2>support</h2>
+                <h2>need support?</h2>
                 <ul>
                     <li><a href="{{ asset('/') }}">Contact Us</a></li>
                     <li><a href="{{ asset('/') }}">FAQs</a></li>
