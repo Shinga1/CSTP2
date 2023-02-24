@@ -12,21 +12,22 @@
     
     <h4>@if($product->product_stock > 0)
         In stock
-    @else
-        Sorry this product is currently out of stock
-    @endif</h4>
 
     <h4>Select a quantity:</h4>
-    <select name="" id="">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
+        <select name="" id="">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
     <br>
     
     <button>Add to basket</button>
+
+    @else
+        Sorry this product is currently out of stock
+    @endif</h4>
 
 </div>
 @endsection
