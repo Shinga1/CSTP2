@@ -970,7 +970,6 @@ label{
 
 .aboutUs-bg {
     min-height: 100vh;
-    display: grid;
     place-items: center;
     align-content: center;
     text-align: center;
@@ -982,14 +981,14 @@ label{
     font-size: 85px;
     color: #fff;
     font-weight: 600;
+    text-align: left;
+    padding-top: 300px;
 }
 
 .aboutUs-about {
     background-color: #fff;
     padding: 100px;
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    grid-gap: 1.5rem;
     align-items: center;
 }
 
@@ -1006,6 +1005,7 @@ label{
 }
 
 .aboutUs-about .about-text h2 {
+    color: rgb(0, 0, 0);
     background-color: #fff;
     text-transform: capitalize;
     font-weight: bold;
@@ -1013,6 +1013,7 @@ label{
 }
 
 .aboutUs-about .about-text p {
+    color: rgb(0, 0, 0);
     background-color: #fff;
     margin: 1rem 0 2rem;
     line-height: 1.5;
