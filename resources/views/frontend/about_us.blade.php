@@ -5,9 +5,21 @@
 <div class="about_us">
 
     <div class="aboutUs-bg">
-        <br> </br>
-         <h1>&nbsp &nbsp &nbsp &nbsp WHO WE ARE</h1>
+         <h1>WHO WE ARE</h1>
          <br> </br>
+         
+         <style>
+         .image {
+            border:4px solid #1b6b6f; 
+            padding:15px;
+            align: "right";
+        }
+         </style>
+
+         <img 
+         class="image"
+         src="/assets/images/3DBusinessCard.jpg" height="250" width="250"
+         alt="Our mission statement">
 
          <section class="aboutUs-about" id="about">
                 <div class="about-text">
@@ -20,5 +32,4 @@
                     <a href="{{ url('/about_us') }}" class="button">Find Out More</a>
                 </div>
             </section>
-    </div>
 </div>
