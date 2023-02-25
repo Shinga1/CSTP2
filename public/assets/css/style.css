@@ -24,7 +24,7 @@ nav .links {
     justify-content: center;
     align-items: center;
     margin-right: auto;
-    margin-left: 22%;
+    margin-left: 22.2%;
 }
 
 nav .right {
@@ -32,7 +32,7 @@ nav .right {
 }
 
 nav .logo {
-    padding-left: 20px;
+    padding-left: 30px;
     padding-right: 20px;
     width: 12rem;
 }
@@ -574,7 +574,7 @@ nav ul a:hover::after {
     width: 12%;
     border-radius: 25px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(to right, gold, #fff);
+    background: linear-gradient(to right, #ffd700, #fff);
     background-size: 200% auto;
     color: transparent;
     -webkit-background-clip: text;
@@ -596,7 +596,7 @@ nav ul a:hover::after {
 }
 
 .home-bg a:hover {
-    color: gold;
+    color: #ffd700;
     transform: scale(1.1) translateX(15px);
 }
 
@@ -1007,3 +1007,130 @@ label {
 }
 
 /**----------------------------------------------------------END OF ABOUT US PAGE CSS----------------------------------------------------------------------**/
+
+/**----------------------------------------------------------PRODUCTS PAGE CSS----------------------------------------------------------------------**/
+.products-page {
+    padding-block: 5%;
+}
+
+.products-page .products-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0 30px;
+}
+
+.products-page h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.products-page .products-filter {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.products-page .products-filter h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.products-page .products-filter p {
+    display: flex;
+}
+
+.products-page .products-filter a {
+    margin-left: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    text-transform: capitalize;
+}
+
+.products-page .products-filter a:hover {
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.products-page .products-filter a.high-low {
+    float: right;
+    margin-left: 48%;
+}
+
+.products-page .products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+}
+
+.products-page .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.products-page .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.products-page .product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.5);
+}
+
+.products-page .product-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #444444;
+    text-transform: capitalize;
+}
+
+.products-page .product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #f9a11d;
+}
+
+.product-stock {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.product-stock.in-stock {
+    color: #00ff00;
+    background-color: #fff;
+}
+
+.product-stock.out-of-stock {
+    color: #ff0000;
+    background-color: #fff;
+}
+
+/**----------------------------------------------------------END OF PRODUCTS PAGE CSS----------------------------------------------------------------------**/
