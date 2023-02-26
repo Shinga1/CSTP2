@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\BasketController;
 
 
 /*
@@ -43,3 +44,6 @@ Route::get('/login', [LoginController::class, 'login']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);
+
+Route::get('/basket', [BasketController::class, 'show']);
+Route::post('/basket', [BasketController::class, 'basketStore']);
