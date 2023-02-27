@@ -26,7 +26,7 @@
 
         <main>
             @yield('content')
-            @yield('content1')
+            <!-- @yield('content1') -->
         </main>
     </div>
     @include('layouts.frontend.footer')

@@ -66,11 +66,11 @@
                         <button>Electronics</button>
                     </div>
                     <div class="product">
-                        <img src="{{ asset('assets/images/productImages/fenty.png') }}">
+                        <img src="{{ asset('assets/images/productImages/fenty.jpg') }}">
                         <button>Makeup & Beauty</button>
                     </div>
                     <div class="product">
-                        <img src="{{ asset('assets/images/productImages/snoop-loopz.png') }}">
+                        <img src="{{ asset('assets/images/productImages/snoop-loopz.jpg') }}">
                         <button>Consumables</button>
                     </div>
                     <div class="product">

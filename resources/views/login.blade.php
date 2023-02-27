@@ -1,43 +1,36 @@
-<head>
-	<title>Login Page</title>
-</head>
+@extends('layouts.main')
 
-<body>
-	<h2>Login Page</h2>
-	<?php
-		// define variables and set to empty values
-		$username = $password = "";
+@section ('content')
 
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			$username = test_input($_POST["username"]);
-			$password = test_input($_POST["password"]);
+<div class="about_us">
 
-			// checks if username and password are valid
-			if ($username == "myusername" && $password == "mypassword") {
-				// start a session and redirect to home page
-				session_start();
-				$_SESSION["username"] = $username;
-				header("Location: home.blade.php");
-			} else {
-				// show an error message
-				echo "<p style='color:red'>Invalid username or password</p>";
-			}
-		}
+    <div class="home-bg">
 
-		function test_input($data) {
-			$data = trim($data);
-			$data = stripslashes($data);
-			$data = htmlspecialchars($data);
-			return $data;
-		}
-	?>
+    @if(session('errorMessage'))
+        {{ session('errorMessage') }}
+    @endif
+    <form action="{{ url('/login') }}" method="POST">
+        @csrf
+        <label for="email">Your email:</label><br>
+        <input type="email" name="email">
+        
+        @error('email')
+            <div>
+                {{ $message }}
+            </div>
+        @enderror
+        
+        <br>
+        <label for="password">Password:</label><br>
+        <input type="password" name="password">
 
-	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-		<label  for="username">Username:</label>
-		<input  type="text" name="username" id="username" required><br><br>
-		<label  for="password">Password:</label>
-		<input  type="password"  name="password" id="password" required><br><br>
-		<input  type="submit"  value="Login">
-	</form>
+        @error('password')
+            <div>
+                {{ $message }}
+            </div>
+        @enderror
 
-</body>
+        <button class="bg-danger" type="submit">Login</button>
+</form>
+    </div>
+</div>
