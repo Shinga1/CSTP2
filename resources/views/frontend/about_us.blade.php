@@ -11,6 +11,7 @@
         <style>
          .image 
          {
+            background: transparent;
             border:4px solid #FFD700; 
             padding:15px;
             height: 500px;
@@ -43,7 +44,7 @@
             </p>
             <img 
                 class="image"
-                src="/assets/images/ourStory.jpg"
+                src="/assets/images/ourStory.png"
                 alt="Our story">
         </section>
 
