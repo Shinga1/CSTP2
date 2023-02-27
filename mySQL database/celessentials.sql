@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2023 at 12:12 AM
+-- Generation Time: Feb 24, 2023 at 04:39 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -57,10 +57,16 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_image`, `product_
 (13, 'Unfinished (Hardcover)', 'chopra.jpg', 'The thoughtful, revealing and NEW YORK TIMES BESTSELLING memoir from one of the world\'s most recognisable women, renowned for her bold risk-taking and activism', 16, 'Books', 20),
 (14, 'TRDR by Souija Boy', 'trdr.jpg', '“A disappointing handheld with little innovation, poor marketing and a bunch of problems”', 400, 'Electronics', 15),
 (15, 'Will I Am Puls Smart Watch', 'puls.jpg', 'The i.am PULS (by Black Eyed Peas member and founder Will.i.am) is a smart cuff designed to replace your phone entirely. It features a 1.7-inch touchscreen display, which can be used to make calls, send texts, respond to emails, and more. ', 300, 'Electronics', 0),
-(16, 'Virginia Black Whiskey by Drake', 'drake.jpg', 'Virginia Black Decadent American Whiskey. A collaboration between world renowned, platinum selling recording artist Drake and luxury spirits veteran Brent Hocking; the only three-time winner of the illustrious “Spirit of the Year” award.', 45, 'Foods', 30),
-(17, 'Aviation American Gin by Ryan Reynolds', 'ryan.jpg', 'Aviation Gin is a completely unique and distinguished gin from Portland, Oregon. Based on a ‘Botanical Democracy’ Aviation Gin has a balance of flavours rather than being dictated by juniper.', 25, 'Foods', 20),
-(18, 'Casamigos Blanco Tequila by George Clooney', 'clooney.jpg', 'Casamigos Blanco Tequila is a small batch, ultra-premium 100 Percent Blue Weber agave tequila founded by George Clooney and Rande Gerber', 52, 'Foods', 50),
-(19, 'Antonio Banderas Perfumes - The Secret - Eau ', 'antonio.jpg', 'Pure magnetism. The Secret by Antonio Banderas, a mysterious and magnetic men\'s fragrance that holds the true seducer\'s secret to success. A rich personality captured in a sensual, refined and extremely seductive fragrance', 23, 'Perfumes', 30);
+(16, 'Virginia Black Whiskey by Drake', 'drake.jpg', 'Virginia Black Decadent American Whiskey. A collaboration between world renowned, platinum selling recording artist Drake and luxury spirits veteran Brent Hocking; the only three-time winner of the illustrious “Spirit of the Year” award.', 45, 'Food', 30),
+(17, 'Aviation American Gin by Ryan Reynolds', 'ryan.jpg', 'Aviation Gin is a completely unique and distinguished gin from Portland, Oregon. Based on a ‘Botanical Democracy’ Aviation Gin has a balance of flavours rather than being dictated by juniper.', 25, 'Food', 20),
+(18, 'Casamigos Blanco Tequila by George Clooney', 'clooney.jpg', 'Casamigos Blanco Tequila is a small batch, ultra-premium 100 Percent Blue Weber agave tequila founded by George Clooney and Rande Gerber', 52, 'Food', 50),
+(19, 'Antonio Banderas Perfumes - The Secret - Eau ', 'antonio.jpg', 'Pure magnetism. The Secret by Antonio Banderas, a mysterious and magnetic men\'s fragrance that holds the true seducer\'s secret to success. A rich personality captured in a sensual, refined and extremely seductive fragrance', 23, 'Perfumes', 30),
+(20, '818 Tequila Blanco by Kendall Jenner', 'kendall.jpg', 'Kendall Jenner has landed in the spirits business and we couldn\'t be more excited! 818 is the name of her tequila brand, named after the postcode of where she lives.', 65, 'Food', 30),
+(21, 'Raycon The Everyday Earbuds by Ray J', 'ray.jpg', 'Small build, mighty sound. Our most compact wireless earbuds deliver crisp and powerful beats for your everyday grind.', 100, 'Electronics', 30),
+(22, 'RiRi by Rihanna Eau de Parfum', 'riri.jpg', 'RiRi by Rihanna captures a fresh, vibrant essence with a playful twist.', 20, 'Perfumes', 30),
+(23, 'Byredo Travx - Space Rage', 'travis.jpg', 'Travx - Space Rage is a limited perfume by Byredo for women and men and was released in 2020. The scent is sweet-fruity. ', 200, 'Perfumes', 1),
+(24, 'Beyonce Midnight Heat', 'yonce.jpg', 'Midnight Heat perfume for women by Beyoncé is the ultimate evening scent; a tempting, sexy fragrance with a hint of mystery. The fruity floral gourmand opens with juicy top notes of Dragon fruit, Starfruit and Armenian Plum.', 25, 'Perfumes', 2),
+(25, 'Limited Edition Pablo Escobar inspired iPhone', 'narcos.jpg', 'Pablo Escobar Mug Shot Phone Case', 10, 'Electronics', 30);
 
 --
 -- Indexes for dumped tables
@@ -80,7 +86,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

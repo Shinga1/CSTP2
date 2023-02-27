@@ -27,16 +27,32 @@
             <section class="home-reviews">
                 <div class="reviews-container">
                     <div class="review">
-                        <p class="review-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
-                        <p class="customer">- KS</p>
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                        <p class="review-text">"I absolutely love Celessentials! Their selection of celebrity-produced
+                            products is top-notch, and their customer service is excellent. I've bought a few items from
+                            them now, and I've been thrilled with the quality every time."</p>
+                        <p class="customer">- Olivia W.</p>
                     </div>
-                    <<div class="review">
-                        <p class="review-text">"Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                            ac turpis egestas."</p>
-                        <p class="customer">- KS</p>
-                </div>
-                <button class="prev-button"><i class="fas fa-chevron-left"></i></button>
-                <button class="next-button"><i class="fas fa-chevron-right"></i></button>
+                    <div class="review">
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="review-text">"Celessentials has a great selection of products, and I'm always excited to
+                            see what new items they have. The only reason I'm not giving them 5 stars is because I've had a
+                            couple of issues with shipping times, but overall, I've been really happy with my purchases."
+                        </p>
+                        <p class="customer">- James L.</p>
+                    </div>
             </section>
 
             <section class="home-products" id="products">
@@ -50,11 +66,11 @@
                         <button>Electronics</button>
                     </div>
                     <div class="product">
-                        <img src="{{ asset('assets/images/productImages/fenty.png') }}">
+                        <img src="{{ asset('assets/images/productImages/fenty.jpg') }}">
                         <button>Makeup & Beauty</button>
                     </div>
                     <div class="product">
-                        <img src="{{ asset('assets/images/productImages/snoop-loopz.png') }}">
+                        <img src="{{ asset('assets/images/productImages/snoop-loopz.jpg') }}">
                         <button>Consumables</button>
                     </div>
                     <div class="product">
