@@ -914,9 +914,69 @@ footer ul {
 
 /** -------------------------------------------------------- CONTACT US PAGE CSS ----------------------------------------------------------------------**/
 .contact_us {
-    min-height: 100vh;
+    min-height: 70vh;
     display: grid;
     align-content: center;
     color: #fff;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.content {
+    position: static;
+    min-height: 70vh;
+    display: grid;
+    align-content: center;
+    color: #fff;
+    padding: 0px;
+}
+form{
+    width: 90%;
+    max-width: 600px;
+    align-content: center;
+    margin: auto;
+    margin-top: -150px;
+    margin-bottom: 600px;
+}
+.input-group{
+    margin-bottom: 30px;
+    position: relative;
+}
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+    font-size: 15px;
+}
+label{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: #fff;
+    cursor: text;
+    transition: 0.2s;
+    background-color: transparent;
+}
+button{
+    padding: 10px 0;
+    color: #fff;
+    outline: none;
+    background: transparent;
+    border: 1px solid #fff;
+    width: 100%;
+    cursor: pointer;
+}
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label{
+    top: -35px;
+    font-size: 14px;
 }
 /** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
