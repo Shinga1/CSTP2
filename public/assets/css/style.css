@@ -19,6 +19,24 @@ nav {
     transition: all 0.5s ease;
 }
 
+nav .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 24.1%;
+}
+
+nav .right {
+    padding-right: 20px;
+}
+
+nav .logo {
+    padding-left: 30px;
+    padding-right: 20px;
+    width: 12rem;
+}
+
 nav:hover {
     background: rgb(0, 0, 0);
 }
@@ -26,23 +44,6 @@ nav:hover {
 nav.active {
     background: rgb(0, 0, 0);
     transition: all 0.5s ease;
-}
-
-nav .links {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav .right {
-    padding-left: 70px;
-    padding-right: 20px;
-}
-
-nav .logo {
-    padding-left: 40px;
-    width: 12rem;
 }
 
 nav ul li {
@@ -85,7 +86,7 @@ nav ul a:hover::after {
     width: 1px;
     height: 1px;
     background: transparent;
-    animation: animStar 80s linear infinite;
+    animation: animatedStar 80s linear infinite;
     box-shadow: 779px 1331px #fff, 324px 42px #fff, 303px 586px #fff,
         1312px 276px #fff, 451px 625px #fff, 521px 1931px #fff,
         1087px 1871px #fff, 36px 1546px #fff, 132px 934px #fff,
@@ -533,7 +534,7 @@ nav ul a:hover::after {
         755px 1468px #fff, 696px 1654px #fff, 1144px 60px #fff;
 }
 
-@keyframes animStar {
+@keyframes animatedStar {
     from {
         transform: translateY(50px);
     }
@@ -573,7 +574,7 @@ nav ul a:hover::after {
     width: 12%;
     border-radius: 25px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(to right, gold, #fff);
+    background: linear-gradient(to right, #ffd700, #fff);
     background-size: 200% auto;
     color: transparent;
     -webkit-background-clip: text;
@@ -595,19 +596,19 @@ nav ul a:hover::after {
 }
 
 .home-bg a:hover {
-    color: gold;
+    color: #ffd700;
     transform: scale(1.1) translateX(15px);
 }
 
 .home-about {
-    background-color: #fff;
+    background-color:#fff;
     position: relative;
     padding: 100px;
     align-items: center;
 }
 
-.about-text {
-    background-color: #fff;
+.home-about .about-text {
+    background-color:#fff;
     padding: 0 2rem;
 }
 
@@ -653,62 +654,60 @@ nav ul a:hover::after {
 }
 
 .home-reviews {
+    background-color: transparent;
     position: relative;
     padding-block: 50px;
     overflow-x: hidden;
 }
 
 .home-reviews .reviews-container {
+    background-color: transparent;
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
 }
 
 .home-reviews .review {
+    background-color: transparent;
     flex: 0 0 100%;
     padding: 20px;
     box-sizing: border-box;
 }
 
+.home-reviews .review .rating {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.home-reviews .review .fa-star {
+    background-color: transparent;
+    font-size: 20px;
+    color: #bbb;
+    margin-right: 5px;
+}
+
+.home-reviews .review .fa-star.checked {
+    color: #f90;
+}
+
 .home-reviews .review-text {
+    background-color: transparent;
     color: #fff;
     text-align: center;
     font-size: 1.2em;
     line-height: 1.5;
     margin-bottom: 10px;
+    padding: 0 30px;
 }
 
 .home-reviews .customer {
+    background-color: transparent;
     color: #fff;
     text-align: center;
     font-style: italic;
     font-size: 0.8em;
-}
-
-.home-reviews .prev-button,
-.next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: 2em;
-    color: #ccc;
-    cursor: pointer;
-}
-
-.home-reviews .prev-button:hover,
-.next-button:hover {
-    color: #fff;
-}
-
-.home-reviews .prev-button {
-    left: 10px;
-}
-
-.home-reviews .next-button {
-    right: 10px;
 }
 
 .home-products {
@@ -794,7 +793,7 @@ footer ul {
 }
 
 .footer:after {
-    content: "© 2023, CELESSENTIALS - All Rights Reserved.";
+    content: "© 2023, CELESSENTIALS";
     position: absolute;
     bottom: 1%;
     left: 1%;
@@ -903,15 +902,6 @@ footer ul {
 }
 /** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
 
-/** -------------------------------------------------------- ABOUT US PAGE CSS ----------------------------------------------------------------------**/
-.about_us {
-    min-height: 100vh;
-    display: grid;
-    align-content: center;
-    color: #fff;
-}
-/** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
-
 /** -------------------------------------------------------- CONTACT US PAGE CSS ----------------------------------------------------------------------**/
 .content {
     position: static;
@@ -921,59 +911,57 @@ footer ul {
     color: #fff;
     padding: 70px;
 }
-.contact-box{
-    background:#ffd700;
-    display:flex;
+.contact-box {
+    background: #ffd700;
+    display: flex;
     flex-basis: 60%;
     padding: 40px 60px;
 }
-.input-row{
+.input-row {
     justify-content: space-between;
     margin-bottom: 20px;
-
 }
-.input-row.input-group{
-    flex-basis:45% ;
+.input-row.input-group {
+    flex-basis: 45%;
 }
-input{
+input {
     width: 100%;
     border: 1px solid #fff;
     border-bottom: 1px solid #808080;
     outline: none;
     padding-bottom: 5px;
 }
-.textarea{
+.textarea {
     width: 100%;
     border: 1px solid #fff;
     outline: none;
     padding: 5px;
     margin-bottom: 5px;
 }
-label{
+label {
     margin-bottom: 6px;
     display: block;
     color: #ccc;
 }
-.contact_us button{
+.contact_us button {
     background: #ccc;
     width: 100px;
     border: none;
     outline: none;
     color: #fff;
     height: 20px;
-
 }
 
-/** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
+/** -------------------------------------------------------- END OF CONTACT US PAGE CSS ----------------------------------------------------------------------**/
 
-/**-------------------------------------------------------------CONTACT PAGE CSS--------------------------------------------------------------------------**/
+/**-------------------------------------------------------------ABOUT US PAGE CSS--------------------------------------------------------------------------**/
 
 .aboutUs-bg {
     min-height: 100vh;
     place-items: center;
     align-content: center;
     text-align: center;
-    color: white;
+    color: #fff;
 }
 
 .aboutUs-bg h1 {
@@ -986,35 +974,28 @@ label{
 }
 
 .aboutUs-about {
-    background-color: #fff;
     padding: 100px;
     display: grid;
     align-items: center;
+    background-color: transparent;
 }
 
-.aboutUs-text {
+.aboutUs-about .about-text {
     background-color: #fff;
     padding: 0 2rem;
 }
 
-.aboutUs-about .about-text span {
-    background-color: #fff;
-    text-transform: capitalize;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
 .aboutUs-about .about-text h2 {
-    color: rgb(0, 0, 0);
     background-color: #fff;
+    color:#000;
     text-transform: capitalize;
     font-weight: bold;
     margin: 1rem 0 2rem;
 }
 
 .aboutUs-about .about-text p {
-    color: rgb(0, 0, 0);
     background-color: #fff;
+    color: #000;
     margin: 1rem 0 2rem;
     line-height: 1.5;
 }
@@ -1023,4 +1004,171 @@ label{
     background-color: #fff;
 }
 
-/**----------------------------------------------------------END OF CONTACT PAGE CSS----------------------------------------------------------------------**/
+.aboutUS-about .about-text .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #ffd700, #f9a602);
+    border: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.aboutUs-about .about-text .button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.aboutUS-about .about-text .button:active {
+    transform: translateY(0px);
+    box-shadow: none;
+}
+
+.aboutUs-sbs
+{
+    display: flex;
+    justify-content: space-around;
+    background-color: #000;
+    padding: 100px;
+}
+
+.aboutUs-flexBox
+{
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: #fff;
+}
+
+/**----------------------------------------------------------END OF ABOUT US PAGE CSS----------------------------------------------------------------------**/
+
+/**----------------------------------------------------------PRODUCTS PAGE CSS----------------------------------------------------------------------**/
+.products-page {
+    padding-block: 5%;
+}
+
+.products-page .products-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0 30px;
+}
+
+.products-page h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.products-page .products-filter {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.products-page .products-filter h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.products-page .products-filter p {
+    display: flex;
+}
+
+.products-page .products-filter a {
+    margin-left: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    text-transform: capitalize;
+}
+
+.products-page .products-filter a:hover {
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.products-page .products-filter a.high-low {
+    float: right;
+    margin-left: 48%;
+}
+
+.products-page .products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+}
+
+.products-page .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.products-page .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.products-page .product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.5);
+}
+
+.products-page .product-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #444444;
+    text-transform: capitalize;
+}
+
+.products-page .product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #f9a11d;
+}
+
+.product-stock {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.product-stock.in-stock {
+    color: #00ff00;
+    background-color: #fff;
+}
+
+.product-stock.out-of-stock {
+    color: #ff0000;
+    background-color: #fff;
+}
+
+/**----------------------------------------------------------END OF PRODUCTS PAGE CSS----------------------------------------------------------------------**/

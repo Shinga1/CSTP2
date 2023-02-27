@@ -18,10 +18,9 @@
             <li><a href="{{ url('/login') }}">Login</a></li>
         @endguest
         @auth
-            <li><a href="{{ url('/login') }}">Logout</a></li>
+            <li><a href="{{ url('/logout') }}">Logout</a></li>
+            <li><a href="{{ url('/basket') }}"><i class="fa fa-basket-shopping"></i></a></li>
         @endauth
-        <li><a href="{{ asset('/') }}"><i class="fa fa-basket-shopping"></i></a></li>
-        <li><a href="{{ asset('/') }}"><i class="fa fa-user"></i></a></li>
     </ul>
 
 </nav>
