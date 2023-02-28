@@ -1,19 +1,28 @@
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-// Inventory item model
-@Entity
-@Table(name = "inventory_items")
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+
+@Entity
+@Table(name = "Products_Inventory")
+ 
 public class InventoryItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
+
+    @Column
     private String name;
+    @Column
     private int quantity;
+    @Column
     private double price;
 
-    // Constructor
+
     public InventoryItem() {}
 
     public InventoryItem(String name, int quantity, double price) {
@@ -24,7 +33,7 @@ public class InventoryItem {
     
 
     // Getter methods
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
@@ -42,7 +51,7 @@ public class InventoryItem {
 
 
     // Setter methods
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
