@@ -22,7 +22,7 @@
         <img src="/assets/images/productImages/{{ $product->product_image }}" alt="image" height="250" width="250">
         {{ $product->product_name }}
         £{{ $product->product_price }}
-        {{ $product->quantity }}
+        Quantity: {{ $product->quantity }}
 
         <a href="/remove/{{ $product->id }}">Remove</a>
         
@@ -37,8 +37,14 @@
     @endforeach
     <br><br>
 
-    Subtotal = £{{ $subtotal }}
+    <div>
+        Subtotal = £{{ $subtotal }}
 
+        <form action="/checkout" method="post">
+            @csrf
+            <button class="bg-danger" type="submit">Buy now</button>
+        </form>
+    </div>
 </div>
 
 

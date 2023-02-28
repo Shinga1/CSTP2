@@ -6,7 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\BasketController;
-
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +50,4 @@ Route::get('/basket', [BasketController::class, 'show']);
 
 Route::get('/remove/{id}', [BasketController::class, 'basketRemove']);
 
+Route::post('/checkout', [CheckoutController::class, 'showOrder']);
