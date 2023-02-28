@@ -53,6 +53,8 @@ class BasketController extends Controller
         } else {
             return redirect()->back()->with('stockLow', 'Sorry there is only '. $stock . ' available');
             }
+        } else {
+            return redirect('/login')->with('loginNow', 'You need to login before you add to your basket');
         } 
     }
 

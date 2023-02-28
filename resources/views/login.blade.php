@@ -3,6 +3,13 @@
 @section ('content')
 
 <div class="about_us">
+<br><br><br><br>
+
+    @if (session()->has('loginNow'))
+        <div class="alert alert-danger">
+            {{ session()->get('loginNow') }}
+        </div>
+    @endif
 
     <div class="home-bg">
 
