@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Basket;
 use App\Models\Checkout;
+use App\Models\Products;
 
 class CheckoutController extends Controller
 {
@@ -21,6 +22,11 @@ class CheckoutController extends Controller
             $checkout->subtotal = $product->product_price * $product->quantity;
 
             $checkout->save();
+
+            //update stock after checkout
+            $product = Products::where('product_id', $product->product_id)->first();
+            $product->product_stock -= $checkout->quantity;
+            $product->update();
         }
 
         //delete the basket
