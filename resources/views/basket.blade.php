@@ -4,6 +4,12 @@
 
 <br><br><br><br>
 
+    @if (session()->has('delete'))
+        <div class="alert alert-success">
+            {{ session()->get('delete') }}
+        </div>
+    @endif
+
 <div>
     <h1>Basket page</h1>
 
@@ -13,6 +19,9 @@
         {{ $product->product_name }}
         £{{ $product->product_price }}
         {{ $product->quantity }}
+
+        <a href="/remove/{{ $product->id }}">Remove</a>
+        
     </div>
     @endforeach
 </div>

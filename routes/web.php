@@ -45,5 +45,8 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);
 
-Route::get('/basket', [BasketController::class, 'show']);
 Route::post('/basket', [BasketController::class, 'basketStore']);
+Route::get('/basket', [BasketController::class, 'show']);
+
+Route::get('/remove/{id}', [BasketController::class, 'basketRemove']);
+

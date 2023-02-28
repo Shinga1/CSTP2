@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Basket;
 use App\Models\Products;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class BasketController extends Controller
@@ -53,5 +54,12 @@ class BasketController extends Controller
             return redirect()->back()->with('stockLow', 'Sorry there is only '. $stock . ' available');
             }
         } 
+    }
+
+    public function basketRemove($id) {
+
+        Basket::where('id', $id)->delete();
+
+        return redirect('/basket')->with('delete', "Product removed sucessfully");
     }
 }
