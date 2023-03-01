@@ -16,8 +16,10 @@
         @guest
             <li><a href="{{ url('/register') }}">Register</a></li>
             <li><a href="{{ url('/login') }}">Login</a></li>
+            <li><a href="{{ url('/login') }}"><i class="fa fa-basket-shopping"></i></a></li>
         @endguest
         @auth
+            <li><a href="">{{ auth()->user()->name }}</a></li>
             <li><a href="{{ url('/logout') }}">Logout</a></li>
             <li><a href="{{ url('/basket') }}"><i class="fa fa-basket-shopping"></i></a></li>
         @endauth

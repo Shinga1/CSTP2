@@ -40,7 +40,7 @@
                 to buy headphones and another website to buy perfumes and another website to buy books. 
                 The shopping experience ends up being draining which is why we founded Celessentials.
                 <br></br>
-                The one stop for all your celebrity needs for all the celebrity fantics out there.
+                The one stop for all your celebrity needs for all you celebrity fantics out there.
             </p>
             <img 
                 class="image"
