@@ -1208,3 +1208,7 @@ label {
 .font-colour {
     color: whitesmoke;
 }
+
+.danger-colour {
+    color: red;
+}
