@@ -903,6 +903,30 @@ footer ul {
 /** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
 
 /** -------------------------------------------------------- CONTACT US PAGE CSS ----------------------------------------------------------------------**/
+.contactUs-bg {
+    min-height: 100vh;
+    place-items: center;
+    align-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.contactUs-bg h1 {
+    text-transform: capitalize;
+    font-size: 85px;
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding-top: 300px;
+}
+.contactUs-bg p {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 100;
+    margin: 1rem 0 2rem;
+    line-height: 1.5;
+    text-align: left;
+}
 .content {
     position: static;
     min-height: 70vh;
@@ -930,6 +954,7 @@ input {
     border-bottom: 1px solid #808080;
     outline: none;
     padding-bottom: 5px;
+    color: whitesmoke;
 }
 .textarea {
     width: 100%;
@@ -937,6 +962,7 @@ input {
     outline: none;
     padding: 5px;
     margin-bottom: 5px;
+    color: whitesmoke;
 }
 label {
     margin-bottom: 6px;
