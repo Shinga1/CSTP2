@@ -14,9 +14,9 @@
             <br></br>
             <br></br>
             <br></br>
-            <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Send us any questions or inquiries. 
+            <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Fill this form out to send us any questions or inquiries. 
                 <br> 
-                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Our team would be happy to answer your questions and get back to you.</p>
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Our team would be happy to answer your questions and get back to you.</p>
         </div>
         <div class="content">
         <form>
@@ -36,7 +36,8 @@
             <label for="message">Your Message:</label>
             <textarea style="color: whiteSmoke;" id="message" rows="10"cols="170" required></textarea>
        </div>
-       <button type="submit" background="whiteSmoke">SUBMIT</button>
+       <br></br>
+       <button type="submit" style="background-color: whiteSmoke; color: black;">SUBMIT</button>
     </form>
     </div>
 </body>
