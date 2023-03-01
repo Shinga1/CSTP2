@@ -4,10 +4,12 @@
     <br><br><br><br>
 
     <div>
-        <h1>Register</h1>
+        <div class="register-font">
+            <h1>Register</h1>
+        </div>
         <form action="{{ url('/register') }}" method="POST">
             @csrf
-            <input type="text" name="name" placeholder="Enter your Name">
+            <input type="text" name="name" style="color:white" placeholder="Enter your Name">
 
             @error('name')
                 <div>
@@ -15,7 +17,7 @@
                 </div>
             @enderror
 
-            <input type="text" name="email" placeholder="Enter your Email">
+            <input type="text" name="email" style="color:white"  placeholder="Enter your Email">
 
             @error('email')
                 <div>
@@ -23,7 +25,7 @@
                 </div>
             @enderror
 
-            <input type="password" name="password" placeholder="Enter a password">
+            <input type="password" name="password" style="color:white"  placeholder="Enter a password">
 
             @error('password')
                 <div>
@@ -31,7 +33,7 @@
                 </div>
             @enderror
 
-            <input type="password" name="password_confirmation" placeholder="Reenter password">
+            <input type="password" name="password_confirmation" style="color:white"  placeholder="Re-enter password">
 
             @error('password_confirmation')
                 <div>
@@ -41,5 +43,6 @@
 
             <button type="submit" class="bg-danger">Register Now</button>
         </form>
+       
     </div>
 @endsection

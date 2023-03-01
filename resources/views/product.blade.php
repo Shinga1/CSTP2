@@ -19,12 +19,13 @@
 
     <div>
 
-<div class="font-colour">
+      <div class="font-colour">
         <h1>{{ $product->product_name }}</h1>
-</div>
+     </div>
         <img src="/assets/images/productImages/{{ $product->product_image }}" alt="image" height="250" width="250"> <br>
-    <div class="font-color">
-            <h4>Product Description: {{ $product->product_description }}</h4> <br>
+        
+        <div class="font-colour">
+        <h4>Product Description: {{ $product->product_description }}</h4> <br>
 
             <h4>Price: £{{ $product->product_price }}</h4> <br>
     
@@ -42,7 +43,7 @@
                         <option value="5">5</option>
                     </select>
                     <br>
-    </div>
+    
                     <input type="hidden" name="product_id" value="{{ $product->product_id }}">
                     <button type="submit" class="bg-danger">Add to basket</button>
                 </form>
@@ -52,6 +53,6 @@
                 Sorry this product is currently out of stock
             @endif
         </h4>
-   
+        </div>
     </div>
 @endsection

@@ -19,7 +19,7 @@
     <form action="{{ url('/login') }}" method="POST">
         @csrf
         <label for="email">Your email:</label><br>
-        <input type="email" name="email">
+        <input type="email" name="email" style="color: whitesmoke">
         
         @error('email')
             <div>
@@ -29,7 +29,7 @@
         
         <br>
         <label for="password">Password:</label><br>
-        <input type="password" name="password">
+        <input type="password" name="password" style="color: whitesmoke">
 
         @error('password')
             <div>
