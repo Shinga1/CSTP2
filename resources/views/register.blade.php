@@ -1,59 +1,51 @@
 @extends('layouts.main')
 
 @section('content')
-    <br><br><br><br>
+    <div class="register-page">
+        <div class="content">
+            <h1 class="title">{{ __('Register') }}</h1>
 
-    <div>
-        <div class="font-colour">
-            <br></br>
-            <h1>Register</h1>
-            <br></br>
+            <form action="{{ url('/register') }}" method="POST">
+                @csrf
+
+                <label for="name">Enter Your Name:</label>
+                <input type="text" name="name">
+
+                @error('name')
+                    <div class="danger-colour">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+                <label for="email">Your Email:</label>
+                <input type="email" name="email">
+
+                @error('email')
+                    <div class="danger-colour">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+                <label for="password">Password:</label>
+                <input type="password" name="password">
+
+                @error('password')
+                    <div class="danger-colour">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+                <label for="password">Re-Enter Password:</label>
+                <input type="password" name="password_confirmation">
+
+                @error('password_confirmation')
+                    <div class="danger-colour">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+                <button type="submit">Register Now</button>
+            </form>
         </div>
-
-        <div class="home">
-            <div class="bg-effect">
-                <div class="stars"></div>
-                </div>
-            </div>
-        </div>
-        
-        <form action="{{ url('/register') }}" method="POST">
-            @csrf
-            <input type="text" name="name" style="color:white" placeholder="Enter your Name">
-
-            @error('name')
-                <div class="danger-colour">
-                    {{ $message }}
-                </div>
-            @enderror
-
-            <input type="text" name="email" style="color:white"  placeholder="Enter your Email">
-
-            @error('email')
-                <div class="danger-colour">
-                    {{ $message }}
-                </div>
-            @enderror
-
-            <input type="password" name="password" style="color:white"  placeholder="Enter a password">
-
-            @error('password')
-                <div class="danger-colour">
-                    {{ $message }}
-                </div>
-            @enderror
-
-            <input type="password" name="password_confirmation" style="color:white"  placeholder="Re-enter password">
-
-            @error('password_confirmation')
-                <div class="danger-colour">
-                    {{ $message }}
-                </div>
-            @enderror
-
-            <br></br>
-            <button type="submit" style="color: black; background: whiteSmoke;">Register Now</button>
-        </form>
-       
     </div>
 @endsection
