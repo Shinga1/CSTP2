@@ -1169,11 +1169,15 @@ label {
     background-color: #fff;
 }
 
-.register-font {
-    color: whitesmoke;
-}
-.font-colour{
+
+.option_color {
     color: whitesmoke;
 }
 
+
 /**----------------------------------------------------------END OF PRODUCTS PAGE CSS----------------------------------------------------------------------**/
+
+
+.font-colour {
+    color: whitesmoke;
+}

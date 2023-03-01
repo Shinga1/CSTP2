@@ -4,7 +4,7 @@
     <br><br><br><br>
 
     <div>
-        <div class="register-font">
+        <div class="font-colour">
             <h1>Register</h1>
         </div>
         <form action="{{ url('/register') }}" method="POST">
