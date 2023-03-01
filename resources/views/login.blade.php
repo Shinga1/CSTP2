@@ -2,8 +2,20 @@
 
 @section ('content')
 
-<div class="about_us">
-<br><br><br><br>
+    <div class="login-title">
+    <br> </br><br> </br><br> </br><br>
+        <h1>Good to see you again!</h1>
+        <br> </br>
+    </div>
+
+    <div class="home">
+        <div class="bg-effect">
+            <div class="stars"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about_us">
 
     @if (session()->has('loginNow'))
         <div class="alert alert-danger">
@@ -22,7 +34,7 @@
         <input type="email" name="email" style="color: whitesmoke">
         
         @error('email')
-            <div>
+            <div class="danger-colour">
                 {{ $message }}
             </div>
         @enderror
@@ -32,12 +44,12 @@
         <input type="password" name="password" style="color: whitesmoke">
 
         @error('password')
-            <div>
+            <div class="danger-colour">
                 {{ $message }}
             </div>
         @enderror
 
-        <button class="bg-danger" type="submit">Login</button>
+        <button type="submit" style="color: black; background: whiteSmoke;">Login</button>
 </form>
     </div>
 </div>

@@ -70,12 +70,8 @@
 
         <section class="aboutUs-about" id="about">
                 <div class="about-text">
-                    <h2>The Site For Celebrities 💫</h2>
-                    <p>Celessentials is the stop for all your celebity related needs. Whether you want to jazz up your life
-                        with
-                        tech or relax with a book. We have it all. From books to electronics, clothes to shoes and finally
-                        beauty to
-                        put it all together.</p>
+                    <h2>Have any questions or inquiries?</h2>
+                    <p>Click the button below to fill our feedback form and our team would be happy to answer your questions and get back to you.</p>
                     <a href="{{ url('/contact_us') }}" class="button">Contact us</a>
                     <br></br>
                 </div>

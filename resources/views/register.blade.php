@@ -5,8 +5,18 @@
 
     <div>
         <div class="font-colour">
+            <br></br>
             <h1>Register</h1>
+            <br></br>
         </div>
+
+        <div class="home">
+            <div class="bg-effect">
+                <div class="stars"></div>
+                </div>
+            </div>
+        </div>
+        
         <form action="{{ url('/register') }}" method="POST">
             @csrf
             <input type="text" name="name" style="color:white" placeholder="Enter your Name">

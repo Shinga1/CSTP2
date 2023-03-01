@@ -1212,3 +1212,20 @@ label {
 .danger-colour {
     color: red;
 }
+
+.login-title {
+    min-height: 100vh;
+    place-items: center;
+    align-content: center;
+    text-align: center;
+    color: #fff;
+    
+}
+.login-title h1 {
+    text-transform: capitalize;
+    font-size: 50px;
+    color: #fff;
+    font-weight: 200;
+    text-align: center;
+    padding-top: 200px;
+}
