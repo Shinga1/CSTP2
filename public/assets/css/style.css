@@ -24,7 +24,7 @@ nav .links {
     justify-content: center;
     align-items: center;
     margin-right: auto;
-    margin-left: 24.1%;
+    margin-left: 22%;
 }
 
 nav .right {
@@ -33,7 +33,6 @@ nav .right {
 
 nav .logo {
     padding-left: 30px;
-    padding-right: 20px;
     width: 12rem;
 }
 
@@ -767,6 +766,98 @@ nav ul a:hover::after {
 
 /** -------------------------------------------------------- END OF HOME PAGE CSS ----------------------------------------------------------------------**/
 
+/** -------------------------------------------------------- LOGIN PAGE CSS ----------------------------------------------------------------------**/
+.login-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.login-page form input {
+    width: 500px;
+    margin-bottom: 1rem;
+    border-color: white;
+    color: white;
+    caret-color: white;
+}
+
+.login-page h1 {
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.login-page button {
+    margin-top: 1rem;
+    background-color: #fff;
+    color: #000;
+    border-color: rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-block: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    transition: 0.3s;
+}
+
+.login-page button:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
+/** -------------------------------------------------------- END OF LOGIN PAGE CSS ----------------------------------------------------------------------**/
+
+/** -------------------------------------------------------- REGISTER PAGE CSS ----------------------------------------------------------------------**/
+
+.register-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.register-page form input {
+    width: 500px;
+    margin-bottom: 1rem;
+    border-color: white;
+    color: white;
+    caret-color: white;
+}
+
+.register-page h1 {
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.register-page button {
+    margin-top: 1rem;
+    background-color: #fff;
+    color: #000;
+    border-color: rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-block: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    transition: 0.3s;
+}
+
+.register-page button:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+/** -------------------------------------------------------- END OF REGISTER PAGE CSS ----------------------------------------------------------------------**/
+
 /** -------------------------------------------------------- FOOTER PAGE CSS ----------------------------------------------------------------------**/
 .footer-container {
     max-width: 1170px;
@@ -919,6 +1010,7 @@ footer ul {
     text-align: left;
     padding-top: 300px;
 }
+
 .contactUs-bg p {
     font-size: 20px;
     color: #fff;
@@ -927,6 +1019,7 @@ footer ul {
     line-height: 1.5;
     text-align: left;
 }
+
 .content {
     position: static;
     min-height: 70vh;
@@ -935,20 +1028,24 @@ footer ul {
     color: #fff;
     padding: 70px;
 }
+
 .contact-box {
     background: #ffd700;
     display: flex;
     flex-basis: 60%;
     padding: 40px 60px;
 }
+
 .input-row {
     justify-content: space-between;
     margin-bottom: 20px;
 }
+
 .input-row.input-group {
     flex-basis: 45%;
 }
-input {
+
+.contactUs-bg input {
     width: 100%;
     border: 1px solid #fff;
     border-bottom: 1px solid #808080;
@@ -956,7 +1053,8 @@ input {
     padding-bottom: 5px;
     color: whitesmoke;
 }
-.textarea {
+
+.contactUs-bg .textarea {
     width: 100%;
     border: 1px solid #fff;
     outline: none;
@@ -964,12 +1062,14 @@ input {
     margin-bottom: 5px;
     color: whitesmoke;
 }
-label {
+
+.contactUs-bg label {
     margin-bottom: 6px;
     display: block;
     color: #ccc;
     color: whiteSmoke;
 }
+
 .contact_us button {
     background: #ccc;
     width: 100px;
@@ -982,14 +1082,6 @@ label {
 /** -------------------------------------------------------- END OF CONTACT US PAGE CSS ----------------------------------------------------------------------**/
 
 /**-------------------------------------------------------------ABOUT US PAGE CSS--------------------------------------------------------------------------**/
-
-.aboutUs-bg {
-    min-height: 100vh;
-    place-items: center;
-    align-content: center;
-    text-align: center;
-    color: #fff;
-}
 
 .aboutUs-bg h1 {
     text-transform: capitalize;
@@ -1008,6 +1100,7 @@ label {
 }
 
 .aboutUs-about .about-text {
+    border-radius: 5px;
     background-color: #fff;
     padding: 0 2rem;
 }
@@ -1196,36 +1289,56 @@ label {
     background-color: #fff;
 }
 
+/**-----------------------------------------------------INDIVIDUAL PRODUCTS CSS-----------------------------------------------------------------**/
 
-.option_color {
-    color: whitesmoke;
+.individual-products {
+    min-height: 100px;
+    color: white;
+    padding-block: 5%;
+    margin-top: 20px;
 }
 
+.individual-products .product-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.individual-products .product-description {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.individual-products .option_color {
+    background-color: #eee;
+    color: #333;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.individual-products .bg-danger {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
 
 /**----------------------------------------------------------END OF PRODUCTS PAGE CSS----------------------------------------------------------------------**/
 
+/**----------------------------------------------------------BASKET PAGE CSS----------------------------------------------------------------------**/
 
-.font-colour {
-    color: whitesmoke;
+.basket-page {
+    min-height: 100px;
+    color: white;
+    padding-block: 5%;
+    margin-top: 20px;
 }
 
-.danger-colour {
-    color: red;
-}
-
-.login-title {
-    min-height: 100vh;
-    place-items: center;
-    align-content: center;
-    text-align: center;
-    color: #fff;
-    
-}
-.login-title h1 {
-    text-transform: capitalize;
-    font-size: 50px;
-    color: #fff;
-    font-weight: 200;
-    text-align: center;
-    padding-top: 200px;
-}
+/**----------------------------------------------------------END OF BASKET PAGE CSS----------------------------------------------------------------------**/

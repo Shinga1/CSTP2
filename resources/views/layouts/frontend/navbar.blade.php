@@ -7,8 +7,8 @@
 
     <ul class="links">
         <li><a href="{{ url('/') }}">home</a></li>
-        <li><a href="{{ url('/products') }}">products</a></li>
         <li><a href="{{ url('/about_us') }}">about us</a></li>
+        <li><a href="{{ url('/products') }}">products</a></li>
         <li><a href="{{ url('/contact_us') }}">contact us</a></li>
     </ul>
 
