@@ -1,6 +1,5 @@
 @extends('layouts.main')
 
-<<<<<<< HEAD
 <body>
      <div class="contact_us">
         <h2>Contact Us</h2>
@@ -28,13 +27,3 @@
     </form>
     </div>
 </body>
-=======
-<div class="contact_us">
-    @section ('content')
-
-    <div class="home-bg">
-        <h1>WHO WE ARE</h1>
-        <a href="/products">Celessentials</a>
-    </div>
-</div>
->>>>>>> 4618b5ff53e247e57cd77c3d0d1e6681e1f6e9a2
