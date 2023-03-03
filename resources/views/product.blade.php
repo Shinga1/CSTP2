@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+
     @if (session()->has('message'))
         <div class="alert alert-success">
             {{ session()->get('message') }} <a href="{{ url('/basket') }}">Do you want to checkout now?</a>
