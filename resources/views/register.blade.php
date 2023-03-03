@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+
     <div class="register-page">
         <div class="content">
             <h1 class="title">{{ __('Register') }}</h1>

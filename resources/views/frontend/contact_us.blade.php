@@ -2,6 +2,13 @@
 
 <body>
     <div class="contactUs-bg">
+
+        <div class="home">
+            <div class="bg-effect">
+                <div class="stars"></div>
+            </div>
+        </div>
+
         <h1>&nbsp &nbsp Contact Us</h1>
         <br></br>
         <br></br>
