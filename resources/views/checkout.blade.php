@@ -28,5 +28,8 @@
         Total you have paid = £{{ $subtotal }}
     </div>
 
+    <p>View your order details by clicking <a href="/previous">here</a></p>
+    
+
 
 @endsection
