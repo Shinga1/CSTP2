@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +52,6 @@ Route::get('/basket', [BasketController::class, 'show']);
 Route::get('/remove/{id}', [BasketController::class, 'basketRemove']);
 
 Route::post('/checkout', [CheckoutController::class, 'showOrder']);
+
+Route::get('/previous', [OrdersController::class, 'show']);
+Route::get('/previous/{id}', [OrdersController::class, 'orderDetails']);

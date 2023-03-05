@@ -44,7 +44,7 @@ class BasketController extends Controller
                 $Basket->product_id = $request->product_id;
                 $Basket->product_image = $product_image;
                 $Basket->product_name = $product_name;
-                $Basket->email = auth()->user()->id;
+                $Basket->email = auth()->user()->email;
                 $Basket->product_price = $product_price;
                 $Basket->quantity = $request->quantity;
                 $Basket->save();

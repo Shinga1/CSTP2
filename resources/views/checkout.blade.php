@@ -4,7 +4,7 @@
 
 <br><br><br><br>
 
-<h1>Summary of your order</h1>
+<h1>Summary of your order, {{ auth()->user()->name }}</h1>
 
     @php 
         $subtotal = 0
