@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Basket;
 use App\Models\Products;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class BasketController extends Controller
@@ -43,7 +44,7 @@ class BasketController extends Controller
                 $Basket->product_id = $request->product_id;
                 $Basket->product_image = $product_image;
                 $Basket->product_name = $product_name;
-                $Basket->email = auth()->user()->id;
+                $Basket->email = auth()->user()->email;
                 $Basket->product_price = $product_price;
                 $Basket->quantity = $request->quantity;
                 $Basket->save();
@@ -52,6 +53,15 @@ class BasketController extends Controller
         } else {
             return redirect()->back()->with('stockLow', 'Sorry there is only '. $stock . ' available');
             }
+        } else {
+            return redirect('/login')->with('loginNow', 'You need to login before you add to your basket');
         } 
+    }
+
+    public function basketRemove($id) {
+
+        Basket::where('id', $id)->delete();
+
+        return redirect('/basket')->with('delete', "Product removed sucessfully");
     }
 }

@@ -6,7 +6,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\BasketController;
-
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,5 +46,12 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);
 
-Route::get('/basket', [BasketController::class, 'show']);
 Route::post('/basket', [BasketController::class, 'basketStore']);
+Route::get('/basket', [BasketController::class, 'show']);
+
+Route::get('/remove/{id}', [BasketController::class, 'basketRemove']);
+
+Route::post('/checkout', [CheckoutController::class, 'showOrder']);
+
+Route::get('/previous', [OrdersController::class, 'show']);
+Route::get('/previous/{id}', [OrdersController::class, 'orderDetails']);

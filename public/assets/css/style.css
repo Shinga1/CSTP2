@@ -19,6 +19,23 @@ nav {
     transition: all 0.5s ease;
 }
 
+nav .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 22%;
+}
+
+nav .right {
+    padding-right: 20px;
+}
+
+nav .logo {
+    padding-left: 30px;
+    width: 12rem;
+}
+
 nav:hover {
     background: rgb(0, 0, 0);
 }
@@ -26,23 +43,6 @@ nav:hover {
 nav.active {
     background: rgb(0, 0, 0);
     transition: all 0.5s ease;
-}
-
-nav .links {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav .right {
-    padding-left: 70px;
-    padding-right: 20px;
-}
-
-nav .logo {
-    padding-left: 40px;
-    width: 12rem;
 }
 
 nav ul li {
@@ -85,7 +85,7 @@ nav ul a:hover::after {
     width: 1px;
     height: 1px;
     background: transparent;
-    animation: animStar 80s linear infinite;
+    animation: animatedStar 80s linear infinite;
     box-shadow: 779px 1331px #fff, 324px 42px #fff, 303px 586px #fff,
         1312px 276px #fff, 451px 625px #fff, 521px 1931px #fff,
         1087px 1871px #fff, 36px 1546px #fff, 132px 934px #fff,
@@ -533,7 +533,7 @@ nav ul a:hover::after {
         755px 1468px #fff, 696px 1654px #fff, 1144px 60px #fff;
 }
 
-@keyframes animStar {
+@keyframes animatedStar {
     from {
         transform: translateY(50px);
     }
@@ -573,7 +573,7 @@ nav ul a:hover::after {
     width: 12%;
     border-radius: 25px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(to right, gold, #fff);
+    background: linear-gradient(to right, #ffd700, #fff);
     background-size: 200% auto;
     color: transparent;
     -webkit-background-clip: text;
@@ -595,7 +595,7 @@ nav ul a:hover::after {
 }
 
 .home-bg a:hover {
-    color: gold;
+    color: #ffd700;
     transform: scale(1.1) translateX(15px);
 }
 
@@ -606,7 +606,7 @@ nav ul a:hover::after {
     align-items: center;
 }
 
-.about-text {
+.home-about .about-text {
     background-color: #fff;
     padding: 0 2rem;
 }
@@ -653,62 +653,60 @@ nav ul a:hover::after {
 }
 
 .home-reviews {
+    background-color: transparent;
     position: relative;
     padding-block: 50px;
     overflow-x: hidden;
 }
 
 .home-reviews .reviews-container {
+    background-color: transparent;
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
 }
 
 .home-reviews .review {
+    background-color: transparent;
     flex: 0 0 100%;
     padding: 20px;
     box-sizing: border-box;
 }
 
+.home-reviews .review .rating {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.home-reviews .review .fa-star {
+    background-color: transparent;
+    font-size: 20px;
+    color: #bbb;
+    margin-right: 5px;
+}
+
+.home-reviews .review .fa-star.checked {
+    color: #f90;
+}
+
 .home-reviews .review-text {
+    background-color: transparent;
     color: #fff;
     text-align: center;
     font-size: 1.2em;
     line-height: 1.5;
     margin-bottom: 10px;
+    padding: 0 30px;
 }
 
 .home-reviews .customer {
+    background-color: transparent;
     color: #fff;
     text-align: center;
     font-style: italic;
     font-size: 0.8em;
-}
-
-.home-reviews .prev-button,
-.next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: 2em;
-    color: #ccc;
-    cursor: pointer;
-}
-
-.home-reviews .prev-button:hover,
-.next-button:hover {
-    color: #fff;
-}
-
-.home-reviews .prev-button {
-    left: 10px;
-}
-
-.home-reviews .next-button {
-    right: 10px;
 }
 
 .home-products {
@@ -768,6 +766,98 @@ nav ul a:hover::after {
 
 /** -------------------------------------------------------- END OF HOME PAGE CSS ----------------------------------------------------------------------**/
 
+/** -------------------------------------------------------- LOGIN PAGE CSS ----------------------------------------------------------------------**/
+.login-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.login-page form input {
+    width: 500px;
+    margin-bottom: 1rem;
+    border-color: white;
+    color: white;
+    caret-color: white;
+}
+
+.login-page h1 {
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.login-page button {
+    margin-top: 1rem;
+    background-color: #fff;
+    color: #000;
+    border-color: rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-block: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    transition: 0.3s;
+}
+
+.login-page button:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
+/** -------------------------------------------------------- END OF LOGIN PAGE CSS ----------------------------------------------------------------------**/
+
+/** -------------------------------------------------------- REGISTER PAGE CSS ----------------------------------------------------------------------**/
+
+.register-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.register-page form input {
+    width: 500px;
+    margin-bottom: 1rem;
+    border-color: white;
+    color: white;
+    caret-color: white;
+}
+
+.register-page h1 {
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.register-page button {
+    margin-top: 1rem;
+    background-color: #fff;
+    color: #000;
+    border-color: rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-block: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    transition: 0.3s;
+}
+
+.register-page button:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+/** -------------------------------------------------------- END OF REGISTER PAGE CSS ----------------------------------------------------------------------**/
+
 /** -------------------------------------------------------- FOOTER PAGE CSS ----------------------------------------------------------------------**/
 .footer-container {
     max-width: 1170px;
@@ -790,11 +880,11 @@ footer ul {
     flex-flow: column;
     justify-content: space-between;
     background-color: #000;
-    padding-block: 100px;
+    padding-block: 75px;
 }
 
 .footer:after {
-    content: "© 2023, CELESSENTIALS - All Rights Reserved.";
+    content: "© 2023, CELESSENTIALS";
     position: absolute;
     bottom: 1%;
     left: 1%;
@@ -903,24 +993,31 @@ footer ul {
 }
 /** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
 
-/** -------------------------------------------------------- ABOUT US PAGE CSS ----------------------------------------------------------------------**/
-.about_us {
+/** -------------------------------------------------------- CONTACT US PAGE CSS ----------------------------------------------------------------------**/
+.contactUs-bg {
     min-height: 100vh;
-    display: grid;
+    place-items: center;
     align-content: center;
+    text-align: center;
     color: #fff;
 }
-/** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
 
-/** -------------------------------------------------------- CONTACT US PAGE CSS ----------------------------------------------------------------------**/
-.contact_us {
-    min-height: 70vh;
-    display: grid;
-    align-content: center;
+.contactUs-bg h1 {
+    text-transform: capitalize;
+    font-size: 85px;
     color: #fff;
-    font-weight: bold;
-    text-align: center;
+    font-weight: 600;
+    text-align: left;
+    padding-top: 300px;
+}
 
+.contactUs-bg p {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 100;
+    margin: 1rem 0 2rem;
+    line-height: 1.5;
+    text-align: left;
 }
 
 .content {
@@ -929,54 +1026,319 @@ footer ul {
     display: grid;
     align-content: center;
     color: #fff;
-    padding: 0px;
+    padding: 70px;
 }
-form{
-    width: 90%;
-    max-width: 600px;
-    align-content: center;
-    margin: auto;
-    margin-top: -150px;
-    margin-bottom: 600px;
+
+.contact-box {
+    background: #ffd700;
+    display: flex;
+    flex-basis: 60%;
+    padding: 40px 60px;
 }
-.input-group{
-    margin-bottom: 30px;
-    position: relative;
+
+.input-row {
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
-input, textarea{
+
+.input-row.input-group {
+    flex-basis: 45%;
+}
+
+.contactUs-bg input {
     width: 100%;
-    padding: 10px;
-    outline: 0;
     border: 1px solid #fff;
-    color: #fff;
-    background: transparent;
-    font-size: 15px;
+    border-bottom: 1px solid #808080;
+    outline: none;
+    padding-bottom: 5px;
+    color: whitesmoke;
 }
-label{
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
+
+.contactUs-bg .textarea {
+    width: 100%;
+    border: 1px solid #fff;
+    outline: none;
+    padding: 5px;
+    margin-bottom: 5px;
+    color: whitesmoke;
+}
+
+.contactUs-bg label {
+    margin-bottom: 6px;
+    display: block;
+    color: #ccc;
+    color: whiteSmoke;
+}
+
+.contact_us button {
+    background: #ccc;
+    width: 100px;
+    border: none;
+    outline: none;
     color: #fff;
-    cursor: text;
-    transition: 0.2s;
+    height: 20px;
+}
+
+/** -------------------------------------------------------- END OF CONTACT US PAGE CSS ----------------------------------------------------------------------**/
+
+/**-------------------------------------------------------------ABOUT US PAGE CSS--------------------------------------------------------------------------**/
+
+.aboutUs-bg h1 {
+    text-transform: capitalize;
+    font-size: 85px;
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding-top: 300px;
+}
+
+.aboutUs-about {
+    padding: 100px;
+    display: grid;
+    align-items: center;
     background-color: transparent;
 }
-button{
-    padding: 10px 0;
+
+.aboutUs-about .about-text {
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 0 2rem;
+}
+
+.aboutUs-about .about-text h2 {
+    background-color: #fff;
+    color: #000;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin: 1rem 0 2rem;
+}
+
+.aboutUs-about .about-text p {
+    background-color: #fff;
+    color: #000;
+    margin: 1rem 0 2rem;
+    line-height: 1.5;
+}
+
+.aboutUs-about .about-text a {
+    background-color: #fff;
+}
+
+.aboutUS-about .about-text .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #ffd700, #f9a602);
+    border: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.aboutUs-about .about-text .button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.aboutUS-about .about-text .button:active {
+    transform: translateY(0px);
+    box-shadow: none;
+}
+
+.aboutUs-sbs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #000;
+    padding: 100px;
+}
+
+.aboutUs-flexBox {
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 20px;
     color: #fff;
-    outline: none;
-    background: transparent;
-    border: 1px solid #fff;
-    width: 100%;
+}
+
+/**----------------------------------------------------------END OF ABOUT US PAGE CSS----------------------------------------------------------------------**/
+
+/**----------------------------------------------------------PRODUCTS PAGE CSS----------------------------------------------------------------------**/
+.products-page {
+    padding-block: 5%;
+}
+
+.products-page .products-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0 30px;
+}
+
+.products-page h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.products-page .products-filter {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.products-page .products-filter h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.products-page .products-filter p {
+    display: flex;
+}
+
+.products-page .products-filter a {
+    margin-left: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    text-transform: capitalize;
+}
+
+.products-page .products-filter a:hover {
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.products-page .products-filter a.high-low {
+    float: right;
+    margin-left: 48%;
+}
+
+.products-page .products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+}
+
+.products-page .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.products-page .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.products-page .product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.5);
+}
+
+.products-page .product-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #444444;
+    text-transform: capitalize;
+}
+
+.products-page .product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #f9a11d;
+}
+
+.product-stock {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.product-stock.in-stock {
+    color: #00ff00;
+    background-color: #fff;
+}
+
+.product-stock.out-of-stock {
+    color: #ff0000;
+    background-color: #fff;
+}
+
+/**-----------------------------------------------------INDIVIDUAL PRODUCTS CSS-----------------------------------------------------------------**/
+
+.individual-products {
+    min-height: 100px;
+    color: white;
+    padding-block: 5%;
+    margin-top: 20px;
+}
+
+.individual-products .product-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.individual-products .product-description {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.individual-products .option_color {
+    background-color: #eee;
+    color: #333;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.individual-products .bg-danger {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
     cursor: pointer;
 }
-input:focus~label,
-input:valid~label,
-textarea:focus~label,
-textarea:valid~label{
-    top: -35px;
-    font-size: 14px;
+
+/**----------------------------------------------------------END OF PRODUCTS PAGE CSS----------------------------------------------------------------------**/
+
+/**----------------------------------------------------------BASKET PAGE CSS----------------------------------------------------------------------**/
+
+.basket-page {
+    min-height: 100px;
+    color: white;
+    padding-block: 5%;
+    margin-top: 20px;
 }
-/** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
+
+/**----------------------------------------------------------END OF BASKET PAGE CSS----------------------------------------------------------------------**/

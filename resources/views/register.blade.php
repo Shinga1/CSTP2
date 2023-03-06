@@ -1,45 +1,52 @@
 @extends('layouts.main')
 
 @section('content')
-    <br><br><br><br>
 
-    <div>
-        <h1>Register</h1>
-        <form action="{{ url('/register') }}" method="POST">
-            @csrf
-            <input type="text" name="name" placeholder="Enter your Name">
+    <div class="register-page">
+        <div class="content">
+            <h1 class="title">{{ __('Register') }}</h1>
 
-            @error('name')
-                <div>
-                    {{ $message }}
-                </div>
-            @enderror
+            <form action="{{ url('/register') }}" method="POST">
+                @csrf
 
-            <input type="text" name="email" placeholder="Enter your Email">
+                <label for="name">Enter Your Name:</label>
+                <input type="text" name="name">
 
-            @error('email')
-                <div>
-                    {{ $message }}
-                </div>
-            @enderror
+                @error('name')
+                    <div class="danger-colour">
+                        {{ $message }}
+                    </div>
+                @enderror
 
-            <input type="password" name="password" placeholder="Enter a password">
+                <label for="email">Your Email:</label>
+                <input type="email" name="email">
 
-            @error('password')
-                <div>
-                    {{ $message }}
-                </div>
-            @enderror
+                @error('email')
+                    <div class="danger-colour">
+                        {{ $message }}
+                    </div>
+                @enderror
 
-            <input type="password" name="password_confirmation" placeholder="Reenter password">
+                <label for="password">Password:</label>
+                <input type="password" name="password">
 
-            @error('password_confirmation')
-                <div>
-                    {{ $message }}
-                </div>
-            @enderror
+                @error('password')
+                    <div class="danger-colour">
+                        {{ $message }}
+                    </div>
+                @enderror
 
-            <button type="submit" class="bg-danger">Register Now</button>
-        </form>
+                <label for="password">Re-Enter Password:</label>
+                <input type="password" name="password_confirmation">
+
+                @error('password_confirmation')
+                    <div class="danger-colour">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+                <button type="submit">Register Now</button>
+            </form>
+        </div>
     </div>
 @endsection
