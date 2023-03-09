@@ -25,8 +25,8 @@ class OrdersController extends Controller
             array_push($allProducts, [
                 'name' => $product->product_name,
                 'image' => $product->product_image,
-                'price' => $product->product_price,
                 'quantity' => $products[$i]['quantity'],
+                'price' => $product->product_price * $products[$i]['quantity'],
             ]);
         }
 
