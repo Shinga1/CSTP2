@@ -4,12 +4,6 @@
 
     <div class="aboutUs">
 
-    <div class="home">
-        <div class="bg-effect">
-            <div class="stars"></div>
-        </div>
-    </div>
-
         <div class="aboutUs-bg">
             <br></br>
 
