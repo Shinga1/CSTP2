@@ -64,4 +64,10 @@ class BasketController extends Controller
 
         return redirect('/basket')->with('delete', "Product removed sucessfully");
     }
+
+    public function getBasketCount() {
+        $basketCount = Basket::where('user_id', auth()->user()->id)->sum('quantity');
+        return $basketCount;
+    }
+    
 }
