@@ -1,44 +1,31 @@
 @extends('layouts.main')
 
 <body>
-    <div class="contactUs-bg">
-
-        <div class="home">
-            <div class="bg-effect">
-                <div class="stars"></div>
-            </div>
-        </div>
-
-        <h1>&nbsp &nbsp Contact Us</h1>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Fill this form out to send us any questions or inquiries.
-            <br>
-            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Our team would be happy to answer your questions and get back to you.
-        </p>
-    </div>
-    <div class="content">
-        <form>
-            <div class="input-group">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="input-group">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="input-group">
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" required>
-            </div>
-            <div class="input-group">
-                <label for="message">Your Message:</label>
-                <textarea style="color: whiteSmoke;" id="message" rows="10"cols="170" required></textarea>
-            </div>
-            <br></br>
-            <button type="submit" style="background-color: whiteSmoke; color: black;">SUBMIT</button>
-        </form>
-    </div>
+    <section class="contact">
+    <div class="contact_us">
+       <h1>Contact Us</h1>
+       <p>Further Enquires?<br> Send us a message, our team will be in touch as soon as possible!</p>
+   </div>
+      <div class="content">
+       <form action="" method="GET">
+           <div class="input-group">
+           <input type="text" id="name" required>
+           <label for="name">Your Name:</label>
+       </div>
+       <div class="input-group">
+           <input type="email" id="email" required>
+           <label for="email">Your Email:</label>
+       </div>
+       <div class="input-group">
+           <input type="text" id="subject" required>
+           <label for="subject">Subject:</label>
+       </div>
+       <div class="input-group">
+           <textarea id="message" rows="10" required></textarea>
+           <label for="message">Your Message:</label>
+      </div>
+      <button type="submit">SEND</button>
+    </form>
+   </div>
+</section>
 </body>
