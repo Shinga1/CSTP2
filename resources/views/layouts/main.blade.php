@@ -20,6 +20,18 @@
 
 </head>
 
+@if (session()->has('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+@endif
+
+@if (session()->has('subscribed'))
+    <div class="alert alert-danger">
+        {{ session()->get('subscribed') }}
+    </div>
+@endif
+
 <body>
     <div id="app">
         @include('layouts.frontend.navbar')

@@ -1,5 +1,12 @@
 @extends('layouts.main')
 
+
+@if (session()->has('msgSent'))
+    <div class="alert alert-success">
+        {{ session()->get('msgSent') }}
+    </div>
+@endif
+
 <body>
     <section class="contact">
     <div class="contact_us">
