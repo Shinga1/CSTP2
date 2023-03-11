@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contact;
-
+use App\Models\Newsletter;
 
 class FrontendController extends Controller
 {
@@ -45,5 +45,26 @@ class FrontendController extends Controller
         $message->save();
 
         return back()->with('msgSent', 'Your message has been sent successfully');
+    }
+
+    public function subscribe(Request $request) {
+
+        $input = $request->validate([
+            'email' => 'required|email',
+        ]);
+
+        $subscribed = Newsletter::where('email', $input['email'])->first();
+
+        if($subscribed) {
+            return back()->with('subscribed', 'You have already subscribed to the newsletter');
+        } 
+
+        $subscribe = new Newsletter();
+        $subscribe->email = $input['email'];
+
+        $subscribe->save();
+
+        return back()->with('success', 'You have now subscribed to our newsletter');
+        
     }
 }

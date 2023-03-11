@@ -24,6 +24,7 @@ use App\Http\Controllers\FrontendController;
 Route::post('/contact_us', [FrontendController::class, 'message']);
 Route::get('/contact_us', [FrontendController::class, 'contactus']);
 
+Route::post('/layouts/main', [FrontendController::class, 'subscribe']);
 
 /* Main Frontend Routes */
 Route::controller(App\Http\Controllers\FrontendController::class)->group(function() {
