@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 
 class FrontendController extends Controller
@@ -24,5 +25,25 @@ class FrontendController extends Controller
     public function contactus()
     {
         return view('frontend.contact_us');
+    }
+
+    public function message(Request $request) {
+
+        $validateInput = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'subject' => 'required|string',
+            'message' => 'required|string',
+        ]);
+
+        $message = new Contact();
+        $message->name = $validateInput['name'];
+        $message->email = $validateInput['email'];
+        $message->subject = $validateInput['subject'];
+        $message->message = $validateInput['message'];
+
+        $message->save();
+
+        return back()->with('msgSent', 'Your message has been sent successfully');
     }
 }

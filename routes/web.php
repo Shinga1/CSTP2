@@ -8,6 +8,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +21,14 @@ use App\Http\Controllers\OrdersController;
 |
 */
 
+Route::post('/contact_us', [FrontendController::class, 'message']);
+Route::get('/contact_us', [FrontendController::class, 'contactus']);
+
 
 /* Main Frontend Routes */
 Route::controller(App\Http\Controllers\FrontendController::class)->group(function() {
     Route::get('/', 'home');
     Route::get('/about_us', 'aboutus');
-    Route::get('/contact_us', 'contactus');
 
 });
 
