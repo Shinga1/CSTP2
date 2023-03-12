@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All orders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>All orders</h1>
+            <div>
+                <table class="table">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>User</th>
+                        <th>Total paid</th>
+                        <th>Status</th>
+                        <th>Created at</th>
+                        <th>Updated at</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr th:each = "orders: ${orders}">
+                        <td th:text = "${orders.id}"></td>
+                        <td th:text = "${orders.name}"></td>
+                        <td th:text = "${orders.subtotal}"></td>
+                        <td th:text = "${orders.status}"></td>
+                        <td th:text = "${orders.createdAt}"></td>
+                        <td th:text = "${orders.updatedAt}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
