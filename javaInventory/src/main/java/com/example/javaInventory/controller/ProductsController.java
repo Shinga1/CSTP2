@@ -4,9 +4,7 @@ import com.example.javaInventory.entity.Products;
 import com.example.javaInventory.service.ProductsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -61,6 +59,28 @@ public class ProductsController {
         }
 
         productsService.saveProduct(products);
+        return "redirect:/products";
+    }
+
+    @GetMapping("/products/update/{id}")
+    public String updateProduct(@PathVariable Long id, Model model) {
+        model.addAttribute("product", productsService.getProductID(id));
+        return "update-product";
+    }
+
+    @PostMapping("/products/{id}")
+    public String update(@PathVariable Long id, @ModelAttribute("product") Products product, Model model) {
+        Products currentProduct = productsService.getProductID(id);
+
+        currentProduct.setId(id);
+        currentProduct.setProductName(product.getProductName());
+        currentProduct.setProductDescription(product.getProductDescription());
+        currentProduct.setProductCategory(product.getProductCategory());
+        currentProduct.setProductStock(product.getProductStock());
+        currentProduct.setProductImage(product.getProductImage());
+        currentProduct.setProductImage(product.getProductImage());
+
+        productsService.updateProduct(currentProduct);
         return "redirect:/products";
     }
 }

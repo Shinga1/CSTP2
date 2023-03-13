@@ -9,4 +9,7 @@ public interface ProductsService {
     List<Products> getAllProducts();
 
     Products saveProduct(Products products);
+
+    Products updateProduct(Products products);
+    Products getProductID(Long id);
 }
