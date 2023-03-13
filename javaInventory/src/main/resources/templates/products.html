@@ -24,6 +24,8 @@
                             <th>Price</th>
                             <th>Category</th>
                             <th>Stock</th>
+                            <th>Update</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
 
@@ -35,6 +37,8 @@
                             <td th:text = "${products.productPrice}"></td>
                             <td th:text = "${products.productCategory}"></td>
                             <td th:text = "${products.productStock}"></td>
+                            <td><a class="btn btn-primary">Update</a></td>
+                            <td><a class="btn btn-danger">Delete</a></td>
                         </tr>
                     </tbody>
                 </table>
