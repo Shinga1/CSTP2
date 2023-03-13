@@ -20,4 +20,9 @@ public class ProductsServiceImplementation implements ProductsService {
     public List<Products> getAllProducts() {
         return productsRepository.findAll();
     }
+
+    @Override
+    public Products saveProduct(Products products) {
+        return productsRepository.save(products);
+    }
 }

@@ -14,20 +14,20 @@ public class Products {
     @Column(name = "product_name")
     private String productName;
 
-    @Column(name = "product_image")
-    private String productImage;
-
     @Column(name = "product_description")
     private String productDescription;
-
-    @Column(name = "product_price")
-    private String productPrice;
 
     @Column(name = "product_category")
     private String productCategory;
 
     @Column(name = "product_stock")
     private String productStock;
+
+    @Column(name = "product_price")
+    private String productPrice;
+
+    @Column(name = "product_image")
+    private String productImage;
 
     public Products(String productName, String productImage, String productDescription, String productPrice, String productCategory, String productStock) {
         this.productName = productName;
