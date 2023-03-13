@@ -67,6 +67,14 @@ public class Products {
         this.productImage = productImage;
     }
 
+    @Transient
+    public String imageLocation() {
+        if (id == null || productImage == null)
+            return null;
+
+        return "/product-images/" + productImage;
+    }
+
     public String getProductDescription() {
         return productDescription;
     }
