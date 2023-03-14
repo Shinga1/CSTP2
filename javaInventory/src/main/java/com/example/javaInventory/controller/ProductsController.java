@@ -69,19 +69,35 @@ public class ProductsController {
     }
 
     @PostMapping("/products/{id}")
-    public String update(@PathVariable Long id, @ModelAttribute("product") Products product, Model model) {
-        Products currentProduct = productsService.getProductID(id);
+    public String update(@PathVariable Long id, Products product, @RequestParam("image") MultipartFile productImage) throws IOException {
+        productsService.saveProduct(product);
 
-        currentProduct.setId(id);
-        currentProduct.setProductName(product.getProductName());
-        currentProduct.setProductDescription(product.getProductDescription());
-        currentProduct.setProductCategory(product.getProductCategory());
-        currentProduct.setProductStock(product.getProductStock());
-        currentProduct.setProductImage(product.getProductImage());
-        currentProduct.setProductImage(product.getProductImage());
+        if (productImage.getOriginalFilename() != "") {
+            product.setProductImage(productImage.getOriginalFilename());
 
-        productsService.updateProduct(currentProduct);
+            String fileName = productImage.getOriginalFilename();
+            product.setProductImage(fileName);
+
+            String uploadDir = "./product-images/";
+
+            Path uploadPath = Paths.get(uploadDir);
+
+            if (!Files.exists(uploadPath)) {
+                Files.createDirectories(uploadPath);
+            }
+
+            try (InputStream inputStream = productImage.getInputStream()) {
+                Path filePath = uploadPath.resolve(fileName);
+                Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException IOe) {
+                throw new IOException("Error when saving image " + fileName);
+            }
+
+        }
+
+        productsService.updateProduct(product);
         return "redirect:/products";
     }
 }
+
 

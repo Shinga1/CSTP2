@@ -45,6 +45,7 @@
 
                 <div class="form-group">
                     <label>Choose a new image for product:</label>
+                    <input type="hidden" th:field="*{productImage}" name="image">
                     <input type="file" name="image" class="form-control">
                     <p>Current image of product: <img th:src="@{${product.imageLocation}}"/></p>
                 </div>
