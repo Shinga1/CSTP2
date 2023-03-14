@@ -1,6 +1,7 @@
 package com.example.javaInventory.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
 
@@ -29,6 +30,7 @@ public class Orders {
     private Timestamp createdAt;
 
     @Column(name = "updated_at")
+    @UpdateTimestamp
     private Timestamp updatedAt;
 
     public Orders(Long id, Integer userID, String name, Float subtotal, String status, Timestamp createdAt, Timestamp updatedAt) {
