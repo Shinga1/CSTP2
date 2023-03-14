@@ -35,4 +35,9 @@ public class ProductsServiceImplementation implements ProductsService {
     public Products getProductID(Long id) {
         return productsRepository.findById(id).get();
     }
+
+    @Override
+    public void deleteProduct(Long id) {
+        productsRepository.deleteById(id);
+    }
 }
