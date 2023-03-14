@@ -20,4 +20,14 @@ public class OrdersServiceImplementation implements OrdersService {
     public List<Orders> getAllOrders() {
         return ordersRepository.findAll();
     }
+
+    @Override
+    public Orders getOrderID(Long id) {
+        return ordersRepository.findById(id).get();
+    }
+
+    @Override
+    public Orders updateStatus(Orders orders) {
+        return ordersRepository.save(orders);
+    }
 }

@@ -7,4 +7,7 @@ import java.util.List;
 public interface OrdersService {
 
     List<Orders> getAllOrders();
+
+    Orders getOrderID(Long id);
+    Orders updateStatus(Orders orders);
 }
