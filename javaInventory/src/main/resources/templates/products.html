@@ -54,12 +54,18 @@
                             <td th:text = "${products.productDescription}"></td>
                             <td th:text = "${products.productPrice}"></td>
                             <td th:text = "${products.productCategory}"></td>
-                            <td th:text = "${products.productStock}"></td>
+                            <td>
+                                <strong><span th:if = "${products.productStock} == 0" class="text-danger">Out of stock</span></strong>
+                                <strong><span th:if = "${products.productStock} > 0 and ${products.productStock} <= 5 " class="text-warning">Low stock</span></strong>
+                                <strong><span th:if = "${products.productStock} > 5" class="text-success">In stock</span></strong>
+                            </td>
                             <td><a th:href = "@{/products/update/{id}(id=${products.id})}" class="btn btn-primary">Update</a></td>
                             <td><a th:href = "@{/products/{id}(id=${products.id})}" class="btn btn-danger">Delete</a></td>
                         </tr>
                     </tbody>
                 </table>
+
+
             </div>
         </div>
     </div>
