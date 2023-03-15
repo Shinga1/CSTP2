@@ -772,7 +772,7 @@ nav ul a:hover::after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 6rem;
 }
 
 .login-page form input {
@@ -816,10 +816,11 @@ nav ul a:hover::after {
 
 .register-page form {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 6rem;
 }
 
 .register-page form input {
@@ -835,7 +836,7 @@ nav ul a:hover::after {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-top: 5rem;
 }
 
 .register-page button {
@@ -994,91 +995,72 @@ footer ul {
 /** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
 
 /** -------------------------------------------------------- CONTACT US PAGE CSS ----------------------------------------------------------------------**/
-.contactUs-bg {
-    min-height: 100vh;
-    place-items: center;
+.contact .contact_us {
+    min-height: 70vh;
+    display: grid;
     align-content: center;
+    color: #fff;
+    font-weight: bold;
     text-align: center;
-    color: #fff;
-}
 
-.contactUs-bg h1 {
-    text-transform: capitalize;
-    font-size: 85px;
-    color: #fff;
-    font-weight: 600;
-    text-align: left;
-    padding-top: 300px;
 }
-
-.contactUs-bg p {
-    font-size: 20px;
-    color: #fff;
-    font-weight: 100;
-    margin: 1rem 0 2rem;
-    line-height: 1.5;
-    text-align: left;
-}
-
-.content {
+.contact .content {
     position: static;
     min-height: 70vh;
     display: grid;
     align-content: center;
     color: #fff;
-    padding: 70px;
+    padding: 0px;
 }
-
-.contact-box {
-    background: #ffd700;
-    display: flex;
-    flex-basis: 60%;
-    padding: 40px 60px;
+.contact form{
+    width: 90%;
+    max-width: 600px;
+    align-content: center;
+    margin: auto;
+    margin-top: -150px;
+    margin-bottom: 600px;
 }
-
-.input-row {
-    justify-content: space-between;
-    margin-bottom: 20px;
+.contact .input-group{
+    margin-bottom: 30px;
+    position: relative;
 }
-
-.input-row.input-group {
-    flex-basis: 45%;
-}
-
-.contactUs-bg input {
+.contact input, textarea{
     width: 100%;
+    padding: 10px;
+    outline: 0;
     border: 1px solid #fff;
-    border-bottom: 1px solid #808080;
-    outline: none;
-    padding-bottom: 5px;
-    color: whitesmoke;
-}
-
-.contactUs-bg .textarea {
-    width: 100%;
-    border: 1px solid #fff;
-    outline: none;
-    padding: 5px;
-    margin-bottom: 5px;
-    color: whitesmoke;
-}
-
-.contactUs-bg label {
-    margin-bottom: 6px;
-    display: block;
-    color: #ccc;
-    color: whiteSmoke;
-}
-
-.contact_us button {
-    background: #ccc;
-    width: 100px;
-    border: none;
-    outline: none;
     color: #fff;
-    height: 20px;
+    background: transparent;
+    font-size: 15px;
 }
-
+.contact label{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: #fff;
+    cursor: text;
+    transition: 0.2s;
+    background-color: transparent;
+}
+.contact button{
+    padding: 10px 0;
+    color: #fff;
+    outline: none;
+    background: transparent;
+    border: 1px solid #fff;
+    width: 100%;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.contact input:focus~label,
+.contact input:valid~label,
+.contact textarea:focus~label,
+.contact textarea:valid~label{
+    top: -35px;
+    font-size: 14px;
+}
 /** -------------------------------------------------------- END OF CONTACT US PAGE CSS ----------------------------------------------------------------------**/
 
 /**-------------------------------------------------------------ABOUT US PAGE CSS--------------------------------------------------------------------------**/

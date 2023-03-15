@@ -44,7 +44,7 @@ class BasketController extends Controller
                 $Basket->product_id = $request->product_id;
                 $Basket->product_image = $product_image;
                 $Basket->product_name = $product_name;
-                $Basket->email = auth()->user()->id;
+                $Basket->email = auth()->user()->email;
                 $Basket->product_price = $product_price;
                 $Basket->quantity = $request->quantity;
                 $Basket->save();
@@ -64,4 +64,10 @@ class BasketController extends Controller
 
         return redirect('/basket')->with('delete', "Product removed sucessfully");
     }
+
+    public function getBasketCount() {
+        $basketCount = Basket::where('user_id', auth()->user()->id)->sum('quantity');
+        return $basketCount;
+    }
+    
 }

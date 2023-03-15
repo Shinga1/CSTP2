@@ -8,8 +8,10 @@
                 <p class="text2"> To receive updates, exclusive deals, and more, please provide your email address and
                     subscribe.
                 </p>
-                <form class="form">
-                    <input class="input" type="email" required="required">
+                <form class="form" action="/layouts/main" method="post">
+                    @csrf
+                        <input class="input" type="email" name="email" required="required">
+                    <button type="submit">Subsribe Now</button>
                 </form>
             </div>
 

@@ -4,7 +4,7 @@
 
 <br><br><br><br>
 
-<h1>Summary of your order</h1>
+<h1>Summary of your order, {{ auth()->user()->name }}</h1>
 
     @php 
         $subtotal = 0
@@ -27,6 +27,9 @@
     <div>
         Total you have paid = £{{ $subtotal }}
     </div>
+
+    <p>View your order details by clicking <a href="/previous">here</a></p>
+    
 
 
 @endsection

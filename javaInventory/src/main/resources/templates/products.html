@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>List of all products</h1>
+
+            <div class="row">
+                <a th:href="@{/products/add}">Add new product</a>
+            </div>
+
+            <div>
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Stock</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr th:each = "products: ${products}">
+                            <td th:text = "${products.productImage}"></td>
+                            <td th:text = "${products.productName}"></td>
+                            <td th:text = "${products.productDescription}"></td>
+                            <td th:text = "${products.productPrice}"></td>
+                            <td th:text = "${products.productCategory}"></td>
+                            <td th:text = "${products.productStock}"></td>
+                            <td><a th:href = "@{/products/update/{id}(id=${products.id})}" class="btn btn-primary">Update</a></td>
+                            <td><a th:href = "@{/products/{id}(id=${products.id})}" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

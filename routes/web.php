@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +21,15 @@ use App\Http\Controllers\CheckoutController;
 |
 */
 
+Route::post('/contact_us', [FrontendController::class, 'message']);
+Route::get('/contact_us', [FrontendController::class, 'contactus']);
+
+Route::post('/layouts/main', [FrontendController::class, 'subscribe']);
 
 /* Main Frontend Routes */
 Route::controller(App\Http\Controllers\FrontendController::class)->group(function() {
     Route::get('/', 'home');
     Route::get('/about_us', 'aboutus');
-    Route::get('/contact_us', 'contactus');
 
 });
 
@@ -51,3 +56,6 @@ Route::get('/basket', [BasketController::class, 'show']);
 Route::get('/remove/{id}', [BasketController::class, 'basketRemove']);
 
 Route::post('/checkout', [CheckoutController::class, 'showOrder']);
+
+Route::get('/previous', [OrdersController::class, 'show']);
+Route::get('/previous/{id}', [OrdersController::class, 'orderDetails']);

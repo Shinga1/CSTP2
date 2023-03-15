@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Add details of new product</h1>
+            <div class="card-body">
+                <form th:action="@{/products}" th:object="${product}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Product name:</label>
+                        <input type="text" name="productName" th:field="*{productName}" placeholder="Enter name of product" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Product Description:</label>
+                        <input type="text" name="productDescription" th:field="*{productDescription}" placeholder="Enter description of product" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Choose product category:</label>
+                        <select name="productCategory" th:field="*{productCategory}" class="form-control" required>
+                            <option value="">Select a category</option>
+                            <option value="Beauty">Beauty</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Food">Food</option>
+                            <option value="Perfumes">Perfumes</option>
+                            <option value="Books">Books</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Product stock available:</label>
+                        <input type="number" name="productStock" th:field="*{productStock}" placeholder="Enter stock of product" step="1" min="0" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Product price:</label>
+                        <input type="number" name="productPrice" th:field="*{productPrice}" placeholder="Enter name of product" step="0.01" min="1" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Image of product:</label>
+                        <input type="file" name="image" class="form-control">
+                    </div>
+
+                    <div class="box-footer">
+                        <button type="submit">Add product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

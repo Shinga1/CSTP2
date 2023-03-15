@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Update order status</h1>
+        <div class="card-body">
+            <form th:action="@{/orders/{id}(id=${order.id})}" th:object="${order}" method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <h2>Orders details</h2>
+                    <p>Order number: <span th:text = ${id}></span> </p>
+                    <p>User: <span th:text = ${order.name}></span> </p>
+                    <p>Total paid: <span th:text = ${order.subtotal}></span> </p>
+                    <p>Current status of order: <span th:text = ${order.status}></span> </p>
+                </div>
+
+                <div class="form-group">
+                    <h4>Update the status of the order:</h4>
+                    <select name="status" th:field="*{status}" class="form-control" required>
+                        <option value="Processing">Processing</option>
+                        <option value="Shipping">Shipping</option>
+                        <option value="Delivered">Delivered</option>
+                    </select>
+                </div>
+
+                <div class="box-footer">
+                    <button type="submit">Update now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

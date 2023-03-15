@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('user_id');
             $table->string('name');
-            $table->integer('quantity');
             $table->float('subtotal');
             $table->string('status')->default('Processing');
             $table->timestamps();

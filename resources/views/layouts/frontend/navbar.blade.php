@@ -20,9 +20,11 @@
         @endguest
         @auth
             <li><a href="">{{ auth()->user()->name }}</a></li>
+            <li><a href="{{ url('/previous') }}">Your orders</a></li>
             <li><a href="{{ url('/logout') }}">Logout</a></li>
-            <li><a href="{{ url('/basket') }}"><i class="fa fa-basket-shopping"></i></a></li>
+            <li><a href="{{ url('/basket') }}"><i class="fa fa-basket-shopping"> {{ app('App\Http\Controllers\BasketController')->getBasketCount() }}</i></a></li>
         @endauth
     </ul>
 
 </nav>
+
