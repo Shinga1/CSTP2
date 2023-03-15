@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+</head>
+<body>
+    <nav>
+		<ul>
+			<li><a href="AddItem.html">Add Item</a></li>
+			<li><a href="UpdateItems.html">Update Existing Item</a></li>
+			<li><a href="DeleteItem.html">Delete Item</a></li>
+		</ul>
+	</nav>
+	<h1>Dashboard</h1>
+	
+
+	<!-- Inventory table goes here -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    // Connect to the database
+                    $host = "localhost";
+                    $user = "username";
+                    $password = "password";
+                    $dbname = "celessentials";
+                    $con = mysqli_connect($host, $user, $password, $dbname);
+                    if (!$con) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
+    
+                    // Retrieve product data from the database
+                    $sql = "SELECT * FROM products";
+                    $result = mysqli_query($con, $sql);
+    
+                    // Display the product data in the table
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>";
+                        echo "<td>" . $row['product_name'] . "</td>";
+                        echo "<td>" . $row['description'] . "</td>";
+                        echo "<td>" . $row['quantity'] . "</td>";
+                        echo "<td>" . $row['price'] . "</td>";
+                        echo "</tr>";
+                    }
+    
+                    // Close the database connection
+                    mysqli_close($con);
+                ?>
+            </tbody>
+        </table>
+    
+        <!-- Add form to add new product to the database -->
+        <form action="add_product.php" method="post">
+            <label for="product_name">Product Name:</label>
+            <input type="text" id="product_name" name="product_name">
+    
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description">
+    
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity">
+    
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price">
+    
+            <input type="submit" value="Add Product">
+        </form>
+    
+    
+        <!-- Form to update product quantity in the database -->
+        <form action="update_quantity.php" method="post">
+
+    
+</body>
+</html>
