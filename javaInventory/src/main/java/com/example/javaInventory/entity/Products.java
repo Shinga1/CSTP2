@@ -21,7 +21,7 @@ public class Products {
     private String productCategory;
 
     @Column(name = "product_stock")
-    private String productStock;
+    private Integer productStock;
 
     @Column(name = "product_price")
     private String productPrice;
@@ -29,7 +29,7 @@ public class Products {
     @Column(name = "product_image")
     private String productImage;
 
-    public Products(String productName, String productImage, String productDescription, String productPrice, String productCategory, String productStock) {
+    public Products(String productName, String productImage, String productDescription, String productPrice, String productCategory, Integer productStock) {
         this.productName = productName;
         this.productImage = productImage;
         this.productDescription = productDescription;
@@ -99,11 +99,11 @@ public class Products {
         this.productCategory = productCategory;
     }
 
-    public String getProductStock() {
+    public Integer getProductStock() {
         return productStock;
     }
 
-    public void setProductStock(String productStock) {
+    public void setProductStock(Integer productStock) {
         this.productStock = productStock;
     }
 

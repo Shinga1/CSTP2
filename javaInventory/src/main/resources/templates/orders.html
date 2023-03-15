@@ -49,7 +49,7 @@
                     <td th:text = "${orders.status}"></td>
                     <td th:text = "${orders.createdAt}"></td>
                     <td th:text = "${orders.updatedAt}"></td>
-                    <td><a th:href="@{/orders/update/{id}(id=${orders.id})}" class="btn btn-primary">Update Status</a></td>
+                    <td><a th:href="@{/orders/update/status/{id}(id=${orders.id})}" class="btn btn-primary">Update Status</a></td>
                 </tr>
                 </tbody>
             </table>

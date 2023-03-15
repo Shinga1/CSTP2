@@ -25,7 +25,7 @@ public class OrdersController {
         return "orders";
     }
 
-    @GetMapping("/orders/update/{id}")
+    @GetMapping("/orders/update/status/{id}")
     public String updateStatus(@PathVariable Long id, Model model) {
         model.addAttribute("order", ordersService.getOrderID(id));
         return "update-status";

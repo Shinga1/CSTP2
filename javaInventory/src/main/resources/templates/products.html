@@ -23,6 +23,21 @@
     </div>
 </nav>
 
+<div th:if = "${session.messages != null}">
+    <div th:each = "message : ${session.messages}">
+        <div th:if = "${message.contains('out of stock')}" class="alert alert-danger">
+            [[${message}]]
+        </div>
+        <div th:if = "${message.contains('low stock')}" class="alert alert-warning">
+            [[${message}]]
+        </div>
+        <div th:unless = "${message.contains('out of stock') or message.contains('low stock')}" class="alert alert-success">
+            [[${message}]]
+        </div>
+    </div>
+</div>
+
+
 
     <div class="container">
         <div class="row">

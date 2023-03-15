@@ -2,6 +2,7 @@ package com.example.javaInventory.controller;
 
 import com.example.javaInventory.entity.Products;
 import com.example.javaInventory.service.ProductsService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ProductsController {
@@ -25,8 +28,34 @@ public class ProductsController {
     }
 
     @GetMapping("/products")
-    public String allProducts(Model model) {
-        model.addAttribute("products", productsService.getAllProducts());
+    public String allProducts(Model model, HttpSession session) {
+        List<Products> productsList = productsService.getAllProducts();
+        List<String> outOfStock = new ArrayList<>();
+        List<String> lowStock = new ArrayList<>();
+        List<String> messages = new ArrayList<>();
+
+        for (Products product : productsList) {
+            if (product.getProductStock() == 0) {
+                outOfStock.add(product.getProductName());
+            } else if (product.getProductStock() <= 5) {
+                lowStock.add(product.getProductName());
+            }
+        }
+
+        if (!outOfStock.isEmpty()) {
+            messages.add(String.join(", ", outOfStock) + " are out of stock");
+        }
+
+        if (!lowStock.isEmpty()) {
+            messages.add(String.join(", ", lowStock) + " have low stock");
+        }
+
+        if (messages.isEmpty()) {
+            messages.add("All products are in stock");
+        }
+
+        session.setAttribute("messages", messages);
+        model.addAttribute("products", productsList);
         return "products";
     }
 
