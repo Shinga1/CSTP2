@@ -1,50 +1,109 @@
-package com.example.inventory.controller;
+package com.example.javaInventory.controller;
 
-import java.configuration.runtimes;
-
-import com.example.inventory.model.Product;
-import com.example.inventory.service.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import com.example.javaInventory.entity.Products;
+import com.example.javaInventory.service.ProductsService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
-@RestController
-@RequestMapping("/api")
-public class ProductController {
+@Controller
+public class ProductsController {
 
-    @Autowired
-    private ProductService productService;
+    private ProductsService productsService;
 
-    @GetMapping("/products")
-    public ResponseEntity<List<Product>> getAllProducts() {
-        List<Product> products = productService.getAllProducts();
-        return new ResponseEntity<>(products, HttpStatus.OK);
+    public ProductsController(ProductsService productsService) {
+        super();
+        this.productsService = productsService;
     }
 
-    @GetMapping("/products/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable Long id) {
-        Product product = productService.getProductById(id);
-        return new ResponseEntity<>(product, HttpStatus.OK);
+    @GetMapping("/products")
+    public String allProducts(Model model) {
+        model.addAttribute("products", productsService.getAllProducts());
+        return "products";
+    }
+
+    @GetMapping("/products/add")
+    public String addNewProduct(Model model) {
+        Products products = new Products();
+        model.addAttribute("product", products);
+        return "add-product";
     }
 
     @PostMapping("/products")
-    public ResponseEntity<Product> addProduct(@RequestBody Product product) {
-        Product newProduct = productService.addProduct(product);
-        return new ResponseEntity<>(newProduct, HttpStatus.CREATED);
+    public String addProduct(Products products, @RequestParam("image") MultipartFile file) throws IOException {
+
+        String fileName = file.getOriginalFilename();
+        products.setProductImage(fileName);
+
+        String uploadDir = "./product-images/";
+
+        Path uploadPath = Paths.get(uploadDir);
+
+        if (!Files.exists(uploadPath)) {
+            Files.createDirectories(uploadPath);
+        }
+
+        try (InputStream inputStream = file.getInputStream()) {
+            Path filePath = uploadPath.resolve(fileName);
+            Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException IOe) {
+            throw new IOException("Error when saving image " + fileName);
+        }
+
+        productsService.saveProduct(products);
+        return "redirect:/products";
     }
 
-    @PutMapping("/products/{id}")
-    public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product product) {
-        Product updatedProduct = productService.updateProduct(id, product);
-        return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
+    @GetMapping("/products/update/{id}")
+    public String updateProduct(@PathVariable Long id, Model model) {
+        model.addAttribute("product", productsService.getProductID(id));
+        return "update-product";
     }
 
-    @DeleteMapping("/products/{id}")
-    public ResponseEntity<?> deleteProduct(@PathVariable Long id) {
-        productService.deleteProduct(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    @PostMapping("/products/{id}")
+    public String update(@PathVariable Long id, Products product, @RequestParam("image") MultipartFile productImage) throws IOException {
+        productsService.saveProduct(product);
+
+        if (productImage.getOriginalFilename() != "") {
+            product.setProductImage(productImage.getOriginalFilename());
+
+            String fileName = productImage.getOriginalFilename();
+            product.setProductImage(fileName);
+
+            String uploadDir = "./product-images/";
+
+            Path uploadPath = Paths.get(uploadDir);
+
+            if (!Files.exists(uploadPath)) {
+                Files.createDirectories(uploadPath);
+            }
+
+            try (InputStream inputStream = productImage.getInputStream()) {
+                Path filePath = uploadPath.resolve(fileName);
+                Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException IOe) {
+                throw new IOException("Error when saving image " + fileName);
+            }
+
+        }
+
+        productsService.updateProduct(product);
+        return "redirect:/products";
+    }
+
+    @GetMapping("/products/{id}")
+    public String deleteProduct(@PathVariable Long id) {
+        productsService.deleteProduct(id);
+        return "redirect:/products";
     }
 }
+
+
