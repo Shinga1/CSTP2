@@ -1,6 +1,3 @@
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,23 +11,43 @@ public class InventoryItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     @Column
-    private String name;
+    private String product_name;
     @Column
-    private int quantity;
+    private String product_image;
     @Column
-    private double price;
+    private String product_description;
+    @Column
+    private double product_price;
+    @Column
+    private String product_category;
+    @Column
+    private int product_stock;
 
 
     public InventoryItem() {}
 
-    public InventoryItem(String name, int quantity, double price) {
-        this.name = name;
-        this.quantity = quantity;
-        this.price = price;
+    public InventoryItem(int id, String name, String image, String description, double price, String category,int stock) {
+        this.id = id;
+        this.product_name = name;
+        this.product_image = image;
+        this.product_description = description;
+        this.product_price = price;
+        this.product_category = category;
+        this.product_stock = stock;
     }
     
+    public void checkStockLevel(int minimum = 5) {
+        if (this.stockLevel == 0) {
+            sendAlertMessage("Product is out of stock.");
+        } else if (this.stockLevel < minimum) {
+            sendAlertMessage("Product stock level is low.");
+        }
+    }
+    
+    private void sendAlertMessage(String message) {
+        System.out.println(message);
+    }
 
     // Getter methods
     public int getId() {
@@ -41,13 +58,27 @@ public class InventoryItem {
         return name;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public String getImage(){
+        return image;
+    }
+
+    public String getDescript(){
+        return description;
     }
 
     public double getPrice() {
         return price;
     }
+
+    public String getCategory(){
+        return category;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+   
 
 
     // Setter methods
@@ -56,16 +87,15 @@ public class InventoryItem {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.product_name = name;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setStock(int stock) {
+        this.product_stock = stock;
     }
-
 
     public void setPrice(double price) {
-        this.price = price;
+        this.product_price = price;
     }
 }
 
