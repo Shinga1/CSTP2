@@ -9,13 +9,13 @@
 
 <body>
     <section class="contact">
-    <div class="contact_us">
-       <h1>Contact Us</h1>
-       <p>Further Enquires?<br> Send us a message, our team will be in touch as soon as possible!</p>
-   </div>
-      <div class="content">
-        <form action="/contact_us" method="POST">
-            @csrf
+        <div class="contact_us">
+            <h1>Contact Us</h1>
+            <p>Further Enquires?<br> Send us a message, our team will be in touch as soon as possible!</p>
+        </div>
+        <div class="content">
+            <form action="/contact_us" method="POST">
+                @csrf
                 <div class="input-group">
                     <input type="text" id="name" name="name" required>
                     <label for="name">Your Name:</label>
@@ -32,8 +32,8 @@
                     <textarea id="message" rows="10" name="message" required></textarea>
                     <label for="message">Your Message:</label>
                 </div>
-            <button type="submit">SEND</button>
-        </form>
-   </div>
-</section>
+                <button type="submit">SEND</button>
+            </form>
+        </div>
+    </section>
 </body>

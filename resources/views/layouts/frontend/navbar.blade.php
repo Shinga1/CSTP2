@@ -15,12 +15,12 @@
     <ul class="right">
         @guest
             <li><a href="{{ url('/register') }}">Register</a></li>
-            <li><a href="{{ url('/login') }}">Login</a></li>
+            <li><a class="login" href="{{ url('/login') }}">Login</a></li>
             <li><a href="{{ url('/login') }}"><i class="fa fa-basket-shopping"></i></a></li>
         @endguest
         @auth
+            <li><a class="logout" href="{{ url('/logout') }}">Logout</a></li>
             <li><a href="{{ url('/previous') }}"><i class="fa fa-user"> {{ auth()->user()->name }}</i></a></li>
-            <li><a href="{{ url('/logout') }}">Logout</a></li>
             <li><a href="{{ url('/basket') }}"><i class="fa fa-basket-shopping">
                         {{ app('App\Http\Controllers\BasketController')->getBasketCount() }}</i></a></li>
         @endauth

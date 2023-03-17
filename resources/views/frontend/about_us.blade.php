@@ -3,22 +3,20 @@
 @section('content')
 
     <div class="aboutUs">
-        <div class="aboutUs-bg">
-            <br></br>
+        <h1> About Us </h1>
 
-            <style>
-                .image {
-                    background: transparent;
-                    border: 4px solid #FFD700;
-                    padding: 15px;
-                    height: 500px;
-                    width: 500px;
-                    border-radius: 25%;
-                    margin-left: 100px;
-                    margin-right: 100px;
-                }
-            </style>
-        </div>
+        <style>
+            .image {
+                background: transparent;
+                border: 4px solid #FFD700;
+                padding: 15px;
+                height: 500px;
+                width: 500px;
+                border-radius: 25%;
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+        </style>
 
         <section class="aboutUs-sbs">
             <p class="aboutUs-flexBox">
@@ -64,5 +62,4 @@
                 <br></br>
             </div>
         </section>
-    </div>
     </div>
