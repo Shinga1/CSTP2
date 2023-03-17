@@ -1,12 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="home">
-        <div class="bg-effect">
-            <div class="stars"></div>
-        </div>
-    </div>
-
     <section class="products-page" id="products">
         <div class="products-container">
             <h1>All of our Products</h1>

@@ -3,14 +3,6 @@
 @section('content')
 
     <div class="aboutUs">
-
-
-    <div class="home">
-
-        <div class="bg-effect">
-            <div class="stars"></div>
-        </div>
-
         <div class="aboutUs-bg">
             <br></br>
 
@@ -65,7 +57,8 @@
         <section class="aboutUs-about" id="about">
             <div class="about-text">
                 <h2>Have any questions or inquiries?</h2>
-                <p>Click the button below to fill our feedback form and our team would be happy to answer your questions and
+                <p>Click the button below to fill our feedback form and our team would be happy to answer your questions
+                    and
                     get back to you.</p>
                 <a href="{{ url('/contact_us') }}" class="button">Contact us</a>
                 <br></br>
