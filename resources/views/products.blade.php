@@ -15,6 +15,7 @@
             <div class="products-filter">
                 <h2>Filter by:</h2>
                 <select name="" onchange="location = this.value">
+                    <option value="">Please select a filter</option>
                     <option value="/products">All categories</option>
                     <option value="/products/category/Beauty">Beauty</option>
                     <option value="/products/category/Electronics">Electronics</option>
