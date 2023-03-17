@@ -58,24 +58,24 @@
             <section class="home-products" id="products">
                 <div class="product-row">
                     <div class="product">
-                        <img src="{{ asset('assets/images/productImages/yeezy.jpg') }}">
-                        <button>Apparel</button>
+                        <img src="{{ asset('assets/images/productImages/fenty.jpg') }}">
+                        <a href="/products/category/Beauty">Makeup & Beauty</a>
                     </div>
                     <div class="product">
                         <img src="{{ asset('assets/images/productImages/beats.jpg') }}">
-                        <button>Electronics</button>
-                    </div>
-                    <div class="product">
-                        <img src="{{ asset('assets/images/productImages/fenty.jpg') }}">
-                        <button>Makeup & Beauty</button>
+                        <a href="/products/category/Electronics">Electronics</a>
                     </div>
                     <div class="product">
                         <img src="{{ asset('assets/images/productImages/snoop-loopz.jpg') }}">
-                        <button>Consumables</button>
+                        <a href="/products/category/Food">Consumables</a>
+                    </div>
+                    <div class="product">
+                        <img src="{{ asset('assets/images/productImages/travis.jpg') }}">
+                        <a href="/products/category/Perfumes">Perfumes</a>
                     </div>
                     <div class="product">
                         <img src="{{ asset('assets/images/productImages/book.png') }}">
-                        <button>Celebrity Books</button>
+                        <a href="/products/category/Books">Celebrity Books</a>
                     </div>
                 </div>
             </section>
