@@ -59,23 +59,23 @@
                 <div class="product-row">
                     <div class="product">
                         <img src="{{ asset('assets/images/productImages/yeezy.jpg') }}">
-                        <button>Apparel</button>
+                        <a href="/products">Apparel</a>
                     </div>
                     <div class="product">
                         <img src="{{ asset('assets/images/productImages/beats.jpg') }}">
-                        <button>Electronics</button>
+                        <a href="/products">Electronics</a>
                     </div>
                     <div class="product">
                         <img src="{{ asset('assets/images/productImages/fenty.jpg') }}">
-                        <button>Makeup & Beauty</button>
+                        <a href="/products">Makeup & Beauty</a>
                     </div>
                     <div class="product">
                         <img src="{{ asset('assets/images/productImages/snoop-loopz.jpg') }}">
-                        <button>Consumables</button>
+                        <a href="/products">Consumables</a>
                     </div>
                     <div class="product">
                         <img src="{{ asset('assets/images/productImages/book.png') }}">
-                        <button>Celebrity Books</button>
+                        <a href="/products">Celebrity Books</a>
                     </div>
                 </div>
             </section>
