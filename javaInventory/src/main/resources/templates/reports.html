@@ -30,8 +30,13 @@
 
 
 <div>
-    <h4>Click generate reports for stocks to get a list of products with their stock levels</h4>
-    <a th:href="@{/stock/report}">Generate reports for stocks</a>
+    <div>
+        <h4>Report for stock levels of products:</h4>
+        <a th:href="@{/stock/report}">Generate report for stocks</a>
+
+        <h4>Reports for orders:</h4>
+        <a href="@{/order/report}">Generate report for orders</a>
+    </div>
 </div>
 
 
