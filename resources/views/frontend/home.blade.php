@@ -6,7 +6,7 @@
         <div class="bg-effect">
             <div class="stars"></div>
 
-            <img class="main-photo" src="{{ asset('assets/images/logo.png') }}" style = "margin-right: 275px; margin-top: 40px">
+            <img class="main-photo" src="{{ asset('assets/images/logo.png') }}" style="margin-right: 275px; margin-top: 40px">
             <div class="home-bg">
                 <h1>aspire to inspire.</h1>
                 <a href="/products">View our products</a>
