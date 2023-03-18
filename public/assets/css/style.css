@@ -702,7 +702,7 @@ nav ul a:hover::after {
 }
 
 .home-reviews .review .fa-star.checked {
-    color: #f90;
+    color: #ffd700;
 }
 
 .home-reviews .review-text {
@@ -783,8 +783,8 @@ nav ul a:hover::after {
 
 /** -------------------------------------------------------- LOGIN PAGE CSS ----------------------------------------------------------------------**/
 .login-page {
-    margin-top: 22%;
-    padding-bottom: 2rem;
+    margin-top: 20%;
+    padding-bottom: 3.8rem;
     border-bottom: 0.1px solid #242424;
 }
 
@@ -803,6 +803,10 @@ nav ul a:hover::after {
     align-items: center;
     color: #fff;
     padding: 0;
+}
+
+.login-page .content label {
+    margin-bottom: 0.5rem;
 }
 
 .login-page form {
@@ -872,8 +876,8 @@ nav ul a:hover::after {
 
 /** -------------------------------------------------------- REGISTER PAGE CSS ----------------------------------------------------------------------**/
 .register-page {
-    margin-top: 17%;
-    padding-bottom: 8rem;
+    margin-top: 15%;
+    padding-bottom: 9rem;
     border-bottom: 0.1px solid #242424;
 }
 
@@ -892,6 +896,10 @@ nav ul a:hover::after {
     align-items: center;
     color: #fff;
     padding: 0;
+}
+
+.register-page .content label {
+    margin-bottom: 0.5rem;
 }
 
 .register-page form {
