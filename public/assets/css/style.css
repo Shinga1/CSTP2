@@ -31,6 +31,20 @@ nav .right {
     padding-right: 20px;
 }
 
+nav .right .logout {
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    padding: 5px 10px;
+    transition: background-color 0.01s ease;
+}
+
+nav .right .logout:hover {
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #000;
+}
+
 nav .logo {
     padding-left: 30px;
     width: 12rem;
@@ -768,20 +782,43 @@ nav ul a:hover::after {
 /** -------------------------------------------------------- END OF HOME PAGE CSS ----------------------------------------------------------------------**/
 
 /** -------------------------------------------------------- LOGIN PAGE CSS ----------------------------------------------------------------------**/
-.login-page form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.login-page {
+    margin-top: 22%;
+    padding-bottom: 2rem;
+    border-bottom: 0.1px solid #242424;
+}
+
+.login-page .login {
+    display: grid;
+    align-content: center;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.login-page .content {
+    position: static;
+    min-height: 50vh;
     justify-content: center;
-    margin-top: 6rem;
+    align-items: center;
+    color: #fff;
+    padding: 0;
+}
+
+.login-page form {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .login-page form input {
-    width: 500px;
-    margin-bottom: 1rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
     border-color: white;
     color: white;
     caret-color: white;
+    outline: none;
+    height: 40px;
 }
 
 .login-page h1 {
@@ -793,16 +830,16 @@ nav ul a:hover::after {
 }
 
 .login-page button {
-    margin-top: 1rem;
     background-color: #fff;
     color: #000;
     border-color: rgba(0, 0, 0, 0);
     text-transform: uppercase;
     letter-spacing: 3px;
     padding-block: 0.5rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-inline: 3rem;
     transition: 0.3s;
+    display: block;
+    margin: 0 auto;
 }
 
 .login-page button:hover {
@@ -814,22 +851,43 @@ nav ul a:hover::after {
 /** -------------------------------------------------------- END OF LOGIN PAGE CSS ----------------------------------------------------------------------**/
 
 /** -------------------------------------------------------- REGISTER PAGE CSS ----------------------------------------------------------------------**/
+.register-page {
+    margin-top: 17%;
+    padding-bottom: 8rem;
+    border-bottom: 0.1px solid #242424;
+}
+
+.register-page .register {
+    display: grid;
+    align-content: center;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.register-page .content {
+    position: static;
+    min-height: 50vh;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 0;
+}
 
 .register-page form {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 6rem;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .register-page form input {
-    width: 500px;
-    margin-bottom: 1rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
     border-color: white;
     color: white;
     caret-color: white;
+    outline: none;
+    height: 40px;
 }
 
 .register-page h1 {
@@ -837,20 +895,20 @@ nav ul a:hover::after {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 500;
-    margin-top: 5rem;
+    margin-bottom: 1rem;
 }
 
 .register-page button {
-    margin-top: 1rem;
     background-color: #fff;
     color: #000;
     border-color: rgba(0, 0, 0, 0);
     text-transform: uppercase;
     letter-spacing: 3px;
     padding-block: 0.5rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-inline: 3rem;
     transition: 0.3s;
+    display: block;
+    margin: 1rem auto 0;
 }
 
 .register-page button:hover {
@@ -858,6 +916,7 @@ nav ul a:hover::after {
     color: #fff;
     border-color: #fff;
 }
+
 /** -------------------------------------------------------- END OF REGISTER PAGE CSS ----------------------------------------------------------------------**/
 
 /** -------------------------------------------------------- FOOTER PAGE CSS ----------------------------------------------------------------------**/
@@ -977,14 +1036,32 @@ footer ul {
 
 .footer-col .input {
     color: #d3d3d3;
-    border: 0;
-    padding: 2px;
+    border: none;
+    padding: 10px;
     width: 100%;
     outline: none;
     box-sizing: border-box;
-    font-size: 13px;
+    font-size: 0.8rem;
     border-bottom: 2px solid #fff;
     background: transparent;
+}
+
+.footer-col button[type="submit"] {
+    padding-top: 10px;
+    background-color: transparent;
+    color: #808080;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 300;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.footer-col button[type="submit"]:hover {
+    color: #fff;
+    padding-left: 10px;
 }
 
 @media (max-width: 767px) {
@@ -996,22 +1073,27 @@ footer ul {
 /** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
 
 /** -------------------------------------------------------- CONTACT US PAGE CSS ----------------------------------------------------------------------**/
+.contact {
+    border-bottom: 0.1px solid #242424;
+}
+
 .contact .contact_us {
-    min-height: 70vh;
+    min-height: 50vh;
     display: grid;
     align-content: center;
     color: #fff;
     font-weight: bold;
     text-align: center;
 }
+
 .contact .content {
     position: static;
     min-height: 70vh;
-    display: grid;
     align-content: center;
     color: #fff;
     padding: 0px;
 }
+
 .contact form {
     width: 90%;
     max-width: 600px;
@@ -1020,10 +1102,20 @@ footer ul {
     margin-top: -150px;
     margin-bottom: 600px;
 }
+
 .contact .input-group {
     margin-bottom: 30px;
     position: relative;
 }
+
+.contact h1 {
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
 .contact input,
 textarea {
     width: 100%;
@@ -1034,6 +1126,7 @@ textarea {
     background: transparent;
     font-size: 15px;
 }
+
 .contact label {
     height: 100%;
     position: absolute;
@@ -1045,16 +1138,26 @@ textarea {
     transition: 0.2s;
     background-color: transparent;
 }
+
 .contact button {
-    padding: 10px 0;
-    color: #fff;
-    outline: none;
-    background: transparent;
-    border: 1px solid #fff;
-    width: 100%;
-    cursor: pointer;
-    text-transform: capitalize;
+    background-color: #fff;
+    color: #000;
+    border-color: rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-block: 0.5rem;
+    padding-inline: 3rem;
+    transition: 0.3s;
+    display: block;
+    margin: 0 auto;
 }
+
+.contact button:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
 .contact input:focus ~ label,
 .contact input:valid ~ label,
 .contact textarea:focus ~ label,
@@ -1066,13 +1169,26 @@ textarea {
 
 /**-------------------------------------------------------------ABOUT US PAGE CSS--------------------------------------------------------------------------**/
 
-.aboutUs-bg h1 {
-    text-transform: capitalize;
-    font-size: 85px;
+.aboutUs {
+    padding-block: 10%;
+    border-bottom: 0.1px solid #242424;
+}
+
+.aboutUs .products-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0 30px;
+}
+
+.aboutUs h1 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
     color: #fff;
-    font-weight: 600;
-    text-align: left;
-    padding-top: 300px;
 }
 
 .aboutUs-about {
@@ -1149,7 +1265,8 @@ textarea {
 
 /**----------------------------------------------------------PRODUCTS PAGE CSS----------------------------------------------------------------------**/
 .products-page {
-    padding-block: 5%;
+    padding-block: 8%;
+    border-bottom: 0.1px solid #242424;
 }
 
 .products-page .products-container {
@@ -1160,50 +1277,50 @@ textarea {
 }
 
 .products-page h1 {
-    font-size: 3rem;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 30px;
-    text-transform: capitalize;
-    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
     color: #fff;
 }
 
 .products-page .products-filter {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 60px;
+    margin: 20px 0;
 }
 
 .products-page .products-filter h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: capitalize;
     color: #fff;
-}
-
-.products-page .products-filter p {
-    display: flex;
-}
-
-.products-page .products-filter a {
-    margin-left: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
+    margin-right: 20px;
     text-transform: capitalize;
+    font-size: 20px;
 }
 
-.products-page .products-filter a:hover {
-    color: #ffd700;
-    transform: translateY(-2px);
+.products-page .products-filter select {
+    padding: 10px;
+    border: none;
+    background-color: #f2f2f2;
+    color: #555;
+    font-size: 13px;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.products-page .products-filter a.high-low {
-    float: right;
-    margin-left: 48%;
+.products-page .products-filter select:hover {
+    background-color: #ddd;
+}
+
+.products-page .products-filter select:focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px rgba(0, 123, 255, 0.5);
+}
+
+.products-page .products-filter option {
+    color: #555;
+    font-size: 16px;
 }
 
 .products-page .products-list {
@@ -1275,10 +1392,10 @@ textarea {
 /**-----------------------------------------------------INDIVIDUAL PRODUCTS CSS-----------------------------------------------------------------**/
 
 .individual-products {
-    min-height: 100px;
     color: white;
-    padding-block: 5%;
-    margin-top: 20px;
+    padding-block: 19%;
+    border-bottom: 0.1px solid #242424;
+    padding-bottom: 10rem;
 }
 
 .individual-products .product-name {

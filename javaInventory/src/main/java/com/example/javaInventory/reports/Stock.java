@@ -8,7 +8,10 @@ import com.lowagie.text.pdf.PdfWriter;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Stock {
@@ -64,14 +67,25 @@ public class Stock {
 
         Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
         font.setSize(20);
-        Paragraph title = new Paragraph("Stock of all products", font);
+        Paragraph title = new Paragraph("Celessentials stocks report", font);
+        title.setAlignment(Element.ALIGN_CENTER);
         title.setSpacingAfter(20);
+
         document.add(title);
 
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+
+        Paragraph generatedAt = new Paragraph("Report was generated at: " + dateFormat.format(date));
+        document.add(generatedAt);
+
+        Font smallFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
+        smallFont.setSize(14);
+
         if (outOfStock.isEmpty()){
-            document.add(new Paragraph("There are no out of stock products."));
+            document.add(new Paragraph("There are no out of stock products currently.", smallFont));
         } else {
-            document.add(new Paragraph("Out of stock products"));
+            document.add(new Paragraph("Below are all the out of stock products:", smallFont));
             PdfPTable outOfStockTable = new PdfPTable(3);
             outOfStockTable.setWidthPercentage(100);
             outOfStockTable.setSpacingBefore(20);
@@ -83,9 +97,9 @@ public class Stock {
         }
 
         if (lowStock.isEmpty()) {
-            document.add(new Paragraph("There are no low stock products."));
+            document.add(new Paragraph("There are no low stock products currently.", smallFont));
         } else {
-            document.add(new Paragraph("Low stock products"));
+            document.add(new Paragraph("Below are all the low stock products:", smallFont));
             PdfPTable lowStockTable = new PdfPTable(3);
             lowStockTable.setWidthPercentage(100);
             lowStockTable.setSpacingBefore(20);
@@ -96,15 +110,20 @@ public class Stock {
             document.add(lowStockTable);
         }
 
-        document.add(new Paragraph("In stock products"));
-        PdfPTable inStockTable = new PdfPTable(3);
-        inStockTable.setWidthPercentage(100);
-        inStockTable.setSpacingBefore(20);
+        if (inStock.isEmpty()) {
+            document.add(new Paragraph("There are currently no in stock products.", smallFont));
+        } else {
+            document.add(new Paragraph("Below are all the in stock products:", smallFont));
+            PdfPTable inStockTable = new PdfPTable(3);
+            inStockTable.setWidthPercentage(100);
+            inStockTable.setSpacingBefore(20);
 
-        headings(inStockTable);
-        data(inStockTable, inStock);
+            headings(inStockTable);
+            data(inStockTable, inStock);
 
-        document.add(inStockTable);
+            document.add(inStockTable);
+        }
+
 
         document.close();
     }

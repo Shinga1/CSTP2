@@ -1,10 +1,12 @@
 @extends('layouts.main')
 
 @section('content')
-
     <div class="register-page">
+        <div class="register">
+            <h1>Register</h1>
+            <p>Please enter your email and password to register.</p>
+        </div>
         <div class="content">
-            <h1 class="title">{{ __('Register') }}</h1>
 
             <form action="{{ url('/register') }}" method="POST">
                 @csrf

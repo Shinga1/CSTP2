@@ -10,14 +10,14 @@
                 <h2>Filter by:</h2>
                 <select name="" onchange="location = this.value">
                     <option value="">Please select a filter</option>
-                    <option value="/products">All categories</option>
+                    <option value="/products">All Categories</option>
                     <option value="/products/category/Beauty">Beauty</option>
                     <option value="/products/category/Electronics">Electronics</option>
                     <option value="/products/category/Food">Food</option>
                     <option value="/products/category/Perfumes">Perfumes</option>
                     <option value="/products/category/Books">Books</option>
-                    <option value="/products/sorted/high-to-low">Price High-to-low</option>
-                    <option value="/products/sorted/low-to-high">Price Low-to-High</option>
+                    <option value="/products/sorted/high-to-low">Price (High-to-Low)</option>
+                    <option value="/products/sorted/low-to-high">Price (Low-to-High)</option>
                 </select>
             </div>
 
