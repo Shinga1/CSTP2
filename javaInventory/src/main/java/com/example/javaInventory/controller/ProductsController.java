@@ -147,7 +147,7 @@ public class ProductsController {
         response.setContentType("application/pdf");
 
         String header = "Content-Disposition";
-        String name = "attachment; filename = stock-levels.pdf";
+        String name = "attachment; filename = Celessentials-stock-report.pdf";
 
         response.setHeader(header, name);
 
