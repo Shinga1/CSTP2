@@ -848,6 +848,26 @@ nav ul a:hover::after {
     border-color: #fff;
 }
 
+.login-page .register {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.login-page .register p {
+    color: #fff;
+    font-size: 16px;
+}
+
+.login-page .register a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+.login-page .register a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
 /** -------------------------------------------------------- END OF LOGIN PAGE CSS ----------------------------------------------------------------------**/
 
 /** -------------------------------------------------------- REGISTER PAGE CSS ----------------------------------------------------------------------**/
@@ -917,6 +937,25 @@ nav ul a:hover::after {
     border-color: #fff;
 }
 
+.register-page .login {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.register-page .login p {
+    color: #fff;
+    font-size: 16px;
+}
+
+.register-page .login a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+.register-page .login a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
 /** -------------------------------------------------------- END OF REGISTER PAGE CSS ----------------------------------------------------------------------**/
 
 /** -------------------------------------------------------- FOOTER PAGE CSS ----------------------------------------------------------------------**/

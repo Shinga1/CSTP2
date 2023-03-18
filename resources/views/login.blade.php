@@ -40,6 +40,10 @@
 
                 <button type="submit">Login</button>
             </form>
+
+            <div class="register">
+                <p>Don't have an account? <a href="{{ url('/register') }}">Create one</a>.</p>
+            </div>
         </div>
     </div>
     </section>

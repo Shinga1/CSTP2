@@ -49,6 +49,10 @@
 
                 <button type="submit">Register Now</button>
             </form>
+
+            <div class="login">
+                <p>Already have an account? <a href="{{ url('/register') }}">Sign in</a>.</p>
+            </div>
         </div>
     </div>
 @endsection

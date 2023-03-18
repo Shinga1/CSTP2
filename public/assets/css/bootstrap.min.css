@@ -235,7 +235,6 @@ sup {
     top: -0.5em;
 }
 a {
-    color: var(--bs-link-color);
     text-decoration: underline;
 }
 a:not([href]):not([class]),
