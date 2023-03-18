@@ -3,7 +3,6 @@ package com.example.javaInventory.controller;
 import com.example.javaInventory.entity.Products;
 import com.example.javaInventory.reports.Stock;
 import com.example.javaInventory.service.ProductsService;
-import com.lowagie.text.DocumentException;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
