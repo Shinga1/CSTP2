@@ -14,10 +14,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link" th:href="@{/products}">Products</a>
+                <a class="nav-link" th:href="@{/}">Products</a>
                 <a class="nav-link" th:href="@{/orders}">Orders</a>
                 <a class="nav-link" th:href="@{/reports}">Reports</a>
             </div>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" th:href="@{/logout}">Logout</a>
+            </div>
+
         </div>
     </div>
 </nav>
@@ -29,7 +33,7 @@
         <div class="row">
             <h1>Add details of new product</h1>
             <div class="card-body">
-                <form th:action="@{/products}" th:object="${product}" method="post" enctype="multipart/form-data">
+                <form th:action="@{/}" th:object="${product}" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Product name:</label>
                         <input type="text" name="productName" th:field="*{productName}" placeholder="Enter name of product" class="form-control" required>

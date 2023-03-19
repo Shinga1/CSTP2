@@ -29,7 +29,7 @@ public class ProductsController {
         this.productsService = productsService;
     }
 
-    @GetMapping("/products")
+    @GetMapping("/")
     public String allProducts(Model model, HttpSession session) {
         List<Products> productsList = productsService.getAllProducts();
         List<String> outOfStock = new ArrayList<>();
@@ -61,14 +61,14 @@ public class ProductsController {
         return "products";
     }
 
-    @GetMapping("/products/add")
+    @GetMapping("/add")
     public String addNewProduct(Model model) {
         Products products = new Products();
         model.addAttribute("product", products);
         return "add-product";
     }
 
-    @PostMapping("/products")
+    @PostMapping("/")
     public String addProduct(Products products, @RequestParam("image") MultipartFile file) throws IOException {
 
         String fileName = file.getOriginalFilename();
@@ -90,16 +90,16 @@ public class ProductsController {
         }
 
         productsService.saveProduct(products);
-        return "redirect:/products";
+        return "redirect:/";
     }
 
-    @GetMapping("/products/update/{id}")
+    @GetMapping("/update/{id}")
     public String updateProduct(@PathVariable Long id, Model model) {
         model.addAttribute("product", productsService.getProductID(id));
         return "update-product";
     }
 
-    @PostMapping("/products/{id}")
+    @PostMapping("/{id}")
     public String update(@PathVariable Long id, Products product, @RequestParam("image") MultipartFile productImage) throws IOException {
         productsService.saveProduct(product);
 
@@ -127,13 +127,13 @@ public class ProductsController {
         }
 
         productsService.updateProduct(product);
-        return "redirect:/products";
+        return "redirect:/";
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("/{id}")
     public String deleteProduct(@PathVariable Long id) {
         productsService.deleteProduct(id);
-        return "redirect:/products";
+        return "redirect:/";
     }
 
     @GetMapping("/reports")

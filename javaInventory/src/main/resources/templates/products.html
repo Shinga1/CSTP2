@@ -16,10 +16,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link" th:href="@{/products}">Products</a>
+                <a class="nav-link" th:href="@{/}">Products</a>
                 <a class="nav-link" th:href="@{/orders}">Orders</a>
                 <a class="nav-link" th:href="@{/reports}">Reports</a>
             </div>
+
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" th:href="@{/logout}">Logout</a>
+            </div>
+
         </div>
     </div>
 </nav>
@@ -45,7 +50,7 @@
             <h1>List of all products</h1>
 
             <div>
-                <a th:href="@{/products/add}">Add new product</a>
+                <a th:href="@{/add}">Add new product</a>
             </div>
 
             <div>
@@ -75,8 +80,8 @@
                                 <strong><span th:if = "${products.productStock} > 0 and ${products.productStock} <= 5 " class="text-warning">Low stock</span></strong>
                                 <strong><span th:if = "${products.productStock} > 5" class="text-success">In stock</span></strong>
                             </td>
-                            <td><a th:href = "@{/products/update/{id}(id=${products.id})}" class="btn btn-primary">Update</a></td>
-                            <td><a th:href = "@{/products/{id}(id=${products.id})}" class="btn btn-danger">Delete</a></td>
+                            <td><a th:href = "@{/update/{id}(id=${products.id})}" class="btn btn-primary">Update</a></td>
+                            <td><a th:href = "@{/{id}(id=${products.id})}" class="btn btn-danger">Delete</a></td>
                         </tr>
                     </tbody>
                 </table>
