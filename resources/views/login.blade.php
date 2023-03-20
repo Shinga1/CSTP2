@@ -12,12 +12,15 @@
     @endif
 
     <div class="login-page">
+        <div class="login">
+            <h1>Login</h1>
+            <p>Please enter your email and password to log in.</p>
+        </div>
         <div class="content">
-            <h1 class="title">{{ __('Login') }}</h1>
 
             <form action="{{ url('/login') }}" method="POST">
                 @csrf
-                <label for="email">Your Email:</label>
+                <label for="email"> Email:</label>
                 <input type="email" name="email">
 
                 @error('email')
@@ -37,6 +40,11 @@
 
                 <button type="submit">Login</button>
             </form>
+
+            <div class="register">
+                <p>Don't have an account? <a href="{{ url('/register') }}">Create one</a>.</p>
+            </div>
         </div>
     </div>
+    </section>
 @endsection

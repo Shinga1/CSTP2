@@ -3,23 +3,20 @@
 @section('content')
 
     <div class="aboutUs">
+        <h1> About Us </h1>
 
-        <div class="aboutUs-bg">
-            <br></br>
-
-            <style>
-                .image {
-                    background: transparent;
-                    border: 4px solid #FFD700;
-                    padding: 15px;
-                    height: 500px;
-                    width: 500px;
-                    border-radius: 25%;
-                    margin-left: 100px;
-                    margin-right: 100px;
-                }
-            </style>
-        </div>
+        <style>
+            .image {
+                background: transparent;
+                border: 4px solid #FFD700;
+                padding: 15px;
+                height: 500px;
+                width: 500px;
+                border-radius: 25%;
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+        </style>
 
         <section class="aboutUs-sbs">
             <p class="aboutUs-flexBox">
@@ -58,11 +55,11 @@
         <section class="aboutUs-about" id="about">
             <div class="about-text">
                 <h2>Have any questions or inquiries?</h2>
-                <p>Click the button below to fill our feedback form and our team would be happy to answer your questions and
+                <p>Click the button below to fill our feedback form and our team would be happy to answer your questions
+                    and
                     get back to you.</p>
                 <a href="{{ url('/contact_us') }}" class="button">Contact us</a>
                 <br></br>
             </div>
         </section>
-    </div>
     </div>

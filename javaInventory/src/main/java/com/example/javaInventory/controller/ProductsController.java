@@ -1,7 +1,10 @@
 package com.example.javaInventory.controller;
 
 import com.example.javaInventory.entity.Products;
+import com.example.javaInventory.reports.Stock;
 import com.example.javaInventory.service.ProductsService;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +16,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ProductsController {
@@ -24,20 +29,46 @@ public class ProductsController {
         this.productsService = productsService;
     }
 
-    @GetMapping("/products")
-    public String allProducts(Model model) {
-        model.addAttribute("products", productsService.getAllProducts());
+    @GetMapping("/")
+    public String allProducts(Model model, HttpSession session) {
+        List<Products> productsList = productsService.getAllProducts();
+        List<String> outOfStock = new ArrayList<>();
+        List<String> lowStock = new ArrayList<>();
+        List<String> messages = new ArrayList<>();
+
+        for (Products product : productsList) {
+            if (product.getProductStock() == 0) {
+                outOfStock.add(product.getProductName());
+            } else if (product.getProductStock() <= 5) {
+                lowStock.add(product.getProductName());
+            }
+        }
+
+        if (!outOfStock.isEmpty()) {
+            messages.add(String.join(", ", outOfStock) + " are out of stock");
+        }
+
+        if (!lowStock.isEmpty()) {
+            messages.add(String.join(", ", lowStock) + " have low stock");
+        }
+
+        if (messages.isEmpty()) {
+            messages.add("All products are in stock");
+        }
+
+        session.setAttribute("messages", messages);
+        model.addAttribute("products", productsList);
         return "products";
     }
 
-    @GetMapping("/products/add")
+    @GetMapping("/add")
     public String addNewProduct(Model model) {
         Products products = new Products();
         model.addAttribute("product", products);
         return "add-product";
     }
 
-    @PostMapping("/products")
+    @PostMapping("/")
     public String addProduct(Products products, @RequestParam("image") MultipartFile file) throws IOException {
 
         String fileName = file.getOriginalFilename();
@@ -59,16 +90,16 @@ public class ProductsController {
         }
 
         productsService.saveProduct(products);
-        return "redirect:/products";
+        return "redirect:/";
     }
 
-    @GetMapping("/products/update/{id}")
+    @GetMapping("/update/{id}")
     public String updateProduct(@PathVariable Long id, Model model) {
         model.addAttribute("product", productsService.getProductID(id));
         return "update-product";
     }
 
-    @PostMapping("/products/{id}")
+    @PostMapping("/{id}")
     public String update(@PathVariable Long id, Products product, @RequestParam("image") MultipartFile productImage) throws IOException {
         productsService.saveProduct(product);
 
@@ -96,13 +127,34 @@ public class ProductsController {
         }
 
         productsService.updateProduct(product);
-        return "redirect:/products";
+        return "redirect:/";
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("/{id}")
     public String deleteProduct(@PathVariable Long id) {
         productsService.deleteProduct(id);
-        return "redirect:/products";
+        return "redirect:/";
+    }
+
+    @GetMapping("/reports")
+    public String reports() {
+        return "/reports";
+    }
+
+    @GetMapping("/stock/report")
+    public void exportToPDF(HttpServletResponse response) throws IOException {
+        response.setContentType("application/pdf");
+
+        String header = "Content-Disposition";
+        String name = "attachment; filename = Celessentials-stock-report.pdf";
+
+        response.setHeader(header, name);
+
+        List<Products> allProducts = productsService.getAllProducts();
+
+        Stock exporter = new Stock(allProducts);
+        exporter.export(response);
+
     }
 }
 

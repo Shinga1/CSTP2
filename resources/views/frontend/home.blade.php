@@ -6,7 +6,7 @@
         <div class="bg-effect">
             <div class="stars"></div>
 
-            <img class="main-photo" src="{{ asset('assets/images/') }}">
+            <img class="main-photo" src="{{ asset('assets/images/logo.png') }}" style="margin-right: 275px; margin-top: 40px">
             <div class="home-bg">
                 <h1>aspire to inspire.</h1>
                 <a href="/products">View our products</a>
@@ -58,24 +58,24 @@
             <section class="home-products" id="products">
                 <div class="product-row">
                     <div class="product">
-                        <img src="{{ asset('assets/images/productImages/yeezy.jpg') }}">
-                        <button>Apparel</button>
+                        <img src="{{ asset('assets/images/productImages/fenty.jpg') }}">
+                        <a href="/products/category/Beauty">Makeup & Beauty</a>
                     </div>
                     <div class="product">
                         <img src="{{ asset('assets/images/productImages/beats.jpg') }}">
-                        <button>Electronics</button>
-                    </div>
-                    <div class="product">
-                        <img src="{{ asset('assets/images/productImages/fenty.jpg') }}">
-                        <button>Makeup & Beauty</button>
+                        <a href="/products/category/Electronics">Electronics</a>
                     </div>
                     <div class="product">
                         <img src="{{ asset('assets/images/productImages/snoop-loopz.jpg') }}">
-                        <button>Consumables</button>
+                        <a href="/products/category/Food">Consumables</a>
+                    </div>
+                    <div class="product">
+                        <img src="{{ asset('assets/images/productImages/travis.jpg') }}">
+                        <a href="/products/category/Perfumes">Perfumes</a>
                     </div>
                     <div class="product">
                         <img src="{{ asset('assets/images/productImages/book.png') }}">
-                        <button>Celebrity Books</button>
+                        <a href="/products/category/Books">Celebrity Books</a>
                     </div>
                 </div>
             </section>

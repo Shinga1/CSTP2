@@ -1,29 +1,26 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="home">
-        <div class="bg-effect">
-            <div class="stars"></div>
-        </div>
-    </div>
-
     <section class="products-page" id="products">
         <div class="products-container">
             <h1>All of our Products</h1>
 
+
             <div class="products-filter">
                 <h2>Filter by:</h2>
-                <p>
-                    <a href="/products">All categories</a>
-                    <a href="/products/category/Beauty">Beauty</a>
-                    <a href="/products/category/Electronics">Electronics</a>
-                    <a href="/products/category/Food">Food</a>
-                    <a href="/products/category/Perfumes">Perfumes</a>
-                    <a href="/products/category/Books">Books</a>
-                    <a href="/products/sorted/high-to-low" class="high-low">High - low</a>
-                    <a href="/products/sorted/low-to-high" class="low-high">Low - high</a>
-                </p>
+                <select name="" onchange="location = this.value">
+                    <option value="">Please select a filter</option>
+                    <option value="/products">All Categories</option>
+                    <option value="/products/category/Beauty">Beauty</option>
+                    <option value="/products/category/Electronics">Electronics</option>
+                    <option value="/products/category/Food">Food</option>
+                    <option value="/products/category/Perfumes">Perfumes</option>
+                    <option value="/products/category/Books">Books</option>
+                    <option value="/products/sorted/high-to-low">Price (High-to-Low)</option>
+                    <option value="/products/sorted/low-to-high">Price (Low-to-High)</option>
+                </select>
             </div>
+
 
             <div class="products-list">
                 @foreach ($products as $product)
