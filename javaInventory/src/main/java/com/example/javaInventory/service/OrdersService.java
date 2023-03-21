@@ -2,7 +2,7 @@ package com.example.javaInventory.service;
 
 import com.example.javaInventory.entity.Orders;
 
-import java.time.LocalDate;;
+import java.time.LocalDate;
 import java.util.List;
 
 public interface OrdersService {
