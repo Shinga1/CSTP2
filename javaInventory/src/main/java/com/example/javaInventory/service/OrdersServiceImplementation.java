@@ -36,4 +36,10 @@ public class OrdersServiceImplementation implements OrdersService {
     public List<Orders> getOrdersByDate(LocalDate date) {
         return ordersRepository.findByOrderDate();
     }
+
+    @Override
+    public List<Orders> getOrdersBetween(LocalDate startDay, LocalDate endDate) {
+        return ordersRepository.findByOrdersBetween();
+    }
+
 }

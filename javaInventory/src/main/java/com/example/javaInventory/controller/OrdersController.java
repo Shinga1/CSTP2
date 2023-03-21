@@ -3,6 +3,7 @@ package com.example.javaInventory.controller;
 import com.example.javaInventory.entity.Orders;
 import com.example.javaInventory.reports.DailySales;
 import com.example.javaInventory.reports.Order;
+import com.example.javaInventory.reports.WeeklySales;
 import com.example.javaInventory.service.OrdersService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
@@ -75,6 +76,25 @@ public class OrdersController {
 
         DailySales exporter = new DailySales(dailySales);
         exporter.exportDaily(response, today);
+    }
+
+    @GetMapping("/weekly/report")
+    public void exportWeeklyPDF(HttpServletResponse response) throws IOException {
+        response.setContentType("application/pdf");
+
+        String head = "Content-Disposition";
+        String name = "attachment; filename = Celessentials-weekly-sales-report.pdf";
+
+        LocalDate end = LocalDate.now();
+        LocalDate start = end.minusWeeks(1);
+
+
+        response.setHeader(head, name);
+
+        List<Orders> weeklySales = ordersService.getOrdersBetween(start, end.plusDays(1));
+
+        WeeklySales exporter = new WeeklySales(weeklySales, ordersService);
+        exporter.exportWeekly(response);
     }
 
 }
