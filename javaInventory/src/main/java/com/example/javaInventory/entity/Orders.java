@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "orders")
@@ -27,19 +28,19 @@ public class Orders {
     private String status;
 
     @Column(name = "created_at")
-    private Timestamp createdAt;
+    private LocalDate orderDate;
 
     @Column(name = "updated_at")
     @UpdateTimestamp
     private Timestamp updatedAt;
 
-    public Orders(Long id, Integer userID, String name, Float subtotal, String status, Timestamp createdAt, Timestamp updatedAt) {
+    public Orders(Long id, Integer userID, String name, Float subtotal, String status, LocalDate createdAt, Timestamp updatedAt) {
         this.id = id;
         this.userID = userID;
         this.name = name;
         this.subtotal = subtotal;
         this.status = status;
-        this.createdAt = createdAt;
+        this.orderDate = createdAt;
         this.updatedAt = updatedAt;
     }
 
@@ -88,12 +89,12 @@ public class Orders {
         this.status = status;
     }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
+    public LocalDate getCreatedAt() {
+        return orderDate;
     }
 
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
+    public void setCreatedAt(LocalDate createdAt) {
+        this.orderDate = createdAt;
     }
 
     public Timestamp getUpdatedAt() {

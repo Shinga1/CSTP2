@@ -1,6 +1,7 @@
 package com.example.javaInventory.controller;
 
 import com.example.javaInventory.entity.Orders;
+import com.example.javaInventory.reports.DailySales;
 import com.example.javaInventory.reports.Order;
 import com.example.javaInventory.service.OrdersService;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -58,4 +60,21 @@ public class OrdersController {
         Order exporter = new Order(allOrders);
         exporter.export(response);
     }
+
+    @GetMapping("/daily/report")
+    public void exportDailyPDF(HttpServletResponse response) throws IOException {
+        response.setContentType("application/pdf");
+
+        String head = "Content-Disposition";
+        String name = "attachment; filename = Celessentials-daily-sales-report.pdf";
+
+        response.setHeader(head, name);
+
+        LocalDate today = LocalDate.now();
+        List<Orders> dailySales = ordersService.getOrdersByDate(today);
+
+        DailySales exporter = new DailySales(dailySales);
+        exporter.exportDaily(response, today);
+    }
+
 }

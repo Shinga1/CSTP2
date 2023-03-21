@@ -4,6 +4,7 @@ import com.example.javaInventory.entity.Orders;
 import com.example.javaInventory.repository.OrdersRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -29,5 +30,10 @@ public class OrdersServiceImplementation implements OrdersService {
     @Override
     public Orders updateStatus(Orders orders) {
         return ordersRepository.save(orders);
+    }
+
+    @Override
+    public List<Orders> getOrdersByDate(LocalDate date) {
+        return ordersRepository.findByOrderDate();
     }
 }
