@@ -30,11 +30,23 @@ public class ProductsController {
     }
 
     @GetMapping("/")
-    public String allProducts(Model model, HttpSession session) {
-        List<Products> productsList = productsService.getAllProducts();
+    public String allProducts(Model model, HttpSession session, @RequestParam(required = false) String filter) {
+        List<Products> productsList;
         List<String> outOfStock = new ArrayList<>();
         List<String> lowStock = new ArrayList<>();
         List<String> messages = new ArrayList<>();
+
+        if (filter != null && !filter.isEmpty()) {
+            productsList = productsService.filterByStatus(filter);
+            session.setAttribute("filter", filter);
+        } else if (filter != null && filter.isEmpty()) {
+            productsList = productsService.getAllProducts();
+            session.removeAttribute("filter");
+        } else {
+            productsList = productsService.getAllProducts();
+        }
+
+
 
         for (Products product : productsList) {
             if (product.getProductStock() == 0) {
@@ -58,7 +70,22 @@ public class ProductsController {
 
         session.setAttribute("messages", messages);
         model.addAttribute("products", productsList);
+        model.addAttribute("filter", filter);
         return "products";
+    }
+
+    @GetMapping("/filter")
+    public String filterProductsByStatus(@RequestParam String filter, Model model) {
+        List<Products> filteredProducts = productsService.filterByStatus(filter);
+        model.addAttribute("products", filteredProducts);
+        model.addAttribute("filter", filter);
+        return "products";
+    }
+
+    @GetMapping("/clear-filter")
+    public String clearFilter(HttpSession session) {
+        session.removeAttribute("filter");
+        return "redirect:/";
     }
 
     @GetMapping("/add")

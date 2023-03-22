@@ -54,6 +54,22 @@
             </div>
 
             <div>
+                <form th:action = "@{/filter}" method="get">
+                    <label for="filter">Filter by stock levels:</label>
+                    <select id="filter" name="filter">
+                        <option value="In Stock">In Stock</option>
+                        <option value="Low Stock">Low Stock</option>
+                        <option value="Out of Stock">Out of Stock</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Filter</button>
+                    <a th:href = "@{/clear-filter}" class="btn btn-secondary">Clear Filter</a>
+                </form>
+            </div>
+
+            <br><br>
+
+
+            <div>
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
@@ -69,19 +85,19 @@
                     </thead>
 
                     <tbody>
-                        <tr th:each = "products: ${products}">
-                            <td th:text = "${products.productImage}"></td>
-                            <td th:text = "${products.productName}"></td>
-                            <td th:text = "${products.productDescription}"></td>
-                            <td th:text = "${products.productPrice}"></td>
-                            <td th:text = "${products.productCategory}"></td>
+                        <tr th:each = "product: ${products}">
+                            <td th:text = "${product.productImage}"></td>
+                            <td th:text = "${product.productName}"></td>
+                            <td th:text = "${product.productDescription}"></td>
+                            <td th:text = "${product.productPrice}"></td>
+                            <td th:text = "${product.productCategory}"></td>
                             <td>
-                                <strong><span th:if = "${products.productStock} == 0" class="text-danger">Out of stock</span></strong>
-                                <strong><span th:if = "${products.productStock} > 0 and ${products.productStock} <= 5 " class="text-warning">Low stock</span></strong>
-                                <strong><span th:if = "${products.productStock} > 5" class="text-success">In stock</span></strong>
+                                <strong><span th:if = "${product.productStock} == 0" class="text-danger">Out of stock</span></strong>
+                                <strong><span th:if = "${product.productStock} > 0 and ${product.productStock} <= 5 " class="text-warning">Low stock</span></strong>
+                                <strong><span th:if = "${product.productStock} > 5" class="text-success">In stock</span></strong>
                             </td>
-                            <td><a th:href = "@{/update/{id}(id=${products.id})}" class="btn btn-primary">Update</a></td>
-                            <td><a th:href = "@{/{id}(id=${products.id})}" class="btn btn-danger">Delete</a></td>
+                            <td><a th:href = "@{/update/{id}(id=${product.id})}" class="btn btn-primary">Update</a></td>
+                            <td><a th:href = "@{/{id}(id=${product.id})}" class="btn btn-danger">Delete</a></td>
                         </tr>
                     </tbody>
                 </table>

@@ -14,4 +14,6 @@ public interface ProductsService {
     Products getProductID(Long id);
 
     void deleteProduct(Long id);
+
+    List<Products> filterByStatus(String status);
 }
