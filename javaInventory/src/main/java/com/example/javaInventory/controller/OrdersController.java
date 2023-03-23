@@ -6,6 +6,7 @@ import com.example.javaInventory.reports.Order;
 import com.example.javaInventory.reports.WeeklySales;
 import com.example.javaInventory.service.OrdersService;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -27,10 +28,38 @@ public class OrdersController {
     }
 
     @GetMapping("/orders")
-    public String allOrders(Model model){
-        model.addAttribute("orders", ordersService.getAllOrders());
+    public String allOrders(Model model, HttpSession session, @RequestParam(value = "status", required = false) String status){
+        List<Orders> orders;
+        if (status != null && !status.isEmpty()) {
+            orders = ordersService.filter(status);
+            session.setAttribute("status", status);
+        } else if (status != null && status.isEmpty()) {
+            orders = ordersService.getAllOrders();
+            session.removeAttribute("status");
+        } else {
+            orders = ordersService.getAllOrders();
+        }
+
+        model.addAttribute("orders", orders);
+        model.addAttribute("status", status);
+
         return "orders";
     }
+
+    @GetMapping("/filter/status")
+    public String filterOrder(@RequestParam String status, Model model) {
+        List<Orders> filteredOrders = ordersService.filter(status);
+        model.addAttribute("orders", filteredOrders);
+        model.addAttribute("status", status);
+        return "orders";
+    }
+
+    @GetMapping("/clear")
+    public String clear(HttpSession session) {
+        session.removeAttribute("status");
+        return "redirect:/orders";
+    }
+
 
     @GetMapping("/orders/update/status/{id}")
     public String updateStatus(@PathVariable Long id, Model model) {

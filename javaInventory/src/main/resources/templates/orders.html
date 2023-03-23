@@ -33,6 +33,23 @@
 <div class="container">
     <div class="row">
         <h1>All orders</h1>
+
+        <div>
+            <form th:action = "@{/filter/status}" method="get">
+                <label for="status">Filter by order status:</label>
+                <select id="status" name="status">
+                    <option value="Processing">Processing</option>
+                    <option value="Shipping">Shipping</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Filter</button>
+                <a th:href = "@{/clear}" class="btn btn-secondary">Clear Filter</a>
+            </form>
+        </div>
+
+        <br><br>
+
         <div>
             <table class="table">
                 <thead class="table-dark">

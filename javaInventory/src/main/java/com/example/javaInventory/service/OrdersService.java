@@ -15,4 +15,6 @@ public interface OrdersService {
     List<Orders> getOrdersByDate(LocalDate date);
 
     List<Orders> getOrdersBetween(LocalDate atStartOfDay, LocalDate plusDays);
+
+    List<Orders> filter(String status);
 }
