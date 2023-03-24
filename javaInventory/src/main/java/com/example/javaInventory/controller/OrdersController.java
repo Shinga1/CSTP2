@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -68,11 +69,12 @@ public class OrdersController {
     }
 
     @PostMapping("/orders/{id}")
-    public String update(@PathVariable Long id, Orders orders) {
+    public String update(@PathVariable Long id, Orders orders, RedirectAttributes redirectAttributes) {
         Orders currentStatus = ordersService.getOrderID(id);
         currentStatus.setStatus(orders.getStatus());
         orders.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         ordersService.updateStatus(currentStatus);
+        redirectAttributes.addFlashAttribute("update", "Order status has been updated successfully");
         return "redirect:/orders";
     }
 
