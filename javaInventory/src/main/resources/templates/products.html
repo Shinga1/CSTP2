@@ -43,7 +43,17 @@
     </div>
 </div>
 
+<div th:if="${updated}" class="alert alert-success">
+    <p th:text="${updated}"></p>
+</div>
 
+<div th:if="${deleted}" class="alert alert-success">
+    <p th:text="${deleted}"></p>
+</div>
+
+<div th:if="${add}" class="alert alert-success">
+    <p th:text="${add}"></p>
+</div>
 
     <div class="container">
         <div class="row">

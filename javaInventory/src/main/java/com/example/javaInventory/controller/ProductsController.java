@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -96,7 +97,7 @@ public class ProductsController {
     }
 
     @PostMapping("/")
-    public String addProduct(Products products, @RequestParam("image") MultipartFile file) throws IOException {
+    public String addProduct(Products products, @RequestParam("image") MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
 
         String fileName = file.getOriginalFilename();
         products.setProductImage(fileName);
@@ -117,6 +118,7 @@ public class ProductsController {
         }
 
         productsService.saveProduct(products);
+        redirectAttributes.addFlashAttribute("add", "Product successfully added!");
         return "redirect:/";
     }
 
@@ -127,7 +129,7 @@ public class ProductsController {
     }
 
     @PostMapping("/{id}")
-    public String update(@PathVariable Long id, Products product, @RequestParam("image") MultipartFile productImage) throws IOException {
+    public String update(@PathVariable Long id, Products product, @RequestParam("image") MultipartFile productImage, RedirectAttributes redirectAttributes) throws IOException {
         productsService.saveProduct(product);
 
         if (productImage.getOriginalFilename() != "") {
@@ -154,12 +156,14 @@ public class ProductsController {
         }
 
         productsService.updateProduct(product);
+        redirectAttributes.addFlashAttribute("updated", "Product updated successfully");
         return "redirect:/";
     }
 
     @GetMapping("/{id}")
-    public String deleteProduct(@PathVariable Long id) {
+    public String deleteProduct(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         productsService.deleteProduct(id);
+        redirectAttributes.addFlashAttribute("deleted", "Product has been deleted successfully");
         return "redirect:/";
     }
 
