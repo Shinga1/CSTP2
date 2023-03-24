@@ -5,6 +5,7 @@ import com.lowagie.text.*;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
+
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
@@ -19,7 +20,6 @@ public class DailySales {
     private List<Orders> dailySales;
 
     public DailySales(List<Orders> dailySales) {
-        super();
         this.dailySales = dailySales;
     }
 
@@ -52,9 +52,9 @@ public class DailySales {
         }
     }
 
-
     public void exportDaily(HttpServletResponse response, LocalDate today) throws IOException {
         Document document = new Document(PageSize.A4);
+
 
         PdfWriter.getInstance(document, response.getOutputStream());
 
@@ -74,35 +74,30 @@ public class DailySales {
         Paragraph generatedAt = new Paragraph("Report was generated at: " + dateFormat.format(date));
         document.add(generatedAt);
 
-
-        Font smallFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
-        smallFont.setSize(14);
-
         double moneyMade = 0;
 
-        if (dailySales.isEmpty()) {
-            document.add(new Paragraph("There are no orders to display for today.", smallFont));
+        if (dailySales != null && !dailySales.isEmpty()) {
+            PdfPTable table = new PdfPTable(5);
+            table.setWidthPercentage(100);
+            table.setSpacingBefore(10);
+
+            headings(table);
+            data(table, dailySales);
+
+            document.add(table);
         } else {
-            document.add(new Paragraph("Below are all the orders that were placed today:", smallFont));
-            PdfPTable dailyTable = new PdfPTable(5);
-            dailyTable.setWidthPercentage(100);
-            dailyTable.setSpacingBefore(20);
-
-            headings(dailyTable);
-            data(dailyTable, dailySales);
-
-            document.add(dailyTable);
-
-            for (Orders order : dailySales) {
-                moneyMade += order.getSubtotal();
-            }
-
-            Paragraph made = new Paragraph("Total amount made today: £" + String.format("%.2f", moneyMade));
-            made.setSpacingBefore(20);
-            document.add(made);
-
-
-            document.close();
+            Paragraph noData = new Paragraph("No sales for today");
+            document.add(noData);
         }
+
+        for (Orders order : dailySales) {
+            moneyMade += order.getSubtotal();
+        }
+
+        Paragraph made = new Paragraph("Total amount made today: £" + String.format("%.2f", moneyMade));
+        made.setSpacingBefore(20);
+        document.add(made);
+
+        document.close();
     }
 }
