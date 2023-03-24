@@ -71,12 +71,16 @@ public class DailySales {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
 
-        Paragraph generatedAt = new Paragraph("Report was generated at: " + dateFormat.format(date));
+        Paragraph generatedAt = new Paragraph("Report was generated at: " + dateFormat.format(date), FontFactory.getFont(FontFactory.HELVETICA, 14));
         document.add(generatedAt);
+
+        Font smallFont = FontFactory.getFont(FontFactory.HELVETICA);
+        smallFont.setSize(14);
 
         double moneyMade = 0;
 
         if (dailySales != null && !dailySales.isEmpty()) {
+            document.add(new Paragraph("Below are all the orders that were placed today:", smallFont));
             PdfPTable table = new PdfPTable(5);
             table.setWidthPercentage(100);
             table.setSpacingBefore(10);
@@ -86,7 +90,7 @@ public class DailySales {
 
             document.add(table);
         } else {
-            Paragraph noData = new Paragraph("No sales for today");
+            Paragraph noData = new Paragraph("No sales for today", smallFont);
             document.add(noData);
         }
 
@@ -94,7 +98,7 @@ public class DailySales {
             moneyMade += order.getSubtotal();
         }
 
-        Paragraph made = new Paragraph("Total amount made today: £" + String.format("%.2f", moneyMade));
+        Paragraph made = new Paragraph("Total amount made today: £" + String.format("%.2f", moneyMade), FontFactory.getFont(FontFactory.HELVETICA, 14));
         made.setSpacingBefore(20);
         document.add(made);
 
