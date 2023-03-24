@@ -73,11 +73,19 @@
                     <p>Current image of product: <img th:src="@{${product.imageLocation}}"/></p>
                 </div>
 
+
                 <div class="box-footer">
                     <button type="submit">Update</button>
                 </div>
             </form>
         </div>
+
+        <br><br>
+
+        <div>
+            <a th:href = "@{/}" class="btn btn-secondary">Return back to all products</a>
+        </div>
+
     </div>
 </div>
 </body>
