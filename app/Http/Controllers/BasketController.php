@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Session;
 
 class BasketController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('UserAuth');
+    }
+
     public function show() {
         $basket = Basket::where('user_id', auth()->user()->id)->get();
         return view('/basket', ['basket' => $basket]);
