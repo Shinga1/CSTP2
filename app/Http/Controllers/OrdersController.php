@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class OrdersController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('UserAuth');
+    }
+
     public function show() {
         $orders = Checkout::where('user_id', auth()->user()->id)->get();
         return view('/previousOrders', ['orders' => $orders]);
