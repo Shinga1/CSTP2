@@ -59,6 +59,7 @@ Route::middleware(['UserAuth'])->group(function(){
 
     Route::get('/previous', [OrdersController::class, 'show']);
     Route::get('/previous/{id}', [OrdersController::class, 'orderDetails']);
+
+    Route::post('/checkout', [CheckoutController::class, 'showOrder']);
 });
 
-Route::post('/checkout', [CheckoutController::class, 'showOrder']);
