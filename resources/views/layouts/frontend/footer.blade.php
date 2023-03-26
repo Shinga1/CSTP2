@@ -20,7 +20,7 @@
                 <ul>
                     <li><a href="{{ asset('/about_us') }}">About Us</a></li>
                     <li><a href="{{ asset('/privacy_policy') }}">Privacy Policy</a></li>
-                    <li><a href="{{ asset('/') }}">Terms and Conditions</a></li>
+                    <li><a href="{{ asset('/terms_and_conditions') }}">Terms and Conditions</a></li>
                 </ul>
             </div>
 

@@ -36,6 +36,11 @@ class FrontendController extends Controller
         return view('frontend.privacy_policy');
     }
 
+    public function termsandconditions()
+    {
+        return view('frontend.terms_and_conditions');
+    }
+
     public function message(Request $request) {
         $validateInput = $request->validate([
             'name' => 'required|string',

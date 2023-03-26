@@ -31,6 +31,7 @@ Route::controller(App\Http\Controllers\FrontendController::class)->group(functio
     Route::get('/', 'home');
     Route::get('/about_us', 'aboutus');
     Route::get('/privacy_policy', 'privacypolicy');
+    Route::get('/terms_and_conditions', 'termsandconditions');
 
 });
 
