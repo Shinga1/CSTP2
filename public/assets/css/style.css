@@ -1574,6 +1574,10 @@ textarea {
 /**----------------------------------------------------------END OF PRODUCTS PAGE CSS----------------------------------------------------------------------**/
 
 /**----------------------------------------------------------BASKET PAGE CSS----------------------------------------------------------------------**/
+.basket-nothing {
+    margin-top: 10rem;
+    color: white;
+}
 
 .basket-page {
     display: flex;
@@ -1589,7 +1593,7 @@ textarea {
 
 .basket-page > div {
     background-color: #fff;
-    padding: 20px;
+    padding: 50px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -1695,6 +1699,27 @@ textarea {
 }
 
 /**----------------------------------------------------------END OF BASKET PAGE CSS----------------------------------------------------------------------**/
+.danger-colour {
+    color: #ff0000;
+}
+
+.alert.alert-danger {
+    position: relative;
+    top: 150px;
+    left: 10%;
+    max-width: 80%;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
 
 .alert.alert-success {
     position: relative;
@@ -1710,7 +1735,6 @@ textarea {
 
 .alert.alert-success a {
     background-color: transparent;
-    color: #155724;
     text-decoration: underline;
 }
 

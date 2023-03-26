@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
-@section('content')
 
+@section('content')
     @if (auth()->user()->id && $basket->count() == 0)
         <h1>{{ auth()->user()->name }} you currently have nothing in your basket</h1>
         <a href="/products">Go to products page to add to basket</a>
@@ -52,5 +52,4 @@
             </div>
         </div>
     @endif
-
 @endsection

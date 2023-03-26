@@ -8,7 +8,9 @@
     @endif
 
     @if (session('errorMessage'))
-        {{ session('errorMessage') }}
+        <div class="alert alert-danger">
+            {{ session('errorMessage') }}
+        </div>
     @endif
 
     <div class="login-page">
