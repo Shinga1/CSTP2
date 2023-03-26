@@ -992,7 +992,7 @@ footer ul {
 }
 
 .footer:after {
-    content: "© 2023, CELESSENTIALS";
+    content: "© 2023 CELESSENTIALS. All Rights Reserved";
     position: absolute;
     bottom: 1%;
     left: 1%;
@@ -1500,7 +1500,7 @@ textarea {
 
 .individual-products .single-product p {
     background-color: #fff;
-    color: #555;
+    color: #808080;
 }
 
 .individual-products .single-product .btn {
