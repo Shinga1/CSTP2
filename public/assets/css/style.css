@@ -1718,10 +1718,14 @@ textarea {
 }
 
 .ordersTitle {
-    font-size: 2rem;
-    text-align: center;
     margin-top: 25rem;
     padding-top: 2rem;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
     margin-bottom: 3rem;
     color: #fff;
 }
@@ -1763,6 +1767,64 @@ textarea {
 }
 
 /**---------------------------------------------------------- END OF PREVIOUS ORDERS PAGE CSS ----------------------------------------------------------------------**/
+
+/**---------------------------------------------------------- ORDER DETAILS PAGE CSS ----------------------------------------------------------------------**/
+
+.orderDetails h1 {
+    margin-top: 20rem;
+    padding-top: 2rem;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #fff;
+}
+
+.orderDetails {
+    margin: 0 auto;
+    border-bottom: 0.1px solid #242424;
+}
+
+.orderDetails table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-bottom: 25rem;
+}
+
+.orderDetails th {
+    font-weight: bold;
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.orderDetails td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    color: #fff;
+}
+
+.orderDetails tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.orderDetails img {
+    display: block;
+    margin: 0 auto;
+}
+
+.orderDetails tfoot td {
+    font-weight: bold;
+    text-align: right;
+    padding: 10px;
+    border: none;
+}
+
+/**---------------------------------------------------------- END OF ORDER DETAILS PAGE CSS ----------------------------------------------------------------------**/
 
 .danger-colour {
     color: #ff0000;
