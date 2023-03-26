@@ -30,6 +30,7 @@ Route::post('/layouts/main', [FrontendController::class, 'subscribe']);
 Route::controller(App\Http\Controllers\FrontendController::class)->group(function() {
     Route::get('/', 'home');
     Route::get('/about_us', 'aboutus');
+    Route::get('/privacy_policy', 'privacypolicy');
 
 });
 

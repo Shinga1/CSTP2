@@ -31,6 +31,11 @@ class FrontendController extends Controller
         return view('frontend.contact_us');
     }
 
+    public function privacypolicy()
+    {
+        return view('frontend.privacy_policy');
+    }
+
     public function message(Request $request) {
         $validateInput = $request->validate([
             'name' => 'required|string',
