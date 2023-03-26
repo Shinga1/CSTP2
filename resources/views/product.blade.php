@@ -8,12 +8,6 @@
         </div>
     @endif
 
-    @if (session()->has('stockLow'))
-        <div class="alert alert-danger">
-            {{ session()->get('stockLow') }}
-        </div>
-    @endif
-
     <div class="individual-products">
         <div class="small-container single-product">
             <div class="row">

@@ -1440,6 +1440,15 @@ textarea {
 .individual-products {
     padding-block: 7%;
     border-bottom: 0.1px solid #242424;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 5.2rem;
+    padding-block: 5rem;
 }
 
 .individual-products .small-container {
@@ -1459,11 +1468,10 @@ textarea {
 
 .individual-products .single-product {
     max-width: 75%;
-    margin-top: 80px;
     background-color: #fff;
     border-radius: 30px;
-    padding: 40px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .individual-products .single-product .col-2 {
@@ -1568,10 +1576,160 @@ textarea {
 /**----------------------------------------------------------BASKET PAGE CSS----------------------------------------------------------------------**/
 
 .basket-page {
-    min-height: 100px;
-    color: white;
-    padding-block: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 5.2rem;
+    padding-block: 5rem;
+}
+
+.basket-page > div {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.basket-page div > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.basket-page div > div > img {
+    margin-right: 20px;
+    object-fit: cover;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.basket-page div > div > a {
+    background-color: white;
+    margin-left: auto;
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.basket-page div > div:last-child {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.basket-page button {
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #ffd700, #f9a602);
+    border: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.basket-page button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.basket-page button:active {
+    transform: translateY(0px);
+    box-shadow: none;
+}
+
+.basket-page h1 {
+    background-color: white;
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.basket-page .image-text .remove {
+    padding-left: 100px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.basket-page .image-text .remove a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.basket-page .image-text .remove:hover::before {
+    content: "x";
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    transform: translateY(-50%);
+    color: #fff;
+    background-color: #ff0000;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+}
+
+.basket-page .image-text,
+.basket-page .image-text img,
+.basket-page .image-text img a,
+.basket-page .basekt-price form {
+    background-color: white;
 }
 
 /**----------------------------------------------------------END OF BASKET PAGE CSS----------------------------------------------------------------------**/
+
+.alert.alert-success {
+    position: relative;
+    top: 150px;
+    padding: 20px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.alert.alert-success a {
+    background-color: transparent;
+    color: #155724;
+    text-decoration: underline;
+}
+
+.alert.alert-success a:hover {
+    color: #155724;
+    text-decoration: none;
+}
+
+.alert.alert-success:before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 24px;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 5px;
+    border: 1px solid #c3e6cb;
+    border-radius: 50%;
+}
