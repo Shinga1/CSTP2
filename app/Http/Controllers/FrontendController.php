@@ -46,6 +46,11 @@ class FrontendController extends Controller
         return view('frontend.faqs');
     }
 
+    public function refundandreturnpolicy()
+    {
+        return view('frontend.refund_and_return_policy');
+    }
+
     public function message(Request $request) {
         $validateInput = $request->validate([
             'name' => 'required|string',

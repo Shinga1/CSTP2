@@ -33,6 +33,7 @@ Route::controller(App\Http\Controllers\FrontendController::class)->group(functio
     Route::get('/privacy_policy', 'privacypolicy');
     Route::get('/terms_and_conditions', 'termsandconditions');
     Route::get('/faqs', 'faqs');
+    Route::get('/refund_and_return_policy', 'refundandreturnpolicy');
 
 });
 

@@ -29,7 +29,7 @@
                 <ul>
                     <li><a href="{{ asset('/contact_us') }}">Contact Us</a></li>
                     <li><a href="{{ asset('/faqs') }}">FAQs</a></li>
-                    <li><a href="{{ asset('/') }}">Return and Refund Policy</a></li>
+                    <li><a href="{{ asset('/refund_and_return_policy') }}">Refund and Return Policy</a></li>
                 </ul>
             </div>
         </div>
