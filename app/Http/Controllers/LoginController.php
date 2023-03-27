@@ -22,7 +22,7 @@ class LoginController extends Controller
         ]);
 
         if(!auth()->attempt($request->only('email', 'password'))) {
-            return back()->with('errorMessage', 'Invalid login details');
+            return back()->with('errorMessage', 'Incorrect details provided');
         }
 
         return redirect('/');

@@ -17,7 +17,7 @@ public class OrderDetails {
     private Integer orderID;
 
     @Column(name = "product_id")
-    private String productID;
+    private Long productID;
 
     @Column(name = "quantity")
     private Integer quantity;
@@ -31,7 +31,11 @@ public class OrderDetails {
     @Column(name = "updated_at")
     private Timestamp updatedAt;
 
-    public OrderDetails(Long id, Integer orderID, String productID, Integer quantity, Float subtotal, Timestamp createdAt, Timestamp updatedAt) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", insertable = false, updatable = false)
+    private Products product;
+
+    public OrderDetails(Long id, Integer orderID, Long productID, Integer quantity, Float subtotal, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.orderID = orderID;
         this.productID = productID;
@@ -61,11 +65,11 @@ public class OrderDetails {
         this.orderID = orderID;
     }
 
-    public String getProductID() {
+    public Long getProductID() {
         return productID;
     }
 
-    public void setProductID(String productID) {
+    public void setProductID(Long productID) {
         this.productID = productID;
     }
 
@@ -100,4 +104,13 @@ public class OrderDetails {
     public void setUpdatedAt(Timestamp updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    public Products getProduct() {
+        return product;
+    }
+
+    public void setProduct(Products product) {
+        this.product = product;
+    }
 }
+

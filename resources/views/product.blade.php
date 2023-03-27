@@ -4,13 +4,9 @@
 
     @if (session()->has('message'))
         <div class="alert alert-success">
-            {{ session()->get('message') }} <a href="{{ url('/basket') }}">Do you want to checkout now?</a>
-        </div>
-    @endif
-
-    @if (session()->has('stockLow'))
-        <div class="alert alert-danger">
-            {{ session()->get('stockLow') }}
+            {{ session()->get('message') }} <a href="{{ url('/basket') }}">View Basket</a>
+            <a> or </a>
+            <a href="{{ url('/basket') }}">Continue Shopping?</a>
         </div>
     @endif
 

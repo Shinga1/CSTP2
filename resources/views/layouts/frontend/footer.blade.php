@@ -10,7 +10,7 @@
                 </p>
                 <form class="form" action="/layouts/main" method="post">
                     @csrf
-                        <input class="input" type="email" name="email" required="required">
+                    <input class="input" type="email" name="email" required="required">
                     <button type="submit">Subsribe Now</button>
                 </form>
             </div>
@@ -19,8 +19,8 @@
                 <h2>more information</h2>
                 <ul>
                     <li><a href="{{ asset('/about_us') }}">About Us</a></li>
-                    <li><a href="{{ asset('/') }}">Privacy Policy</a></li>
-                    <li><a href="{{ asset('/') }}">Terms and Conditions</a></li>
+                    <li><a href="{{ asset('/privacy_policy') }}">Privacy Policy</a></li>
+                    <li><a href="{{ asset('/terms_and_conditions') }}">Terms and Conditions</a></li>
                 </ul>
             </div>
 
@@ -28,8 +28,8 @@
                 <h2>need support?</h2>
                 <ul>
                     <li><a href="{{ asset('/contact_us') }}">Contact Us</a></li>
-                    <li><a href="{{ asset('/') }}">FAQs</a></li>
-                    <li><a href="{{ asset('/') }}">Return and Refund Policy</a></li>
+                    <li><a href="{{ asset('/faqs') }}">FAQs</a></li>
+                    <li><a href="{{ asset('/refund_and_return_policy') }}">Refund and Return Policy</a></li>
                 </ul>
             </div>
         </div>

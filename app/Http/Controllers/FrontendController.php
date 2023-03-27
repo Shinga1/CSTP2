@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ContactFormEmail;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Newsletter;
+use Illuminate\Support\Facades\Mail;
 
 class FrontendController extends Controller
 {
@@ -13,10 +15,12 @@ class FrontendController extends Controller
     {
         return view('frontend.welcome');
     }
+    
     public function home()
     {
         return view('frontend.home');
     }
+    
     public function aboutus()
     {
         return view('frontend.about_us');
@@ -27,23 +31,44 @@ class FrontendController extends Controller
         return view('frontend.contact_us');
     }
 
-    public function message(Request $request) {
+    public function privacypolicy()
+    {
+        return view('frontend.privacy_policy');
+    }
 
+    public function termsandconditions()
+    {
+        return view('frontend.terms_and_conditions');
+    }
+
+    public function faqs()
+    {
+        return view('frontend.faqs');
+    }
+
+    public function refundandreturnpolicy()
+    {
+        return view('frontend.refund_and_return_policy');
+    }
+
+    public function message(Request $request) {
         $validateInput = $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
             'subject' => 'required|string',
             'message' => 'required|string',
         ]);
-
-        $message = new Contact();
-        $message->name = $validateInput['name'];
-        $message->email = $validateInput['email'];
-        $message->subject = $validateInput['subject'];
-        $message->message = $validateInput['message'];
-
-        $message->save();
-
+    
+        $contact = new Contact();
+        $contact->name = $validateInput['name'];
+        $contact->email = $validateInput['email'];
+        $contact->subject = $validateInput['subject'];
+        $contact->message = $validateInput['message'];
+        
+        $contact->save();
+    
+        Mail::to('celessentialsteam@gmail.com')->send(new ContactFormEmail($contact));
+    
         return back()->with('msgSent', 'Your message has been sent successfully');
     }
 

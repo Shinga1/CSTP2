@@ -30,6 +30,10 @@ Route::post('/layouts/main', [FrontendController::class, 'subscribe']);
 Route::controller(App\Http\Controllers\FrontendController::class)->group(function() {
     Route::get('/', 'home');
     Route::get('/about_us', 'aboutus');
+    Route::get('/privacy_policy', 'privacypolicy');
+    Route::get('/terms_and_conditions', 'termsandconditions');
+    Route::get('/faqs', 'faqs');
+    Route::get('/refund_and_return_policy', 'refundandreturnpolicy');
 
 });
 
@@ -50,12 +54,16 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);
 
-Route::post('/basket', [BasketController::class, 'basketStore']);
-Route::get('/basket', [BasketController::class, 'show']);
+Route::middleware(['UserAuth'])->group(function(){
 
-Route::get('/remove/{id}', [BasketController::class, 'basketRemove']);
+    Route::post('/basket', [BasketController::class, 'basketStore']);
+    Route::get('/basket', [BasketController::class, 'show']);
 
-Route::post('/checkout', [CheckoutController::class, 'showOrder']);
+    Route::get('/remove/{id}', [BasketController::class, 'basketRemove']);  
 
-Route::get('/previous', [OrdersController::class, 'show']);
-Route::get('/previous/{id}', [OrdersController::class, 'orderDetails']);
+    Route::get('/previous', [OrdersController::class, 'show']);
+    Route::get('/previous/{id}', [OrdersController::class, 'orderDetails']);
+
+    Route::post('/checkout', [CheckoutController::class, 'showOrder']);
+});
+

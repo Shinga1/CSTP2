@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
+
 @section('content')
-
-    <br><br><br><br>
-
     @if (auth()->user()->id && $basket->count() == 0)
-        <h1>{{ auth()->user()->name }} you currently have nothing in your basket</h1>
-        <a href="/products">Go to products page to add to basket</a>
+        <h1 class="basket-nothing">{{ auth()->user()->name }} you currently have nothing in your basket 😟</h1>
+        <div class="nothing-btn-container">
+            <a href="/products" class="nothing-btn">Start shopping</a>
+        </div>
     @else
         @if (session()->has('delete'))
             <div class="alert alert-success">
@@ -16,22 +16,23 @@
 
         <div class="basket-page">
             <div>
-                <h1>Basket page</h1>
+                <h1>Basket Page</h1>
 
                 @php
                     $subtotal = 0;
                 @endphp
 
                 @foreach ($basket as $product)
-                    <div>
-                        <img src="/assets/images/productImages/{{ $product->product_image }}" alt="image" height="250"
-                            width="250">
+                    <div class="image-text">
+                        <img src="/assets/images/productImages/{{ $product->product_image }}" alt="image" height="150"
+                            width="150">
+                        <br>
                         {{ $product->product_name }}
+                        <br>
                         £{{ $product->product_price }}
+                        <br>
                         Quantity: {{ $product->quantity }}
-
-                        <a href="/remove/{{ $product->id }}">Remove</a>
-
+                        <a class="remove" href="/remove/{{ $product->id }}">Remove</a>
                     </div>
 
                     @php
@@ -42,7 +43,7 @@
                 @endforeach
                 <br><br>
 
-                <div>
+                <div class="basekt-price">
                     Subtotal = £{{ $subtotal }}
 
                     <form action="/checkout" method="post">
@@ -51,6 +52,6 @@
                     </form>
                 </div>
             </div>
+        </div>
     @endif
-
 @endsection
