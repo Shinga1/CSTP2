@@ -37,7 +37,7 @@
             <table class="table">
                 <thead class="table-dark">
                 <tr>
-                    <th>Product ID</th>
+                    <th>Product name</th>
                     <th>Quantity</th>
                     <th>Subtotal</th>
                 </tr>
@@ -45,7 +45,7 @@
 
                 <tbody>
                 <tr th:each="orderDetail : ${orderDetails}">
-                    <td th:text="${orderDetail.productID}"></td>
+                    <td th:text="${orderDetail.product.productName}"></td>
                     <td th:text="${orderDetail.quantity}"></td>
                     <td th:text="${orderDetail.subtotal}"></td>
                 </tr>
