@@ -1922,6 +1922,82 @@ textarea {
 }
 /** -------------------------------------------------------- END OF TERMS OF USE PAGE CSS ----------------------------------------------------------------------**/
 
+/** -------------------------------------------------------- FAQ PAGE CSS ----------------------------------------------------------------------**/
+.faqs {
+    margin-top: 7rem;
+    position: relative;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 0.1px solid #242424;
+}
+
+.faqs .title {
+    max-width: 800px;
+    text-align: center;
+}
+
+.faqs .title h2 {
+    text-transform: capitalize;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 3rem;
+}
+
+.faqs .title p {
+    font-size: 20px;
+    color: #fff;
+}
+
+.faqs .questions {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px 40px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 50, 0.2);
+}
+
+.faqs .answers {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 0;
+}
+
+.faqs .information {
+    background-color: #fff;
+    position: relative;
+    font-size: 14px;
+    text-align: justify;
+    line-height: 30px;
+    height: 0;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.faqs .information p {
+    color: #000;
+    background-color: #fff;
+}
+
+.faqs .information a {
+    background-color: #fff;
+}
+
+/** -------------------------------------------------------- END OF FAQ PAGE CSS ----------------------------------------------------------------------**/
+
 .danger-colour {
     color: #ff0000;
 }

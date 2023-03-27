@@ -41,6 +41,11 @@ class FrontendController extends Controller
         return view('frontend.terms_and_conditions');
     }
 
+    public function faqs()
+    {
+        return view('frontend.faqs');
+    }
+
     public function message(Request $request) {
         $validateInput = $request->validate([
             'name' => 'required|string',

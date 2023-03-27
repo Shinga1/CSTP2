@@ -28,7 +28,7 @@
                 <h2>need support?</h2>
                 <ul>
                     <li><a href="{{ asset('/contact_us') }}">Contact Us</a></li>
-                    <li><a href="{{ asset('/') }}">FAQs</a></li>
+                    <li><a href="{{ asset('/faqs') }}">FAQs</a></li>
                     <li><a href="{{ asset('/') }}">Return and Refund Policy</a></li>
                 </ul>
             </div>
