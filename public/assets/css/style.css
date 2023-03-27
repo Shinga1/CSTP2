@@ -1443,7 +1443,6 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
     padding: 20px;
     font-size: 16px;
     line-height: 1.5;
@@ -1576,7 +1575,7 @@ textarea {
 /**---------------------------------------------------------- BASKET PAGE CSS ----------------------------------------------------------------------**/
 .basket-nothing {
     margin-top: 10rem;
-    color: white;
+    color: #fff;
 }
 
 .basket-page {
