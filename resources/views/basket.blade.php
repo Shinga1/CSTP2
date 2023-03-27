@@ -3,8 +3,10 @@
 
 @section('content')
     @if (auth()->user()->id && $basket->count() == 0)
-        <h1>{{ auth()->user()->name }} you currently have nothing in your basket</h1>
-        <a href="/products">Go to products page to add to basket</a>
+        <h1 class="basket-nothing">{{ auth()->user()->name }} you currently have nothing in your basket</h1>
+        <div class="nothing-btn-container">
+            <a href="/products" class="nothing-btn">Start shopping</a>
+        </div>
     @else
         @if (session()->has('delete'))
             <div class="alert alert-success">

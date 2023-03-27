@@ -1697,6 +1697,48 @@ textarea {
     background-color: white;
 }
 
+.basket-nothing {
+    padding-top: 17rem;
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    margin: 50px auto;
+    max-width: 600px;
+}
+
+.basket-nothing:before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+}
+
+.nothing-btn-container {
+    text-align: center;
+    padding-bottom: 25rem;
+    border-bottom: 0.1px solid #242424;
+}
+
+.nothing-btn {
+    display: inline-block;
+    color: white;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.nothing-btn:hover {
+    background-color: #fff;
+    color: #333;
+}
+
 /**---------------------------------------------------------- END OF BASKET PAGE CSS ----------------------------------------------------------------------**/
 
 /**---------------------------------------------------------- PREVIOUS ORDERS PAGE CSS ----------------------------------------------------------------------**/
