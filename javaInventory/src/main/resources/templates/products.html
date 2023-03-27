@@ -96,7 +96,7 @@
 
                     <tbody>
                         <tr th:each = "product: ${products}">
-                            <td th:text = "${product.productImage}"></td>
+                            <td><img th:src="@{${product.imageLocation}}" width="225" height="250"></td>
                             <td th:text = "${product.productName}"></td>
                             <td th:text = "${product.productDescription}"></td>
                             <td th:text = "${product.productPrice}"></td>
