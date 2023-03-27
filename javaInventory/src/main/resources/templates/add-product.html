@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Add new Product</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="jStyle.css">
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Celessentials inventory management</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -31,7 +32,9 @@
 <body>
     <div class="container">
         <div class="row">
-            <h1>Add details of new product</h1>
+            <div class="text-center">
+                <h1>Add details of new product</h1>
+            </div>
             <div class="card-body">
                 <form th:action="@{/}" th:object="${product}" method="post" enctype="multipart/form-data">
                     <div class="form-group">
@@ -72,7 +75,11 @@
                     </div>
 
                     <div class="box-footer">
-                        <button type="submit">Add product</button>
+                        <div class="d-flex flex-column" style="min-height: 10vh;">
+                            <div class="mt-auto">
+                                 <button type="submit" class="btn btn-success btn-lg btn-block">Add product</button>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
