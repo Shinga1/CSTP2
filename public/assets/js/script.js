@@ -76,3 +76,20 @@ for (let i = 0; i < toggles.length; i++) {
         }
     });
 }
+
+// Menu Toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const links = document.querySelector(".links");
+const right = document.querySelector(".right");
+
+menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    links.classList.toggle("active");
+    right.classList.toggle("active");
+});
+
+$(document).ready(function () {
+    $("nav .menu-toggle").click(function () {
+        $("nav ul").toggleClass("toggled");
+    });
+});

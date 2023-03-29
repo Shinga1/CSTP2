@@ -28,7 +28,7 @@ nav .links {
 }
 
 nav .right {
-    padding-right: 20px;
+    padding-right: 1em;
 }
 
 nav .right .logout {
@@ -92,6 +92,75 @@ nav ul a:hover::after {
     scale: 1 1;
     transform-origin: left;
 }
+
+nav .menu-toggle {
+    display: none;
+}
+
+nav .menu-toggle i {
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    nav .menu-toggle {
+        display: block;
+        color: #fff;
+    }
+
+    nav .menu-toggle i {
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    nav .links {
+        display: none;
+    }
+
+    nav .links {
+        margin-left: 0;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 71px;
+        left: 0;
+        width: 100%;
+        background: #000;
+        z-index: 1;
+    }
+
+    nav ul li a {
+        display: block;
+        color: #fff;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    nav .menu-toggle {
+        background: transparent;
+        display: block;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    nav:hover ul {
+        display: block;
+    }
+}
+
 /** -------------------------------------------------------- END OF NAVBAR CSS ----------------------------------------------------------------------**/
 
 /** -------------------------------------------------------- HOME PAGE CSS ----------------------------------------------------------------------**/
@@ -1111,12 +1180,40 @@ footer ul {
     padding-left: 10px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 800px) {
+    .footer-row {
+        flex-direction: column;
+    }
+
     .footer-col {
         width: 100%;
+        margin-right: 0;
         margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .footer-col:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer-col h2 {
+        margin-left: 0;
+    }
+
+    .footer-col h2:before {
+        display: none;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-col .input {
+        max-width: 250px;
+        margin: auto;
     }
 }
+
 /** -------------------------------------------------------- END OF FOOTER PAGE CSS ----------------------------------------------------------------------**/
 
 /** -------------------------------------------------------- CONTACT US PAGE CSS ----------------------------------------------------------------------**/
@@ -1759,7 +1856,7 @@ textarea {
 }
 
 .ordersTitle {
-    margin-top: 25rem;
+    margin-top: 10rem;
     padding-top: 2rem;
     font-size: 30px;
     font-weight: bold;
@@ -1868,21 +1965,30 @@ textarea {
 /**---------------------------------------------------------- END OF ORDER DETAILS PAGE CSS ----------------------------------------------------------------------**/
 
 /**---------------------------------------------------------- CHECKOUT PAGE CSS ----------------------------------------------------------------------**/
+.checkout {
+    padding-block: 12rem;
+    border-bottom: 0.1px solid #242424;
+}
 
 .checkout-page {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
+    border-radius: 20px;
     font-size: 16px;
     margin-top: 5.2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .checkout-page h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     text-align: center;
-    color: #555;
+    padding-block: 1.5rem;
+    color: #000;
+    background-color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .checkout-page div {
@@ -1895,6 +2001,12 @@ textarea {
     background-color: #f7f7f7;
     border: 1px solid #ddd;
     border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.checkout-page div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .checkout-page img {
@@ -1904,14 +2016,17 @@ textarea {
 }
 
 .checkout-page p {
+    text-align: center;
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #555;
+    background-color: #fff;
 }
 
 .checkout-page a {
-    color: #0066cc;
-    text-decoration: none;
+    color: #ffd700;
+    background-color: #fff;
+    font-weight: bold;
 }
 
 .checkout-page a:hover {
