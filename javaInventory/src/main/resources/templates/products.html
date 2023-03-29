@@ -330,19 +330,6 @@
     </div>
 </nav>
 
-<div th:if = "${session.messages != null}">
-    <div th:each = "message : ${session.messages}">
-        <div th:if = "${message.contains('out of stock')}" class="alert alert-danger">
-            [[${message}]]
-        </div>
-        <div th:if = "${message.contains('low stock')}" class="alert alert-warning">
-            [[${message}]]
-        </div>
-        <div th:unless = "${message.contains('out of stock') or message.contains('low stock')}" class="alert alert-success">
-            [[${message}]]
-        </div>
-    </div>
-</div>
 
 <div th:if="${updated}" class="alert alert-success">
     <p th:text="${updated}"></p>
@@ -366,6 +353,25 @@
                     <button type="submit" class="btn btn-primary">Add new product</button>
                 </form>
             </div>
+
+            <br><br>
+
+            <div class="row">
+                <div th:if = "${session.messages != null}">
+                    <div th:each = "message : ${session.messages}">
+                        <div th:if = "${message.contains('out of stock')}" class="alert alert-danger">
+                            [[${message}]]
+                        </div>
+                        <div th:if = "${message.contains('low stock')}" class="alert alert-warning">
+                            [[${message}]]
+                        </div>
+                        <div th:unless = "${message.contains('out of stock') or message.contains('low stock')}" class="alert alert-success">
+                            [[${message}]]
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div>
                 <form th:action = "@{/filter}" method="get">

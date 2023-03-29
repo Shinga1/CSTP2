@@ -102,17 +102,29 @@ public class ProductsController {
         String fileName = file.getOriginalFilename();
         products.setProductImage(fileName);
 
-        String uploadDir = "./product-images/";
-
-        Path uploadPath = Paths.get(uploadDir);
-
-        if (!Files.exists(uploadPath)) {
-            Files.createDirectories(uploadPath);
+        // save the image to java
+        String localDir1 = "./product-images/";
+        Path localPath1 = Paths.get(localDir1);
+        if (!Files.exists(localPath1)) {
+            Files.createDirectories(localPath1);
+        }
+        try (InputStream inputStream = file.getInputStream()) {
+            Path filePath1 = localPath1.resolve(fileName);
+            Files.copy(inputStream, filePath1, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException IOe) {
+            throw new IOException("Error when saving image " + fileName);
         }
 
+
+        // save the image to laravel
+        String localDir2 = "../public/assets/images/productImages/";
+        Path localPath2 = Paths.get(localDir2);
+        if (!Files.exists(localPath2)) {
+            Files.createDirectories(localPath2);
+        }
         try (InputStream inputStream = file.getInputStream()) {
-            Path filePath = uploadPath.resolve(fileName);
-            Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
+            Path filePath2 = localPath2.resolve(fileName);
+            Files.copy(inputStream, filePath2, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException IOe) {
             throw new IOException("Error when saving image " + fileName);
         }
@@ -138,16 +150,27 @@ public class ProductsController {
             String fileName = productImage.getOriginalFilename();
             product.setProductImage(fileName);
 
-            String uploadDir = "./product-images/";
-
-            Path uploadPath = Paths.get(uploadDir);
-
-            if (!Files.exists(uploadPath)) {
-                Files.createDirectories(uploadPath);
+            // update image in java
+            String javaUploadDir = "./product-images/";
+            Path javaUploadPath = Paths.get(javaUploadDir);
+            if (!Files.exists(javaUploadPath)) {
+                Files.createDirectories(javaUploadPath);
+            }
+            try (InputStream inputStream = productImage.getInputStream()) {
+                Path filePath = javaUploadPath.resolve(fileName);
+                Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException IOe) {
+                throw new IOException("Error when saving image " + fileName);
             }
 
+            // update image in laravel
+            String laravelUploadDir = "../public/assets/images/productImages/";
+            Path laravelUploadPath = Paths.get(laravelUploadDir);
+            if (!Files.exists(laravelUploadPath)) {
+                Files.createDirectories(laravelUploadPath);
+            }
             try (InputStream inputStream = productImage.getInputStream()) {
-                Path filePath = uploadPath.resolve(fileName);
+                Path filePath = laravelUploadPath.resolve(fileName);
                 Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
             } catch (IOException IOe) {
                 throw new IOException("Error when saving image " + fileName);
