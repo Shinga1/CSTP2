@@ -6,7 +6,7 @@
         <div class="alert alert-success">
             {{ session()->get('message') }} <a href="{{ url('/basket') }}">View Basket</a>
             <a> or </a>
-            <a href="{{ url('/basket') }}">Continue Shopping?</a>
+            <a href="{{ url('/products') }}">Continue Shopping?</a>
         </div>
     @endif
 
