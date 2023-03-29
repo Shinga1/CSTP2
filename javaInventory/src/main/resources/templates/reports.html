@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Products</title>
     <link rel="stylesheet" th:href="@{/styles.css}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <style>
@@ -41,7 +42,7 @@
         margin-right: 15px;
         }
 
-          
+
        *{
             margin: 0;
         }
@@ -81,7 +82,7 @@
         h1{
             font-size: 26px;
             margin-top: 5%;
-            text-align: center; 
+            text-align: center;
 
         }
 
@@ -89,32 +90,32 @@
             color: whitesmoke;
             font-size: 1.25rem;
         }
-        
+
         h4{
             font-family: 'Satoshi';
             font-weight: 700;
             font-size: 22px;
-            text-align: center; 
+            text-align: center;
             margin-bottom: 10px;
-          
+
         }
-        
-        
-        
-        
-        
+
+
+
+
+
         .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
         }
-        
+
         .row {
         margin-bottom: 20px;
         }
-        
-    
-        
+
+
+
         .btn {
         display: inline-block;
         padding: 10px 20px;
@@ -127,7 +128,7 @@
         border-radius: 5px;
         transition: background-color 0.2s ease-in-out;
         }
-        
+
         .btn:hover {
         background-color: #076d7a;
         }
@@ -135,18 +136,18 @@
         .get .btn-primary {
 align-items: center;
         }
-        
+
         .btn-primary {
         background-color: #00bcd4;
         border-color: #007bff00;
         text-align: center;
         }
-      
-        
+
+
         .text-centre{
             align-items: center;
         }
-        
+
         .report {
         display: flex;
         flex-direction: column;
@@ -155,6 +156,11 @@ align-items: center;
         text-align: center;
         margin-bottom: 8%;
         }
+
+     #myChart {
+         width: 10px;
+         height: 10px;
+     }
 
         </style>
 
@@ -177,24 +183,21 @@ align-items: center;
         <div class="d-flex flex-column" style="min-height: 10vh;">
             <div class="mt-auto">
                 <div class="text-center">
-                    <h1>Reports are available here for stocks and orders</h1>
+                    <h1>Reports are available here</h1>
                 </div>
             </div>
         </div>
 
 
-
-
-       
                 <div class="report">
-                    <h4>Report for stock levels of products:</h4> 
+                    <h4>Report for stock levels of products:</h4>
                     <form method="get" action="/stock/report" th:action="@{/stock/report}" th:object="${reportForm}">
                         <input type="hidden" name="reportType" value="stock">
                         <button type="submit" class="btn btn-primary">Generate stocks report</button>
                       </form>
                 </div>
-          
-    
+
+
                     <div class="report">
                         <h4>Reports for orders:</h4>
                         <form method="get" action="/order/report/" th:action="@{/order/report}" th:object="${orderReportForm}">
@@ -203,16 +206,16 @@ align-items: center;
                         </form>
                     </div>
 
-    
+
                 <div class="report">
-                    
+
                     <h4>Reports for today's sale:</h4>
                     <form method="get" action="/daily/report/" th:action="@{/daily/report}" th:object="${dailyReportForm}">
                         <input type="hidden" name="reportType" value="stock">
                         <button type="submit" class="btn btn-primary">Generate today's sales report</button>
                     </form>
                 </div>
-        
+
 
                 <div class="report">
                     <h4>Reports for the sales of the past week:</h4>
@@ -223,7 +226,63 @@ align-items: center;
                 </div>
     </div>
   </div>
-  
+
+    <div style="width: 80%; margin: 0 auto; height: 80%;">
+        <h1>Graph showing the total number of orders placed in the last 7 days</h1>
+
+        <canvas id="myChart"></canvas>
+        <script th:inline="javascript">
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var labels = /*[[${labels}]]*/ [];
+            var data = /*[[${data}]]*/ [];
+
+            labels.reverse();
+
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total Sales',
+                        data: data,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Date',
+                                font: {
+                                    size: 16,
+                                    weight: 'bold',
+                                }
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Total Orders Per Day',
+                                font: {
+                                    size: 16,
+                                    weight: 'bold'
+                                }
+                            },
+                            min: 0,
+                            ticks: {
+                                beginAtZero: true,
+                                stepSize: 1
+                            }
+                        }
+                    },
+                }
+            });
+        </script>
+    </div>
+
 
 
 </body>
