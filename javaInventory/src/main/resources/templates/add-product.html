@@ -3,23 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <title>Add new Product</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="jStyle.css">
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Celessentials inventory management</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<style>
+
+    nav {
+    background-color: #333;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 18px;
+    }
+
+    .navbar-brand,
+    .navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    }
+
+    .navbar-nav a:hover {
+    color: #00bcd4;
+    }
+
+    .navbar-brand:hover {
+    color: #fff;
+    }
+
+    .navbar-nav {
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar-nav a:not(:last-child) {
+    margin-right: 15px;
+    }
+
+    * {
+    margin: 0;
+    }
+
+    .navbar {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 1440px;
+    height: 80px;
+    background: #3b3a3a;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    }
+
+    .navbar-logout {
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+    margin-left: 100px;
+
+    }
+
+    .navbar-logout:hover {
+    background-color: #00bcd4;
+    }
+
+    .navbar-logout:hover a {
+    color: #fff;
+    }
+
+    .navbar-logout a {
+    color: #fff;
+    text-decoration: none;
+    }
+
+    /* ---------------------------form input--------------------- */
+        .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        line-height: 1.5;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+
+    .form-control:focus {
+        border-color: #66afe9;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    }
+
+    select.form-control {
+        height: auto;
+    }
+
+    .box-footer {
+        padding-top: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        font-weight: 400;
+        color: #fff;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: #007bff;
+        border: 1px solid #007bff;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.25rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+            border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .btn-secondary {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    .btn-success {
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    .btn:hover {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+
+    .btn:focus,
+    .btn.focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+/* -----------------------text---------------------- */
+h1{
+    margin: 15px;
+}
+
+h4{
+        color: whitesmoke;
+        font-size: 1.25rem;
+    }
+        
+</style>
+
+<nav >
+    <h4>Celessentials inventory management</h4>
             <div class="navbar-nav">
                 <a class="nav-link" th:href="@{/}">Products</a>
                 <a class="nav-link" th:href="@{/orders}">Orders</a>
                 <a class="nav-link" th:href="@{/reports}">Reports</a>
             </div>
-            <div class="navbar-nav ms-auto">
+
+            <div class="navbar-logout">
                 <a class="nav-link" th:href="@{/logout}">Logout</a>
             </div>
 
@@ -33,7 +198,11 @@
     <div class="container">
         <div class="row">
             <div class="text-center">
-                <h1>Add details of new product</h1>
+                <div class="d-flex flex-column" style="min-height: 10vh;">
+                    <div class="mt-auto">
+                        <h1>Add details of new product</h1>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <form th:action="@{/}" th:object="${product}" method="post" enctype="multipart/form-data">
@@ -75,9 +244,9 @@
                     </div>
 
                     <div class="box-footer">
-                        <div class="d-flex flex-column" style="min-height: 10vh;">
+                        <div class="d-flex flex-column" style="min-height: 5vh;">
                             <div class="mt-auto">
-                                 <button type="submit" class="btn btn-success btn-lg btn-block">Add product</button>
+                                 <button type="submit" class="btn btn-success">Add product</button>
                             </div>
                         </div>
                     </div>

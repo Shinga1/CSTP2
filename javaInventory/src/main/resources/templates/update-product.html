@@ -3,24 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <title>Update product</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Celessentials inventory management</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<style>
+
+/* ----------------------nav-bar----------------- */
+    nav {
+    background-color: #333;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 18px;
+    }
+
+    .navbar-brand,
+    .navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    }
+
+    .navbar-nav a:hover {
+    color: #00bcd4;
+    }
+
+    .navbar-brand:hover {
+    color: #fff;
+    }
+
+    .navbar-nav {
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar-nav a:not(:last-child) {
+    margin-right: 15px;
+    }
+
+    * {
+    margin: 0;
+    }
+
+    .navbar {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 1440px;
+    height: 80px;
+    background: #3b3a3a;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    }
+
+    .navbar-logout {
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+    }
+
+    .navbar-logout:hover {
+    background-color: #00bcd4;
+    }
+
+    .navbar-logout:hover a {
+    color: #fff;
+    }
+
+    .navbar-logout a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 100px;
+
+    }
+
+
+/* -----------------------form------------------ */
+    .container {
+        margin: auto;
+        max-width: 800px;
+        padding: 20px;
+        
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    input[type="file"] {
+        margin-top: 10px;
+    }
+
+    .box-footer {
+        margin-top: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+    }
+
+    .btn:hover {
+        background-color: #0069d9;
+    }
+
+    .btn:active {
+        background-color: #0051a8;
+    }
+
+    .card-body {
+        padding: 20px;
+        border: 1px solid #e2dfdf;
+        border-radius: 4px;
+        background-color:whitesmoke ;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    p img {
+        margin-top: 10px;
+        max-width: 225px;
+        max-height: 250px;
+        object-fit: contain;
+    }
+
+    .lable{
+        margin-bottom: 10px;
+
+    }
+
+    h4{
+        color: whitesmoke;
+        font-size: 1.25rem;
+    }
+        
+
+</style>
+
+<nav >
+    <h4>Celessentials inventory management</h4>
             <div class="navbar-nav">
                 <a class="nav-link" th:href="@{/}">Products</a>
                 <a class="nav-link" th:href="@{/orders}">Orders</a>
                 <a class="nav-link" th:href="@{/reports}">Reports</a>
             </div>
 
-            <div class="navbar-nav ms-auto">
+            <div class="navbar-logout">
                 <a class="nav-link" th:href="@{/logout}">Logout</a>
             </div>
 
@@ -31,7 +199,7 @@
 
 <div class="container">
     <div class="row">
-        <h1>Update product details</h1>
+        <h2>Update product details</h2>
         <div class="card-body">
             <form th:action="@{/{id}(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
                 <div class="form-group">
@@ -40,7 +208,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Update product Description:</label>
+                    <h3>Update product Description:</h3>
                     <input type="text" name="productDescription" th:field="*{productDescription}" placeholder="Enter description of product" class="form-control" required>
                 </div>
 
@@ -83,7 +251,7 @@
         <br><br>
 
         <div>
-            <a th:href = "@{/}" class="btn btn-secondary">Return back to all products</a>
+            <a th:href = "@{/}" class="btn">Return back to all products</a>
         </div>
 
     </div>

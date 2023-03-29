@@ -3,25 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <title>All orders</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 </head>
 <body>
 
+    <style>
+         h4{
+        color: whitesmoke;
+        font-size: 1.25rem;
+    }
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Celessentials inventory management</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+/* --------------------------------nav-bar--------------------------------- */
+nav {
+  background-color: #333;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 18px;
+}
+
+.navbar-brand,
+.navbar-nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+  color: #00bcd4;
+}
+
+.navbar-brand:hover {
+  color: #fff;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav a:not(:last-child) {
+  margin-right: 15px;
+}
+
+* {
+  margin: 0;
+}
+
+.navbar {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  width: 1440px;
+  height: 80px;
+  background: #3b3a3a;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.navbar-logout {
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.navbar-logout:hover {
+  background-color: #00bcd4;
+}
+
+.navbar-logout:hover a {
+  color: #fff;
+}
+
+.navbar-logout a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 100px;
+
+}
+
+
+
+/* -----------------------------------------tables dark part----------------------- */
+
+        .table-dark th {
+        background-color: #212529;
+        color: #fff;
+        text-align: center;
+        }
+        tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+        }
+        td {
+        padding: 8px;
+        text-align: center;
+        }
+
+        .text-danger {
+        color: red;
+        }
+
+        .text-warning {
+        color: orange;
+        }
+
+        .text-success {
+        color: green;
+        font-size: 18px;
+        }
+
+        .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        }
+
+        .row {
+        margin-bottom: 20px;
+        }
+
+/* ------------------------------------------------buttons-------------------------- */
+
+        .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: #00bcd4;
+        border-color: #00bbd400;
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.2s ease-in-out;
+        }
+
+        .btn:hover {
+        background-color: #076d7a;
+        }
+
+        .btn-filter{
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #00bcd4;
+            color: #fff;
+            border-color: #00bbd400;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .btn-filter:hover{
+            background-color: #0896a8;
+
+        }
+
+/* ---------------------------status drop option------------------- */
+
+        #status {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 0.25rem;
+        background-color: #f2f2f2;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        }
+
+        #status:hover {
+        background-color: #ddd;
+        }
+
+        #status:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #007bff;
+        }
+/* ------------------------------------buttons-------------------------------- */
+        
+        .btn-primary {
+        background-color: #00bcd4;
+        margin-bottom: 10%;
+        }
+
+        .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+        }
+
+
+        .btn-update{
+            background-color: #00bcd4;
+        }
+
+        .btn-update:hover{
+            background-color: #076d7a ;
+        }
+
+        .btn-danger{
+            background-color: rgb(236, 108, 75);
+
+        }
+
+        .btn-danger:hover{
+            background-color: crimson;
+
+        }
+
+        .btn-secondary:hover{
+            background-color:#076d7a ;
+
+        }
+
+
+        .alert.alert-success {
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+        color: #3c763d;
+        padding: 15px;
+        margin-bottom: 20px;
+        }
+
+        .container {
+        margin-top: 30px;
+        }
+
+        h1 {
+        margin-bottom: 30px;
+        }
+
+        form {
+        display: inline-block;
+        margin-bottom: 20px;
+        }
+
+        label {
+        font-weight: bold;
+        margin-right: 10px;
+        }
+
+        select {
+        margin-right: 10px;
+        }
+
+        .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-right: 10px;
+        }
+
+        .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+        }
+
+        .btn-secondary {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+        color: #fff;
+        background-color: #5a6268;
+        border-color: #545b62;
+        }
+
+table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        th, td {
+        padding: 10px;
+        text-align: left;
+        }
+
+        thead {
+        background-color: #212529;
+        color: #fff;
+        }
+
+        tbody tr:nth-child(even) {
+        background-color: white;
+        }
+
+
+        form {
+        display: inline-block;
+        margin-right: 10px;
+        }
+
+        label {
+        margin-right: 10px;
+        font-size: 18px;
+        }
+
+        select {
+        margin-right: 10px;
+        }
+    </style>
+
+
+<nav >
+    <h4>Celessentials inventory management</h4>
             <div class="navbar-nav">
                 <a class="nav-link" th:href="@{/}">Products</a>
                 <a class="nav-link" th:href="@{/orders}">Orders</a>
                 <a class="nav-link" th:href="@{/reports}">Reports</a>
             </div>
 
-            <div class="navbar-nav ms-auto">
+            <div class="navbar-logout">
                 <a class="nav-link" th:href="@{/logout}">Logout</a>
             </div>
 
@@ -47,7 +352,7 @@
                     <option value="Delivered">Delivered</option>
                     <option value="Cancelled">Cancelled</option>
                 </select>
-                <button type="submit" class="btn btn-primary">Filter</button>
+                <button type="submit" class="btn btn-filter">Filter</button>
                 <a th:href = "@{/clear}" class="btn btn-secondary">Clear Filter</a>
             </form>
         </div>
