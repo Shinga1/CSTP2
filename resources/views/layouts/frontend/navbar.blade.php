@@ -5,14 +5,18 @@
         </a>
     </p>
 
-    <ul class="links">
+    <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="links active">
         <li><a href="{{ url('/') }}">home</a></li>
         <li><a href="{{ url('/about_us') }}">about us</a></li>
         <li><a href="{{ url('/products') }}">products</a></li>
         <li><a href="{{ url('/contact_us') }}">contact us</a></li>
     </ul>
 
-    <ul class="right">
+    <ul class="right active">
         @guest
             <li><a href="{{ url('/register') }}">Register</a></li>
             <li><a class="login" href="{{ url('/login') }}">Login</a></li>
