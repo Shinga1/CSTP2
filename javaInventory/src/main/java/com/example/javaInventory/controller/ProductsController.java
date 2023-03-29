@@ -2,6 +2,7 @@ package com.example.javaInventory.controller;
 
 import com.example.javaInventory.entity.Products;
 import com.example.javaInventory.reports.Stock;
+import com.example.javaInventory.repository.OrdersRepository;
 import com.example.javaInventory.service.ProductsService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -17,17 +18,22 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 @Controller
 public class ProductsController {
 
     private ProductsService productsService;
+    private OrdersRepository ordersRepository;
 
-    public ProductsController(ProductsService productsService) {
+    public ProductsController(ProductsService productsService, OrdersRepository ordersRepository) {
         super();
         this.productsService = productsService;
+        this.ordersRepository = ordersRepository;
     }
 
     @GetMapping("/")
@@ -191,7 +197,25 @@ public class ProductsController {
     }
 
     @GetMapping("/reports")
-    public String reports() {
+    public String reports(Model model) {
+        List<Integer> counts = ordersRepository.countOrdersByDayLast7Days();
+        List<String> labels = new ArrayList<>();
+        List<Integer> data = new ArrayList<>();
+
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar cal = Calendar.getInstance();
+
+        for (int i = 6; i >= 0; i--) {
+            cal.add(Calendar.DATE, -1);
+            labels.add(df.format(cal.getTime()));
+            if (i < counts.size()) {
+                data.add(counts.get(i));
+            } else {
+                data.add(0);
+            }
+        }
+        model.addAttribute("labels", labels);
+        model.addAttribute("data", data);
         return "/reports";
     }
 
