@@ -818,9 +818,9 @@ nav ul a:hover::after {
 .login-page form input {
     width: 100%;
     margin-bottom: 1.5rem;
-    border-color: white;
-    color: white;
-    caret-color: white;
+    border-color: #fff;
+    color: #fff;
+    caret-color: #fff;
     outline: none;
     height: 40px;
 }
@@ -911,9 +911,9 @@ nav ul a:hover::after {
 .register-page form input {
     width: 100%;
     margin-bottom: 1.5rem;
-    border-color: white;
-    color: white;
-    caret-color: white;
+    border-color: #fff;
+    color: #fff;
+    caret-color: #fff;
     outline: none;
     height: 40px;
 }
@@ -1611,14 +1611,14 @@ textarea {
 }
 
 .basket-page div > div > a {
-    background-color: white;
+    background-color: #fff;
     margin-left: auto;
     color: #ff0000;
     text-decoration: none;
 }
 
 .basket-page div > div:last-child {
-    background-color: white;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -1654,7 +1654,7 @@ textarea {
 }
 
 .basket-page h1 {
-    background-color: white;
+    background-color: #fff;
     font-size: 30px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -1694,7 +1694,7 @@ textarea {
 .basket-page .image-text img,
 .basket-page .image-text img a,
 .basket-page .basekt-price form {
-    background-color: white;
+    background-color: #fff;
 }
 
 .basket-nothing {
@@ -1722,7 +1722,7 @@ textarea {
 
 .nothing-btn {
     display: inline-block;
-    color: white;
+    color: #fff;
     display: inline-block;
     padding: 15px 30px;
     background-color: #333;
@@ -1785,7 +1785,7 @@ textarea {
 
 .ordersTable table th,
 .ordersTable table td {
-    border: 1px solid black;
+    border: 1px solid #000;
     padding: 0.5rem;
     text-align: center;
 }
@@ -1866,6 +1866,83 @@ textarea {
 }
 
 /**---------------------------------------------------------- END OF ORDER DETAILS PAGE CSS ----------------------------------------------------------------------**/
+
+/**---------------------------------------------------------- CHECKOUT PAGE CSS ----------------------------------------------------------------------**/
+
+.checkout-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    font-size: 16px;
+    margin-top: 5.2rem;
+}
+
+.checkout-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555;
+}
+
+.checkout-page div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.checkout-page img {
+    margin-right: 20px;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.checkout-page p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.checkout-page a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.checkout-page a:hover {
+    text-decoration: underline;
+}
+
+.checkout-page .total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .checkout-page div {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .checkout-page img {
+        margin: 0 0 10px 0;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/**---------------------------------------------------------- END OF CHECKOUT PAGE CSS ----------------------------------------------------------------------**/
 
 /**---------------------------------------------------------- PRIVACY POLICY PAGE CSS ----------------------------------------------------------------------**/
 .privacy_policy {
