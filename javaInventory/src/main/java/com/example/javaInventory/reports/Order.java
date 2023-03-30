@@ -85,6 +85,9 @@ public class Order {
         Paragraph generatedAt = new Paragraph("Report was generated at: " + dateFormat.format(date));
         document.add(generatedAt);
 
+        Paragraph report = new Paragraph("This will show all the incoming/outgoing orders and the cancelled orders if there are any.");
+        document.add(report);
+
         Font smallFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
         smallFont.setSize(14);
 
