@@ -2,6 +2,7 @@ package com.example.javaInventory;
 
 import com.example.javaInventory.controller.ProductsController;
 import com.example.javaInventory.entity.Products;
+import com.example.javaInventory.service.ProductsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -20,6 +21,9 @@ public class ProductsControllerTest {
     @InjectMocks
     private ProductsController productsController;
 
+    @Mock
+    private ProductsService productsService;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -36,5 +40,19 @@ public class ProductsControllerTest {
 
         // Assert
         assertEquals("add-product", viewName);
+    }
+
+    @Test
+    void testUpdateProduct() {
+        // Arrange
+        Integer id = 1;
+        Products product = new Products();
+        when(productsService.getProductID(Long.valueOf(id))).thenReturn(product);
+
+        // Act
+        String viewName = productsController.updateProduct(Long.valueOf(id), model);
+
+        // Assert
+        assertEquals("update-product", viewName);
     }
 }
