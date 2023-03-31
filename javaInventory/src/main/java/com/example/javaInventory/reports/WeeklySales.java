@@ -62,7 +62,7 @@ public class WeeklySales {
 
         Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
         font.setSize(20);
-        Paragraph title = new Paragraph("Celessentials sales report for the past week", font);
+        Paragraph title = new Paragraph("Celessentials sales report for the past 7 days", font);
         title.setAlignment(Element.ALIGN_CENTER);
         title.setSpacingAfter(20);
         document.add(title);
@@ -83,9 +83,9 @@ public class WeeklySales {
         List<Orders> weeklySales = ordersService.getOrdersBetween(start, LocalDate.from(end.atStartOfDay().plusDays(1)));
 
         if (weeklySales.isEmpty()) {
-            document.add(new Paragraph("There are no orders to display for the past week.", smallFont));
+            document.add(new Paragraph("There are no orders to display for the past 7 days.", smallFont));
         } else {
-            document.add(new Paragraph("Below are all the orders that were placed in the past week:", smallFont));
+            document.add(new Paragraph("Below are all the orders that were placed in the past 7 days:", smallFont));
             PdfPTable weeklyTable = new PdfPTable(5);
             weeklyTable.setWidthPercentage(100);
             weeklyTable.setSpacingBefore(20);
@@ -99,7 +99,7 @@ public class WeeklySales {
                 moneyMade += order.getSubtotal();
             }
 
-            Paragraph made = new Paragraph("Total amount made in the past week: £" + String.format("%.2f", moneyMade));
+            Paragraph made = new Paragraph("Total amount made for the past 7 days: £" + String.format("%.2f", moneyMade));
             made.setSpacingBefore(20);
             document.add(made);
 
