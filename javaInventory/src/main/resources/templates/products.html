@@ -12,7 +12,7 @@
 body{
     background-color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0;    
+    margin: 0;
 
     }
 
@@ -28,7 +28,7 @@ margin-top: 30px;
     h4{
         color: whitesmoke;
         font-size: 20px;
-        
+
     }
     nav {
         background-color: #333;
@@ -38,7 +38,7 @@ margin-top: 30px;
         align-items: center;
         padding: 0 20px;
         font-size: 20px;
-        
+
     }
 
     .navbar-nav{
@@ -56,11 +56,11 @@ margin-top: 30px;
     .navbar-nav a:hover {
         color: #00bcd4;
     }
-       
+
     .navbar-nav a:not(:last-child) {
         margin-right: 10px;
         }
-   
+
         .navbar-logout {
             padding: 5px 10px;
             display: inline-block;
@@ -310,7 +310,7 @@ margin-top: 30px;
         <a class="navbar-brand" href="">Celessentials inventory management</a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button> 
+        </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
             <h4>Celessentials inventory management</h4>
             <div class="navbar-nav">
@@ -321,7 +321,7 @@ margin-top: 30px;
             <div class="navbar-logout">
                 <a class="nav-link" th:href="@{/logout}">Logout</a>
             </div>
-    
+
         </div>
     </div>
 </nav>
@@ -414,7 +414,7 @@ margin-top: 30px;
                                 <strong><span th:if = "${product.productStock} > 5" class="text-success">In stock</span></strong>
                             </td>
                             <td><a th:href = "@{/update/{id}(id=${product.id})}" class="btn btn-update">Update</a></td>
-                            <td><a th:href = "@{/{id}(id=${product.id})}" class="btn btn-danger">Delete</a></td>
+                            <td><a th:href = "@{/{id}(id=${product.id})}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a></td>
                         </tr>
                     </tbody>
                 </table>
