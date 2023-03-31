@@ -8,60 +8,49 @@
 </head>
 <body>
     <style>
-     nav {
+     body{
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;    
+
+    }
+    nav {
         background-color: #333;
         height: 80px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 20px;
-        font-size: 18px;
+        font-size: 20px;
+        
     }
 
-        .navbar-brand,
-        .navbar-nav a {
+    .navbar-nav{
+        margin-right: 250px;
+        word-spacing:0%;
+    }
+
+    .navbar-brand,
+    .navbar-nav a {
         color: #fff;
         text-decoration: none;
         transition: color 0.3s ease;
-        }
+     }
 
-        .navbar-nav a:hover {
+    .navbar-nav a:hover {
         color: #00bcd4;
+    }
+       
+    .navbar-nav a:not(:last-child) {
+        margin-right: 10px;
         }
-
-        .navbar-brand:hover {
-        color: #fff;
-        }
-
-        .navbar-nav {
-        display: flex;
-        align-items: center;
-        }
-
-        .navbar-nav a:not(:last-child) {
-        margin-right: 15px;
-        }
-
-
-       *{
-            margin: 0;
-        }
-
-        .navbar {
-            display:inline-block;
-            justify-content: center;
-            align-items: center;
-            width: 1440px;
-            height: 80px;
-            background: #3b3a3a;
-            box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
-        }
-
+   
         .navbar-logout {
             padding: 5px 10px;
             display: inline-block;
             border-radius: 5px;
             transition: background-color 0.2s ease-in-out;
+            margin-right: 20px;
 
         }
 
@@ -80,9 +69,11 @@
 
 /*------------------------------text ---------------------*/
         h1{
-            font-size: 26px;
-            margin-top: 5%;
+            text-decoration: underline;
+            font-size: 33px;
             text-align: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
 
         }
 
@@ -94,14 +85,11 @@
         h4{
             font-family: 'Satoshi';
             font-weight: 700;
-            font-size: 22px;
+            font-size: 18px;
             text-align: center;
             margin-bottom: 10px;
 
         }
-
-
-
 
 
         .container {
@@ -130,11 +118,11 @@
         }
 
         .btn:hover {
-        background-color: #076d7a;
+        background-color: #08707e;
         }
 
         .get .btn-primary {
-align-items: center;
+        align-items: center;
         }
 
         .btn-primary {
@@ -154,7 +142,7 @@ align-items: center;
         justify-content: center;
         align-items: center;
         text-align: center;
-        margin-bottom: 8%;
+        margin-bottom: 20px;
         }
 
      #myChart {
@@ -180,13 +168,10 @@ align-items: center;
     </div>
 </nav>
 
-        <div class="d-flex flex-column" style="min-height: 10vh;">
-            <div class="mt-auto">
                 <div class="text-center">
                     <h1>Reports are available here</h1>
                 </div>
-            </div>
-        </div>
+           
 
 
                 <div class="report">
@@ -208,7 +193,6 @@ align-items: center;
 
 
                 <div class="report">
-
                     <h4>Reports for today's sale:</h4>
                     <form method="get" action="/daily/report/" th:action="@{/daily/report}" th:object="${dailyReportForm}">
                         <input type="hidden" name="reportType" value="stock">
@@ -224,10 +208,10 @@ align-items: center;
                         <button type="submit" class="btn btn-primary">Generate past weeks sales report </button>
                     </form>
                 </div>
-    </div>
-  </div>
+  
+  
 
-    <div style="width: 80%; margin: 0 auto; height: 80%;">
+    <div style="width: 80%; margin: 0 auto; height: 80%; margin-top: 10%;">
         <h1>Graph showing the total number of orders placed in the last 7 days</h1>
 
         <canvas id="myChart"></canvas>

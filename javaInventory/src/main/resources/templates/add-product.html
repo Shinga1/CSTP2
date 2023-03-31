@@ -9,74 +9,64 @@
 
 <style>
 
+ body{
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;    
+
+    }
     nav {
-    background-color: #333;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    font-size: 18px;
+        background-color: #333;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        font-size: 20px;
+        
+    }
+
+    .navbar-nav{
+        margin-right: 250px;
+        word-spacing:0%;
     }
 
     .navbar-brand,
     .navbar-nav a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    }
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+     }
 
     .navbar-nav a:hover {
-    color: #00bcd4;
+        color: #00bcd4;
     }
-
-    .navbar-brand:hover {
-    color: #fff;
-    }
-
-    .navbar-nav {
-    display: flex;
-    align-items: center;
-    }
-
+       
     .navbar-nav a:not(:last-child) {
-    margin-right: 15px;
-    }
+        margin-right: 10px;
+        }
+   
+        .navbar-logout {
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
+            margin-right: 20px;
 
-    * {
-    margin: 0;
-    }
+        }
 
-    .navbar {
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    width: 1440px;
-    height: 80px;
-    background: #3b3a3a;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
-    text-align: center;
-    }
+        .navbar-logout:hover {
+            background-color: #00bcd4;
+        }
 
-    .navbar-logout {
-    padding: 5px 10px;
-    display: inline-block;
-    border-radius: 5px;
-    transition: background-color 0.2s ease-in-out;
-    }
+        .navbar-logout:hover a {
+            color: #fff;
+        }
 
-    .navbar-logout:hover {
-    background-color: #00bcd4;
-    }
-
-    .navbar-logout:hover a {
-    color: #fff;
-    }
-
-    .navbar-logout a {
-    color: #fff;
-    text-decoration: none;
-    }
+        .navbar-logout a {
+            color: #fff;
+            text-decoration: none;
+        }
 
     /* ---------------------------form input--------------------- */
         .container {
@@ -88,9 +78,7 @@
         text-align: center;
     }
 
-    .form-group {
-        margin-bottom: 20px;
-    }
+   
 
     .form-control {
         width: 100%;
@@ -124,14 +112,10 @@
         color: #fff;
         text-align: center;
         vertical-align: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
         user-select: none;
-        background-color: #007bff;
         border: 1px solid #007bff;
         padding: 0.375rem 0.75rem;
-        font-size: 1rem;
+        font-size: 18px;
         line-height: 1.5;
         border-radius: 0.25rem;
         transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
@@ -140,20 +124,30 @@
 
     .btn-secondary {
         color: #fff;
+        text-decoration: none;
         background-color: #6c757d;
         border-color: #6c757d;
+        margin-top: 10px;
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+    .btn-secondary:hover{
+        color: #fff;
+        background-color: #1e1e1f;
+        border-color: #1e1e1f;
     }
 
     .btn-success {
         color: #fff;
-        background-color: #28a745;
-        border-color: #28a745;
+        background-color: #00bcd4;
+        border-color: #00bcd4;
     }
 
-    .btn:hover {
+    .btn-success:hover {
         color: #fff;
-        background-color: #0069d9;
-        border-color: #0062cc;
+        background-color: #08707e;
+        border-color: #08707e;
     }
 
     .btn:focus,
@@ -164,17 +158,21 @@
 
 /* -----------------------text---------------------- */
 h1{
-    margin: 15px;
+    text-decoration: underline;
+            font-size: 33px;
+            text-align: center;
+            margin-top: 30px;
 }
 
 h4{
         color: whitesmoke;
-        font-size: 1.25rem;
+        font-size: 20px;
     }
 
 
     h5{
-font-size: 24px;
+font-size: 20px;
+margin-left: 0;
     }
 
     .productName{

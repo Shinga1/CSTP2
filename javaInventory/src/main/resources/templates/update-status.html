@@ -3,34 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <title>Update product</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<style>
+
+   body{
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;    
+
+    }
+/*------------------------------nav--------------------------*/
+nav {
+        background-color: #333;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        font-size: 20px;
+        
+    }
+
+    .navbar-nav{
+        margin-right: 250px;
+        word-spacing:0%;
+    }
+
+    .navbar-brand,
+    .navbar-nav a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+     }
+
+    .navbar-nav a:hover {
+        color: #00bcd4;
+    }
+       
+    .navbar-nav a:not(:last-child) {
+        margin-right: 10px;
+        }
+   
+        .navbar-logout {
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
+            margin-right: 20px;
+
+        }
+
+        .navbar-logout:hover {
+            background-color: #00bcd4;
+        }
+
+        .navbar-logout:hover a {
+            color: #fff;
+        }
+
+        .navbar-logout a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+/*---------------------------buttons------------------------*/
+
+
+
+button[type="submit"]{
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: #00bcd4;
+        color: #fff;
+        border-color: #00bbd400;
+        border-radius: 5px;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    button[type="submit"]:hover{
+        background-color: #08707e;
+
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-secondary {
+        color: #fff;
+        text-decoration: none;
+        background-color: #6c757d;
+        border-color: #6c757d;
+        font-size: 18px;
+        margin-top: 50px;
+        margin-left: 230px;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .btn-secondary:hover{
+        color: #fff;
+        background-color: #1e1e1f;
+        border-color: #1e1e1f;
+    }
+
+
+
+/*--------------------------status------------------------------*/
+.container {
+        max-width: 1000px;
+        padding: 20px;
+        margin-top: 40px;
+        margin: 0 auto;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            border-color: #1e1e1f;
+             
+        }
+
+        .card-body {
+            background-color: #fff;
+        margin-top: 30px;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        width: 500px;
+        }
+        
+        .form-group span{
+            font-weight: bold;
+        }
+/*-----------------------------status Option----------------------*/
+.form-status {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+.form-status h3 {
+  margin: 0 0 10px;
+}
+
+.form-status select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #444;
+  background-color: #fff;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-status select:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 0 0.2rem rgba(102, 175, 233, 0.5);
+}
+
+
+/*---------------------------text--------------------------------*/
+h4{
+    color: whitesmoke;
+        font-size: 20px;
+        
+    }
+
+h3{
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+h1{
+    text-decoration: underline;
+            font-size: 33px;
+            text-align: center;
+            margin-top: 30px;
+}
+
+h2{
+    margin-bottom: 20px;
+}
+
+</style>
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">Celessentials inventory management</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" th:href="@{/}">Products</a>
-                <a class="nav-link" th:href="@{/orders}">Orders</a>
-                <a class="nav-link" th:href="@{/reports}">Reports</a>
+        </button> -->
+        <nav >
+            <h4>Celessentials inventory management</h4>
+                    <div class="navbar-nav">
+                        <a class="nav-link" th:href="@{/}">Products</a>
+                        <a class="nav-link" th:href="@{/orders}">Orders</a>
+                        <a class="nav-link" th:href="@{/reports}">Reports</a>
+                    </div>
+        
+                    <div class="navbar-logout">
+                        <a class="nav-link" th:href="@{/logout}">Logout</a>
+                    </div>
+        
+                </div>
             </div>
+        </nav>
 
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" th:href="@{/logout}">Logout</a>
-            </div>
-
-        </div>
-    </div>
-</nav>
 
 <body>
+
+    <h1>Update order status</h1>
+
 <div class="container">
     <div class="row">
-        <h1>Update order status</h1>
         <div class="card-body">
             <form th:action="@{/orders/{id}(id=${order.id})}" th:object="${order}" method="post" enctype="multipart/form-data">
 
@@ -42,8 +246,8 @@
                     <p>Current status of order: <span th:text = ${order.status}></span> </p>
                 </div>
 
-                <div class="form-group">
-                    <h4>Update the status of the order:</h4>
+                <div class="form-status">
+                    <h3>Update the status of the order:</h3>
                     <select name="status" th:field="*{status}" class="form-control" required>
                         <option value="Processing">Processing</option>
                         <option value="Cancelled">Cancelled</option>
@@ -59,11 +263,9 @@
                 </div>
             </form>
         </div>
-
-        <div>
-            <a th:href = "@{/orders}" class="btn btn-secondary">Return back to all orders</a>
-        </div>
-
+    </div>
+    <div>
+        <a th:href = "@{/orders}" class="btn btn-secondary">Return back to all orders</a>
     </div>
 </div>
 </body>

@@ -8,6 +8,12 @@
 <body>
 
     <style>
+   body{
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;    
+
+    }
          h4{
         color: whitesmoke;
         font-size: 1.25rem;
@@ -15,73 +21,57 @@
 
 /* --------------------------------nav-bar--------------------------------- */
 nav {
-  background-color: #333;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  font-size: 18px;
-}
+        background-color: #333;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        font-size: 20px;
+        
+    }
 
-.navbar-brand,
-.navbar-nav a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+    .navbar-nav{
+        margin-right: 250px;
+        word-spacing:0%;
+    }
 
-.navbar-nav a:hover {
-  color: #00bcd4;
-}
+    .navbar-brand,
+    .navbar-nav a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+     }
 
-.navbar-brand:hover {
-  color: #fff;
-}
+    .navbar-nav a:hover {
+        color: #00bcd4;
+    }
+       
+    .navbar-nav a:not(:last-child) {
+        margin-right: 10px;
+        }
+   
+        .navbar-logout {
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
+            margin-right: 20px;
 
-.navbar-nav {
-  display: flex;
-  align-items: center;
-}
+        }
 
-.navbar-nav a:not(:last-child) {
-  margin-right: 15px;
-}
+        .navbar-logout:hover {
+            background-color: #00bcd4;
+        }
 
-* {
-  margin: 0;
-}
+        .navbar-logout:hover a {
+            color: #fff;
+        }
 
-.navbar {
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  width: 1440px;
-  height: 80px;
-  background: #3b3a3a;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
-  text-align: center;
-}
-
-.navbar-logout {
-  padding: 5px 10px;
-  display: inline-block;
-  border-radius: 5px;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.navbar-logout:hover {
-  background-color: #00bcd4;
-}
-
-.navbar-logout:hover a {
-  color: #fff;
-}
-
-.navbar-logout a {
-  color: #fff;
-  text-decoration: none;
-}
+        .navbar-logout a {
+            color: #fff;
+            text-decoration: none;
+        }
 
 
 
@@ -158,7 +148,7 @@ nav {
         }
 
         .btn-filter:hover{
-            background-color: #0896a8;
+            background-color: #08707e;
 
         }
 
@@ -201,7 +191,7 @@ nav {
         }
 
         .btn-update:hover{
-            background-color: #076d7a ;
+            background-color: #08707e ;
         }
 
         .btn-danger{
@@ -220,6 +210,26 @@ nav {
         }
 
 
+        .btn-viewDetails{
+            position: relative;left: 30px;       
+         }
+
+         .btn-updateStatus{
+            position: relative;left: 35px;       
+
+         }
+
+        .btn-viewDetails, .btn-updateStatus:hover{
+            background-color:#076d7a ;
+
+        }
+        .btn-viewDetails:hover{
+        background-color: #00bcd4;
+        }
+
+
+/*----------------------------------------------------------------------------*/        
+
         .alert.alert-success {
         background-color: #dff0d8;
         border-color: #d6e9c6;
@@ -233,7 +243,10 @@ nav {
         }
 
         h1 {
-        margin-bottom: 30px;
+            text-decoration: underline;
+            font-size: 33px;
+            text-align: center;
+            margin-top: 30px;
         }
 
         form {
@@ -276,11 +289,12 @@ nav {
 
         .btn-secondary:hover {
         color: #fff;
-        background-color: #5a6268;
-        border-color: #545b62;
+        background-color: #1e1e1f;
+        border-color: #1e1e1f;
         }
 
-table {
+/*--------------------------------Table-----------------------------------*/
+        table {
         border-collapse: collapse;
         width: 100%;
         }
@@ -336,10 +350,10 @@ table {
     <p th:text="${update}"></p>
 </div>
 
+<h1>All orders</h1>
 
 <div class="container">
     <div class="row">
-        <h1>All orders</h1>
 
         <div>
             <form th:action = "@{/filter/status}" method="get">
@@ -380,8 +394,8 @@ table {
                     <td th:text = "${orders.status}"></td>
                     <td th:text = "${orders.createdAt}"></td>
                     <td th:text = "${orders.updatedAt}"></td>
-                    <td><a th:href="@{/order/details/{orderId}(orderId=${orders.id})}" class="btn btn-primary">View details</a></td>
-                    <td><a th:href="@{/orders/update/status/{id}(id=${orders.id})}" class="btn btn-primary">Update Status</a></td>
+                    <td><a th:href="@{/order/details/{orderId}(orderId=${orders.id})}" class="btn btn-viewDetails">View details</a></td>
+                    <td><a th:href="@{/orders/update/status/{id}(id=${orders.id})}" class="btn btn-updateStatus">Update Status</a></td>
                 </tr>
                 </tbody>
             </table>
