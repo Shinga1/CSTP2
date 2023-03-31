@@ -192,7 +192,11 @@ nav {
     }
 
     h2{
-        text-align: center;
+        text-decoration: underline;
+            font-size: 33px;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
     }
         
 
@@ -214,10 +218,11 @@ nav {
     </div>
 </nav>
 
+<h2>Update product details</h2>
+
 
 <div class="container">
     <div class="row">
-        <h2>Update product details</h2>
         <div class="card-body">
             <form th:action="@{/{id}(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
                 <div class="form-group">
