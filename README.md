@@ -66,4 +66,4 @@ Celessentials is a company that sells celebrity-related products. Our goal is to
 6. Navigate to `javaInventory/src/main/resources/application.properties` and check that the first line is: <br>
 `spring.datasource.url=jdbc:mysql://localhost:3306/celessentials` <br>
 7. Run the java application by going to `javaInventory/src/main/java/com/example/javaInventory/JavaApplication.java/` and right clicking on it and pressing `Run 'JavaAppIication'`
-8. Open `http://127.0.0.1:8000/` in the browser
+8. Open `http://127.0.0.1:8080/` in the browser
