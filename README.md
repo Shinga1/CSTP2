@@ -17,7 +17,7 @@ Celessentials is a company that sells celebrity-related products. Our goal is to
 
 ---
 
-### Setting up the Celessentials website
+## Setting up the Celessentials website
 
 ## Requirements:
 * Laravel 
