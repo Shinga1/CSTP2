@@ -55,6 +55,7 @@ Celessentials is a company that sells celebrity-related products. Our goal is to
 * A IDE (Intellij IDEA or Eclipse) 
 * Java development kit (JDK) 
 * Maven
+---
 
 ### Steps to open locally:
 
@@ -67,3 +68,12 @@ Celessentials is a company that sells celebrity-related products. Our goal is to
 `spring.datasource.url=jdbc:mysql://localhost:3306/celessentials` <br>
 7. Run the java application by going to `javaInventory/src/main/java/com/example/javaInventory/JavaApplication.java/` and right clicking on it and pressing `Run 'JavaAppIication'`
 8. Open `http://127.0.0.1:8080/` in the browser
+
+Login details for the Admin can be found in `javaInventory/src/main/resources/application.properties` <br>
+
+Username = `admin@celessentials.com` <br>
+Password = `password`
+
+### Now you should have access to the java inventory website
+
+---
