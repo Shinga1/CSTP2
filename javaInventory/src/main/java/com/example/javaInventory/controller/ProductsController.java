@@ -53,26 +53,32 @@ public class ProductsController {
             productsList = productsService.getAllProducts();
         }
 
-
-
+        boolean allOutOfStock = true;
         for (Products product : productsList) {
             if (product.getProductStock() == 0) {
                 outOfStock.add(product.getProductName());
             } else if (product.getProductStock() <= 5) {
                 lowStock.add(product.getProductName());
+                allOutOfStock = false;
+            } else {
+                allOutOfStock = false;
             }
         }
 
-        if (!outOfStock.isEmpty()) {
-            messages.add(String.join(", ", outOfStock) + " are out of stock");
-        }
+        if (allOutOfStock) {
+            messages.add("All products are out of stock");
+        } else {
+            if (!outOfStock.isEmpty()) {
+                messages.add(String.join(", ", outOfStock) + " are out of stock");
+            }
 
-        if (!lowStock.isEmpty()) {
-            messages.add(String.join(", ", lowStock) + " have low stock");
-        }
+            if (!lowStock.isEmpty()) {
+                messages.add(String.join(", ", lowStock) + " have low stock");
+            }
 
-        if (messages.isEmpty()) {
-            messages.add("All products are in stock");
+            if (messages.isEmpty()) {
+                messages.add("All products are in stock");
+            }
         }
 
         session.setAttribute("messages", messages);

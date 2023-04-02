@@ -11,7 +11,7 @@
      body{
     background-color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0;    
+    margin: 0;
 
     }
     nav {
@@ -22,7 +22,7 @@
         align-items: center;
         padding: 0 20px;
         font-size: 20px;
-        
+
     }
 
     .navbar-nav{
@@ -40,11 +40,11 @@
     .navbar-nav a:hover {
         color: #00bcd4;
     }
-       
+
     .navbar-nav a:not(:last-child) {
         margin-right: 10px;
         }
-   
+
         .navbar-logout {
             padding: 5px 10px;
             display: inline-block;
@@ -172,7 +172,7 @@
                 <div class="text-center">
                     <h1>Reports are available here</h1>
                 </div>
-           
+
 
 
                 <div class="report">
@@ -203,14 +203,14 @@
 
 
                 <div class="report">
-                    <h4>Reports for the sales of the past week:</h4>
+                    <h4>Reports for the sales made in the last 7 days:</h4>
                     <form method="get" action="/weekly/report/" th:action="@{/weekly/report}" th:object="${weeklyReportForm}">
                         <input type="hidden" name="reportType" value="stock">
-                        <button type="submit" class="btn btn-primary">Generate past weeks sales report </button>
+                        <button type="submit" class="btn btn-primary">Generate past 7 days sales report </button>
                     </form>
                 </div>
-  
-  
+
+
 
     <div style="width: 80%; margin: 0 auto; height: 80%; margin-top: 10%;">
         <h1>Graph showing the total number of orders placed in the last 7 days</h1>
