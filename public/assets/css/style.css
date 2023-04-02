@@ -1839,20 +1839,46 @@ textarea {
 /**---------------------------------------------------------- END OF BASKET PAGE CSS ----------------------------------------------------------------------**/
 
 /**---------------------------------------------------------- PREVIOUS ORDERS PAGE CSS ----------------------------------------------------------------------**/
-
 .noOrders {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    font-size: 1.5rem;
+    padding-top: 17rem;
+    font-size: 36px;
+    color: #fff;
     text-align: center;
+    margin: 50px auto;
+    max-width: 600px;
 }
 
-.noOrders a {
-    margin-top: 2rem;
-    font-size: 1.2rem;
+.noOrders:before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+}
+
+.noOrders-btn-container {
+    text-align: center;
+    padding-bottom: 25rem;
+    border-bottom: 0.1px solid #242424;
+}
+
+.noOrders-btn {
+    display: inline-block;
+    color: #fff;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.noOrders-btn:hover {
+    background-color: #fff;
+    color: #333;
 }
 
 .ordersTitle {

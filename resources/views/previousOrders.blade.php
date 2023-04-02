@@ -3,9 +3,9 @@
 @section('content')
 
     @if (count($orders) == 0)
-        <div class="noOrders">
-            <h1>You have no previous orders</h1>
-            <a href="/products">Order a product now</a>
+        <h1 class="noOrders">You have no previous orders 🤔</h1>
+        <div class="noOrders-btn-container">
+            <a href="/products" class="noOrders-btn">Order a product now</a>
         </div>
     @else
         <h1 class="ordersTitle">Here are all your previous orders, {{ auth()->user()->name }}</h1>
